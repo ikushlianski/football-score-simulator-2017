@@ -1,0 +1,38 @@
+.container {
+  padding-top: 2em;
+}
+.jumbotron__introduction {
+  background-image: url('../assets/img/grass.jpg');
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 20rem;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.jumbotron__introduction h2 {
+  margin: 0;
+  padding: 0;
+  text-shadow: 1px 1px 1px black;
+}
+.matchSettings__chooseTeams input {
+  flex-wrap: wrap;
+}
+.container__introduction {
+
+
+}
+.matchSettings__main {
+  border: 1px solid grey;
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+}
+.matchSettings__chooseTeams {
+  display: flex;
+  justify-content: space-around;
+}
+.matchSettings__chooseTeams .relativeStrength {
+
+}
