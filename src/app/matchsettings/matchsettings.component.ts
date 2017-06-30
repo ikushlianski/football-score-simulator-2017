@@ -7,9 +7,19 @@ declare var $: any;
   styleUrls: ['./matchsettings.component.css']
 })
 export class MatchsettingsComponent implements OnInit {
+  constructor() {
+    this.relativeStrength = this.relativeStrengths[3];
+    this.homeCrowdSupport = this.homeCrowdSupports[2]
+    this.homeTeamMorale = this.motivations[2];
+    this.awayTeamMorale = this.motivations[2];
+    this.homeTeamTactics = this.tactics[2];
+    this.awayTeamTactics = this.tactics[2];
+  }
+
   // team names
-  homeTeamName = undefined;
-  awayTeamName = undefined;
+  homeTeamName = '';
+  awayTeamName = '';
+
   // second leg stuff
   isSecondLeg:boolean = false;
   awayTeam1stLegGoals = undefined;
@@ -31,9 +41,39 @@ export class MatchsettingsComponent implements OnInit {
     this.homeTeam1stLegGoals = event.target.value;
   }
 
-  constructor() {
+  // relative strengths
+  relativeStrengths:string[] = [
+    `Hosts much weaker than Visitors`,
+    `Hosts weaker than Visitors`,
+    `Hosts a bit weaker than Visitors`,
+    `Hosts and Visitors equal in class`,
+    `Hosts a bit stronger than Visitors`,
+    `Hosts stronger than Visitors`,
+    `Hosts much stronger than Visitors`
+  ];
+  relativeStrength:string;
 
-  }
+  // home crowd support options
+  homeCrowdSupports:string[] = [
+    `Hosts have no support`,
+    `Hosts have weak support`,
+    `Hosts have average support`,
+    `Hosts enjoy good support`,
+    `Hosts enjoy outstanding support`,
+    `Teams play on neutral venue`,
+    `Random support`
+  ];
+  homeCrowdSupport:string;
+
+  // motivation options
+  motivations:string[] = [`Extremely low`, `Low`, `Average`, `High`, `Extremely high`, `Random`];
+  homeTeamMorale:string;
+  awayTeamMorale:string;
+
+  // tactics options
+  tactics:string[] = ['Defensive', 'Counter', 'Balanced', 'Possession', 'Attacking', 'Random'];
+  homeTeamTactics:string;
+  awayTeamTactics:string;
 
   ngOnInit() {
     $('.firstLegGoalsSetter').hide();

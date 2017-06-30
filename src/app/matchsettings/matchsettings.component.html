@@ -10,7 +10,7 @@
     </div>
     <div class="matchSettings matchSettings__secondLeg">
       <div class="isSecondLeg">
-        <label for="isSecondLeg">2nd leg?</label>
+        <label for="isSecondLeg">2nd leg of Home & Away match?</label>
         <input type="checkbox" name="isSecondLeg" id="isSecondLeg" [checked]="isSecondLeg" (change)="onChangeSecondLeg($event)">
       </div>
       <div class="firstLegGoalsSetter">
@@ -28,43 +28,43 @@
     </div>
     <div class="relativeStrength">
       <label for="relativeStrength">Teams' relative strength</label>
-      <select id="relativeStrength" class="" name="" [disabled]="">
-        <option value="">Some option</option>
+      <select id="relativeStrength" class="" name="relativeStrength" [disabled]="" [(ngModel)]="relativeStrength">
+        <option [ngValue]="" *ngFor="let relativeStrength of relativeStrengths">{{relativeStrength}}</option>
       </select>
     </div>
     <div class="homeCrowdSupport">
       <label for="crowdSupport">Home crowd support</label>
-      <select id="crowdSupport" class="" name="homeCrowdSupport">
-        <option value="">Some option</option>
+      <select id="crowdSupport" class="" name="homeCrowdSupport" [(ngModel)]="homeCrowdSupport">
+        <option [ngValue]="" *ngFor="let homeCrowdSupport of homeCrowdSupports">{{homeCrowdSupport}}</option>
       </select>
     </div>
   </div>
   <div class="matchSettings matchSettings__other">
     <div class="homeTeamSettings">
       <div class="homeTeamMorale">
-        <label for="homeTeamMorale">Home Team Morale</label>
-        <select id="homeTeamMorale" class="" name="homeTeamMorale">
-          <option value="">Some option</option>
+        <label for="homeTeamMorale">Hosts' Motivation & Morale</label>
+        <select id="homeTeamMorale" class="" name="homeTeamMorale" [(ngModel)]="homeTeamMorale">
+          <option [ngValue]="" *ngFor="let motivation of motivations">{{motivation}}</option>
         </select>
       </div>
       <div class="homeTeamTactics">
         <label for="homeTeamTactics">Home Team Tactics</label>
-        <select id="homeTeamTactics" class="" name="homeTeamTactics">
-          <option value="">Some option</option>
+        <select id="homeTeamTactics" class="" name="homeTeamTactics" [(ngModel)]="homeTeamTactics">
+          <option [ngValue]="" *ngFor="let tactic of tactics">{{tactic}}</option>
         </select>
       </div>
     </div>
     <div class="awayTeamSettings">
       <div class="awayTeamMorale">
-        <label for="awayTeamMorale">Away Team Morale</label>
-        <select id="awayTeamMorale" class="" name="awayTeamMorale">
-          <option value="">Some option</option>
+        <label for="awayTeamMorale">Visitors' Motivation & Morale</label>
+        <select id="awayTeamMorale" class="" name="awayTeamMorale" [(ngModel)]="awayTeamMorale">
+          <option [ngValue]="" *ngFor="let motivation of motivations">{{motivation}}</option>
         </select>
       </div>
       <div class="awayTeamTactics">
         <label for="awayTeamTactics">Away Team Tactics</label>
-        <select id="awayTeamTactics" class="" name="awayTeamTactics">
-          <option value="">Some option</option>
+        <select id="awayTeamTactics" class="" name="awayTeamTactics" [(ngModel)]="awayTeamTactics">>
+          <option [ngValue]="" *ngFor="let tactic of tactics">{{tactic}}</option>
         </select>
       </div>
     </div>
