@@ -2,15 +2,33 @@
   <div class="matchSettings matchSettings__main">
     <div class="matchSettings matchSettings__chooseTeams">
       <div class="chooseHomeTeam">
-        <input type="text" name="chooseHomeTeam" value="" placeholder="Choose home team">
+        <input type="text" name="chooseHomeTeam" [value]="" placeholder="Choose home team" [(ngModel)]="homeTeamName">
       </div>
       <div class="chooseAwayTeam">
-        <input type="text" name="chooseAwayTeam" value="" placeholder="Choose away team">
+        <input type="text" name="chooseAwayTeam" [value]="" placeholder="Choose away team" [(ngModel)]="awayTeamName">
+      </div>
+    </div>
+    <div class="matchSettings matchSettings__secondLeg">
+      <div class="isSecondLeg">
+        <label for="isSecondLeg">2nd leg?</label>
+        <input type="checkbox" name="isSecondLeg" id="isSecondLeg" [checked]="isSecondLeg" (change)="onChangeSecondLeg($event)">
+      </div>
+      <div class="firstLegGoalsSetter">
+        <div class="homeTeam1stLegGoals">
+          <label for="homeTeam1stLegGoals">
+            <span *ngIf="!(homeTeamName == undefined || homeTeamName == '')">{{homeTeamName}}</span> <span *ngIf="(homeTeamName == undefined || homeTeamName == '')">Hosts'</span> 1st leg goals</label>
+          <input type="number" name="homeTeam1stLegGoals" id="homeTeam1stLegGoals" min="0" [disabled]="!isSecondLeg" (change)="onChangeHomeTeam1stLegGoals($event)">
+        </div>
+        <div class="awayTeam1stLegGoals">
+          <input type="number" name="awayTeam1stLegGoals" id="awayTeam1stLegGoals" min="0" [disabled]="!isSecondLeg" (change)="onChangeAwayTeam1stLegGoals($event)">
+          <label for="awayTeam1stLegGoals">
+            <span *ngIf="!(awayTeamName == undefined || awayTeamName == '')">{{awayTeamName}}</span> <span *ngIf="(awayTeamName == undefined || awayTeamName == '')">Visitors'</span> 1st leg goals</label>
+        </div>
       </div>
     </div>
     <div class="relativeStrength">
       <label for="relativeStrength">Teams' relative strength</label>
-      <select id="relativeStrength" class="" name="">
+      <select id="relativeStrength" class="" name="" [disabled]="">
         <option value="">Some option</option>
       </select>
     </div>
@@ -19,15 +37,6 @@
       <select id="crowdSupport" class="" name="homeCrowdSupport">
         <option value="">Some option</option>
       </select>
-    </div>
-    <div class="matchSettings matchSettings__secondLeg">
-      <label for="isSecondLeg">Is this 2nd leg?</label>
-      <input type="checkbox" name="isSecondLeg" id="isSecondLeg">
-
-      <label for="awayTeam1stLegGoals">Visitors' 1st leg goals</label>
-      <input type="number" name="awayTeam1stLegGoals" id="awayTeam1stLegGoals">
-      <label for="homeTeam1stLegGoals">Hosts' 1st leg goals</label>
-      <input type="number" name="homeTeam1stLegGoals" id="homeTeam1stLegGoals">
     </div>
   </div>
   <div class="matchSettings matchSettings__other">
