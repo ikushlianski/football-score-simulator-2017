@@ -1,3 +1,63 @@
-<p>
-  matchsettings works!
-</p>
+<div class="matchSettings">
+  <div class="matchSettings matchSettings__main">
+    <div class="matchSettings matchSettings__chooseTeams">
+      <div class="chooseHomeTeam">
+        <input type="text" name="chooseHomeTeam" value="" placeholder="Choose home team">
+      </div>
+      <div class="chooseAwayTeam">
+        <input type="text" name="chooseAwayTeam" value="" placeholder="Choose away team">
+      </div>
+    </div>
+    <div class="relativeStrength">
+      <label for="relativeStrength">Teams' relative strength</label>
+      <select id="relativeStrength" class="" name="">
+        <option value="">Some option</option>
+      </select>
+    </div>
+    <div class="homeCrowdSupport">
+      <label for="crowdSupport">Home crowd support</label>
+      <select id="crowdSupport" class="" name="homeCrowdSupport">
+        <option value="">Some option</option>
+      </select>
+    </div>
+    <div class="matchSettings matchSettings__secondLeg">
+      <label for="isSecondLeg">Is this 2nd leg?</label>
+      <input type="checkbox" name="isSecondLeg" id="isSecondLeg">
+
+      <label for="awayTeam1stLegGoals">Visitors' 1st leg goals</label>
+      <input type="number" name="awayTeam1stLegGoals" id="awayTeam1stLegGoals">
+      <label for="homeTeam1stLegGoals">Hosts' 1st leg goals</label>
+      <input type="number" name="homeTeam1stLegGoals" id="homeTeam1stLegGoals">
+    </div>
+  </div>
+  <div class="matchSettings matchSettings__other">
+    <div class="homeTeamSettings">
+      <div class="homeTeamMorale">
+        <label for="homeTeamMorale">Home Team Morale</label>
+        <select id="homeTeamMorale" class="" name="homeTeamMorale">
+          <option value="">Some option</option>
+        </select>
+      </div>
+      <div class="homeTeamTactics">
+        <label for="homeTeamTactics">Home Team Tactics</label>
+        <select id="homeTeamTactics" class="" name="homeTeamTactics">
+          <option value="">Some option</option>
+        </select>
+      </div>
+    </div>
+    <div class="awayTeamSettings">
+      <div class="awayTeamMorale">
+        <label for="awayTeamMorale">Away Team Morale</label>
+        <select id="awayTeamMorale" class="" name="awayTeamMorale">
+          <option value="">Some option</option>
+        </select>
+      </div>
+      <div class="awayTeamTactics">
+        <label for="awayTeamTactics">Away Team Tactics</label>
+        <select id="awayTeamTactics" class="" name="awayTeamTactics">
+          <option value="">Some option</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+.matchSettings {
+  padding: 2rem;
+}
+.matchSettings__chooseTeams {
+  display: flex;
+  justify-content: space-around;
+  padding: 0rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.matchSettings select {
+  flex-wrap: wrap;
+}
+.matchSettings label {
+  margin: 1rem 0rem 0rem 0rem;
+}
+
+.matchSettings__main {
+  border: 1px solid #673AB7;
+  display: flex;
+  justify-content: space-around;
+}
+.matchSettings__other, .matchSettings__main {
+  margin: 1rem 0rem;
+  flex-wrap: wrap;
+}
+
+.matchSettings__other {
+    display: flex;
+    justify-content: space-around;
+}
+.matchSettings__secondLeg {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 0.5rem;
+    padding: 1rem;
+}
+.matchSettings__secondLeg input {
+  width: auto;
+  max-width: 5rem;
+  margin: 0;
+}
+.matchSettings__secondLeg label {
+  margin: 0;
+}
+.matchSettings__secondLeg #isSecondLeg {
+    width: 1.50em;
+    height: 1.5em;
+}
+
+@media all and (max-width: 640px) {
+  input {
+  }
+  .matchSettings__other, .matchSettings__main {
+    justify-content: center;
+  }
+}

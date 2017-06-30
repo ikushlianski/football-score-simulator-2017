@@ -4,10 +4,10 @@
 }
 
 body {
-  background-color: #111;
+  background-color: rgba(158, 158, 158, 0.10);
 }
 p, label, div, h1, h2, h3, h4, h5, h6 {
-  color: whitesmoke;
+  color: #333;
   display: block;
 }
 label {
@@ -15,9 +15,12 @@ label {
   font-weight: 400;
 }
 input[type=text] {
+  min-width: 20em;
+  min-height: 3em;
   border: none;
   color: #333;
   padding: 0.5em;
+  margin: 0.5em 0em;
   /*border: 1px solid grey;*/
   text-align: center;
   /*box-shadow: inset 0px 0px 2px 1px #444;*/
@@ -25,4 +28,6 @@ input[type=text] {
 }
 select {
   color: initial;
+  min-width: 20em;
+  min-height: 3em;
 }
