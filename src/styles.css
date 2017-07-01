@@ -2,7 +2,13 @@
 * {
   box-sizing: border-box;
 }
-
+button {
+  background-color: #4CAF50;
+  color: white;
+  
+  border: none;
+  padding: 0.5em;
+}
 body {
   background-color: rgba(158, 158, 158, 0.10);
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MainserviceService} from '../mainservice.service';
 
 @Component({
   selector: 'app-scoreboard',
@@ -6,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./scoreboard.component.css']
 })
 export class ScoreboardComponent implements OnInit {
-
-  constructor() { }
+  matchHasStarted:boolean;
+  constructor(private _mainService:MainserviceService) {
+    this._mainService.matchHasStarted$.subscribe(
+      data => {
+        this.matchHasStarted = data;
+        console.log(this.matchHasStarted);
+      }
+    )
+  }
 
   ngOnInit() {
   }

@@ -1,6 +1,6 @@
-<div class="matchSettings">
+<div class="matchSettings" [style.display] = "matchHasStarted ? 'none' : 'block'">
   <div class="matchSettings matchSettings__main">
-    <div class="matchSettings matchSettings__chooseTeams">
+    <div class="chooseTeams matchSettings__chooseTeams">
       <div class="chooseHomeTeam">
         <input type="text" name="chooseHomeTeam" [value]="" placeholder="Choose home team" [(ngModel)]="homeTeamName">
       </div>
@@ -8,18 +8,18 @@
         <input type="text" name="chooseAwayTeam" [value]="" placeholder="Choose away team" [(ngModel)]="awayTeamName">
       </div>
     </div>
-    <div class="matchSettings matchSettings__secondLeg">
+    <div class="matchSettings__secondLeg">
       <div class="isSecondLeg">
         <label for="isSecondLeg">2nd leg of Home & Away match?</label>
         <input type="checkbox" name="isSecondLeg" id="isSecondLeg" [checked]="isSecondLeg" (change)="onChangeSecondLeg($event)">
       </div>
       <div class="firstLegGoalsSetter">
-        <div class="homeTeam1stLegGoals">
+        <div class="firstLegGoalsSetter__homeTeam1stLegGoals">
           <label for="homeTeam1stLegGoals">
             <span *ngIf="!(homeTeamName == undefined || homeTeamName == '')">{{homeTeamName}}</span> <span *ngIf="(homeTeamName == undefined || homeTeamName == '')">Hosts'</span> 1st leg goals</label>
           <input type="number" name="homeTeam1stLegGoals" id="homeTeam1stLegGoals" min="0" [disabled]="!isSecondLeg" (change)="onChangeHomeTeam1stLegGoals($event)">
         </div>
-        <div class="awayTeam1stLegGoals">
+        <div class="firstLegGoalsSetter__awayTeam1stLegGoals">
           <input type="number" name="awayTeam1stLegGoals" id="awayTeam1stLegGoals" min="0" [disabled]="!isSecondLeg" (change)="onChangeAwayTeam1stLegGoals($event)">
           <label for="awayTeam1stLegGoals">
             <span *ngIf="!(awayTeamName == undefined || awayTeamName == '')">{{awayTeamName}}</span> <span *ngIf="(awayTeamName == undefined || awayTeamName == '')">Visitors'</span> 1st leg goals</label>
@@ -69,4 +69,5 @@
       </div>
     </div>
   </div>
+  <button type="button" name="proceedToMatch" class="matchSettings__proceedToMatch" (click)="proceedToMatch()">Proceed to match</button>
 </div>

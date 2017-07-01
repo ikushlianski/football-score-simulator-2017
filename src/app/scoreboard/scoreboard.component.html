@@ -1,3 +1,28 @@
-<p>
-  scoreboard works!
-</p>
+<div class="scoreboard" [style.display] = "matchHasStarted ? 'block' : 'none'">
+  <div class="scoreboard__matchMetaRow">
+
+  </div>
+  <div class="scoreboard__mainRow">
+    <div class="homeTeamZone">
+      <div class="homeTeamName scoreboard__homeTeamName">
+
+      </div>
+    </div>
+    <div class="scoreZone">
+      <div class="currentMatchScore scoreboard__currentMatchScore">
+
+      </div>
+      <div class="currentMatchTime scoreboard__currentMatchTime">
+
+      </div>
+      <div class="aggregateScore scoreboard__aggregateScore" *ngIf="(homeTeam1stLegGoals != undefined && awayTeam1stLegGoals != undefined)">
+        agg: {{homeTeam1stLegGoals}}-{{awayTeam1stLegGoals}}
+      </div>
+    </div>
+    <div class="awayTeamZone">
+      <div class="awayTeamName scoreboard__awayTeamName">
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -2,18 +2,19 @@
   display: inherit;
   margin: 1rem auto;
 }
-.firstLegGoalsSetter .awayTeam1stLegGoals  {
+.firstLegGoalsSetter__awayTeam1stLegGoals  {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
-.firstLegGoalsSetter .homeTeam1stLegGoals  {
+.firstLegGoalsSetter__homeTeam1stLegGoals  {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 .firstLegGoalsSetter div  {
   text-align: center;
+  display: flex;
 }
 .isSecondLeg {
   display: flex;
@@ -32,7 +33,10 @@
   width: 100%;
   flex-wrap: wrap;
 }
-
+.matchSettings__proceedToMatch {
+  margin: 0 auto;
+  display: block;
+}
 .matchSettings select {
   flex-wrap: wrap;
 }

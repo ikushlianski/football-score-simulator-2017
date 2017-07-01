@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MainserviceService} from '../mainservice.service';
 declare var $: any;
 
 @Component({
@@ -7,7 +8,12 @@ declare var $: any;
   styleUrls: ['./matchsettings.component.css']
 })
 export class MatchsettingsComponent implements OnInit {
-  constructor() {
+  constructor(private _mainService:MainserviceService) {
+    this._mainService.matchHasStarted$.subscribe(
+      data => {
+        this.matchHasStarted = data;
+      }
+    );
     this.relativeStrength = this.relativeStrengths[3];
     this.homeCrowdSupport = this.homeCrowdSupports[2]
     this.homeTeamMorale = this.motivations[2];
@@ -25,7 +31,6 @@ export class MatchsettingsComponent implements OnInit {
   awayTeam1stLegGoals = undefined;
   homeTeam1stLegGoals = undefined;
   onChangeSecondLeg(event){
-    console.log(this.homeTeamName, this.awayTeamName)
     if (event.target.checked){
       this.isSecondLeg = true;
     } else {
@@ -75,7 +80,36 @@ export class MatchsettingsComponent implements OnInit {
   homeTeamTactics:string;
   awayTeamTactics:string;
 
+  // proceed to match
+  matchHasStarted:boolean = false;
+  proceedToMatch(){
+    if (this.isSecondLeg) {
+      // if this is the 2nd leg
+      if (this.homeTeam1stLegGoals == undefined || this.awayTeam1stLegGoals == undefined) {
+        alert('Please specify first leg result between these two teams');
+        return;
+      } else {
+        if (this.homeTeamName != '' && this.awayTeamName != '') {
+          this.matchHasStarted = true;
+          this._mainService.updateServiceData(this.matchHasStarted);
+        } else {
+          alert('Please enter team names');
+          return;
+        }
+      }
+    } else {
+      // if this is NOT the first leg
+      if (this.homeTeamName != '' && this.awayTeamName != '') {
+        this.matchHasStarted = true;
+        this._mainService.updateServiceData(this.matchHasStarted);
+      } else {
+        alert('Please enter team names');
+      }
+    }
+  }
+
   ngOnInit() {
+    // hide and show second leg options
     $('.firstLegGoalsSetter').hide();
     $("#isSecondLeg").change(function(event){
       if (event.target.checked) {
@@ -84,6 +118,8 @@ export class MatchsettingsComponent implements OnInit {
         $('.firstLegGoalsSetter').hide();
       }
     });
+
+
   }
 
 }
