@@ -9,6 +9,8 @@ import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 import { AllmatchesComponent } from './allmatches/allmatches.component';
 import { AppsettingsComponent } from './appsettings/appsettings.component';
 import { CommentsComponent } from './comments/comments.component';
+import {MainserviceService} from './mainservice.service';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,7 @@ import { CommentsComponent } from './comments/comments.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [MainserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

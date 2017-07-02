@@ -2,10 +2,10 @@
   <div class="matchSettings matchSettings__main">
     <div class="chooseTeams matchSettings__chooseTeams">
       <div class="chooseHomeTeam">
-        <input type="text" name="chooseHomeTeam" [value]="" placeholder="Choose home team" [(ngModel)]="homeTeamName">
+        <input type="text" name="chooseHomeTeam" [value]="" placeholder="Choose home team" (change)="onChangeHomeTeamName($event)" [(ngModel)]="homeTeamName">
       </div>
       <div class="chooseAwayTeam">
-        <input type="text" name="chooseAwayTeam" [value]="" placeholder="Choose away team" [(ngModel)]="awayTeamName">
+        <input type="text" name="chooseAwayTeam" [value]="" placeholder="Choose away team" (change)="onChangeAwayTeamName($event)" [(ngModel)]="awayTeamName">
       </div>
     </div>
     <div class="matchSettings__secondLeg">
@@ -28,13 +28,13 @@
     </div>
     <div class="relativeStrength">
       <label for="relativeStrength">Teams' relative strength</label>
-      <select id="relativeStrength" class="" name="relativeStrength" [disabled]="" [(ngModel)]="relativeStrength">
+      <select id="relativeStrength" class="" name="relativeStrength" [disabled]="" [(ngModel)]="relativeStrength" (change)="onChangeRelativeStrength($event)">
         <option [ngValue]="" *ngFor="let relativeStrength of relativeStrengths">{{relativeStrength}}</option>
       </select>
     </div>
     <div class="homeCrowdSupport">
       <label for="crowdSupport">Home crowd support</label>
-      <select id="crowdSupport" class="" name="homeCrowdSupport" [(ngModel)]="homeCrowdSupport">
+      <select id="crowdSupport" class="" name="homeCrowdSupport" [(ngModel)]="homeCrowdSupport" (change)="onChangeHomeCrowdSupport($event)">
         <option [ngValue]="" *ngFor="let homeCrowdSupport of homeCrowdSupports">{{homeCrowdSupport}}</option>
       </select>
     </div>
@@ -42,28 +42,28 @@
   <div class="matchSettings matchSettings__other">
     <div class="homeTeamSettings">
       <div class="homeTeamMorale">
-        <label for="homeTeamMorale">Hosts' Motivation & Morale</label>
-        <select id="homeTeamMorale" class="" name="homeTeamMorale" [(ngModel)]="homeTeamMorale">
+        <label for="homeTeamMorale">Hosts' motivation & morale</label>
+        <select id="homeTeamMorale" class="" name="homeTeamMorale" [(ngModel)]="homeTeamMorale" (change)="onChangeHomeTeamMorale($event)">
           <option [ngValue]="" *ngFor="let motivation of motivations">{{motivation}}</option>
         </select>
       </div>
       <div class="homeTeamTactics">
-        <label for="homeTeamTactics">Home Team Tactics</label>
-        <select id="homeTeamTactics" class="" name="homeTeamTactics" [(ngModel)]="homeTeamTactics">
+        <label for="homeTeamTactics">Home team tactics</label>
+        <select id="homeTeamTactics" class="" name="homeTeamTactics" [(ngModel)]="homeTeamTactics" (change)="onChangeHomeTeamTactics($event)">
           <option [ngValue]="" *ngFor="let tactic of tactics">{{tactic}}</option>
         </select>
       </div>
     </div>
     <div class="awayTeamSettings">
       <div class="awayTeamMorale">
-        <label for="awayTeamMorale">Visitors' Motivation & Morale</label>
-        <select id="awayTeamMorale" class="" name="awayTeamMorale" [(ngModel)]="awayTeamMorale">
+        <label for="awayTeamMorale">Visitors' motivation & morale</label>
+        <select id="awayTeamMorale" class="" name="awayTeamMorale" [(ngModel)]="awayTeamMorale" (change)="onChangeAwayTeamMorale($event)">
           <option [ngValue]="" *ngFor="let motivation of motivations">{{motivation}}</option>
         </select>
       </div>
       <div class="awayTeamTactics">
-        <label for="awayTeamTactics">Away Team Tactics</label>
-        <select id="awayTeamTactics" class="" name="awayTeamTactics" [(ngModel)]="awayTeamTactics">>
+        <label for="awayTeamTactics">Away team tactics</label>
+        <select id="awayTeamTactics" class="" name="awayTeamTactics" [(ngModel)]="awayTeamTactics" (change)="onChangeAwayTeamTactics($event)">
           <option [ngValue]="" *ngFor="let tactic of tactics">{{tactic}}</option>
         </select>
       </div>
