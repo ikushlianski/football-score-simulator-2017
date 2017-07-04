@@ -27,15 +27,15 @@
       </div>
     </div>
     <div class="relativeStrength">
-      <label for="relativeStrength">Teams' relative strength</label>
-      <select id="relativeStrength" class="" name="relativeStrength" [disabled]="" [(ngModel)]="relativeStrength" (change)="onChangeRelativeStrength($event)">
-        <option [ngValue]="" *ngFor="let relativeStrength of relativeStrengths">{{relativeStrength}}</option>
+      <label for="relativeStrengthText">Teams' relative strength</label>
+      <select id="relativeStrengthText" class="" name="relativeStrengthText" [disabled]="" [(ngModel)]="relativeStrengthText" (change)="onChangeRelativeStrength($event)">
+        <option [ngValue]="" *ngFor="let relativeStrengthText of relativeStrengths">{{relativeStrengthText}}</option>
       </select>
     </div>
     <div class="homeCrowdSupport">
       <label for="crowdSupport">Home crowd support</label>
-      <select id="crowdSupport" class="" name="homeCrowdSupport" [(ngModel)]="homeCrowdSupport" (change)="onChangeHomeCrowdSupport($event)">
-        <option [ngValue]="" *ngFor="let homeCrowdSupport of homeCrowdSupports">{{homeCrowdSupport}}</option>
+      <select id="crowdSupport" class="" name="homeCrowdSupportText" [(ngModel)]="homeCrowdSupportText" (change)="onChangeHomeCrowdSupport($event)">
+        <option [ngValue]="" *ngFor="let homeCrowdSupportText of homeCrowdSupports">{{homeCrowdSupportText}}</option>
       </select>
     </div>
   </div>
@@ -43,28 +43,28 @@
     <div class="homeTeamSettings">
       <div class="homeTeamMorale">
         <label for="homeTeamMorale">Hosts' motivation & morale</label>
-        <select id="homeTeamMorale" class="" name="homeTeamMorale" [(ngModel)]="homeTeamMorale" (change)="onChangeHomeTeamMorale($event)">
-          <option [ngValue]="" *ngFor="let motivation of motivations">{{motivation}}</option>
+        <select id="homeTeamMorale" class="" name="homeTeamMorale" [(ngModel)]="homeTeamMoraleText" (change)="onChangeHomeTeamMorale($event)">
+          <option [ngValue]="" *ngFor="let homeTeamMoraleText of motivations">{{homeTeamMoraleText}}</option>
         </select>
       </div>
       <div class="homeTeamTactics">
         <label for="homeTeamTactics">Home team tactics</label>
-        <select id="homeTeamTactics" class="" name="homeTeamTactics" [(ngModel)]="homeTeamTactics" (change)="onChangeHomeTeamTactics($event)">
-          <option [ngValue]="" *ngFor="let tactic of tactics">{{tactic}}</option>
+        <select id="homeTeamTactics" class="" name="homeTeamTacticsText" [(ngModel)]="homeTeamTacticsText" (change)="onChangeHomeTeamTactics($event)">
+          <option [ngValue]="" *ngFor="let homeTeamTacticsText of tactics">{{homeTeamTacticsText}}</option>
         </select>
       </div>
     </div>
     <div class="awayTeamSettings">
       <div class="awayTeamMorale">
         <label for="awayTeamMorale">Visitors' motivation & morale</label>
-        <select id="awayTeamMorale" class="" name="awayTeamMorale" [(ngModel)]="awayTeamMorale" (change)="onChangeAwayTeamMorale($event)">
-          <option [ngValue]="" *ngFor="let motivation of motivations">{{motivation}}</option>
+        <select id="awayTeamMorale" class="" name="awayTeamMorale" [(ngModel)]="awayTeamMoraleText" (change)="onChangeAwayTeamMorale($event)">
+          <option [ngValue]="" *ngFor="let awayTeamMoraleText of motivations">{{awayTeamMoraleText}}</option>
         </select>
       </div>
       <div class="awayTeamTactics">
         <label for="awayTeamTactics">Away team tactics</label>
-        <select id="awayTeamTactics" class="" name="awayTeamTactics" [(ngModel)]="awayTeamTactics" (change)="onChangeAwayTeamTactics($event)">
-          <option [ngValue]="" *ngFor="let tactic of tactics">{{tactic}}</option>
+        <select id="awayTeamTactics" class="" name="awayTeamTacticsText" [(ngModel)]="awayTeamTacticsText" (change)="onChangeAwayTeamTactics($event)">
+          <option [ngValue]="" *ngFor="let awayTeamTacticsText of tactics">{{awayTeamTacticsText}}</option>
         </select>
       </div>
     </div>

@@ -37,39 +37,45 @@ export class MainserviceService {
     this.awayTeam1stLegGoals.next(data);
   }
 
-  // relative strength
-  relativeStrength = new Subject<string>();
-  relativeStrength$ = this.relativeStrength.asObservable();
-  updateRelativeStrength(data:any){
-    this.relativeStrength.next(data);
+  // relative strength home and away
+  homeRelativeStrength = new Subject<number>();
+  homeRelativeStrength$ = this.homeRelativeStrength.asObservable();
+  updateHomeRelativeStrength(data:any){
+    this.homeRelativeStrength.next(data);
   }
+  awayRelativeStrength = new Subject<number>();
+  awayRelativeStrength$ = this.awayRelativeStrength.asObservable();
+  updateAwayRelativeStrength(data:any){
+    this.awayRelativeStrength.next(data);
+  }
+
   // home crowd support
-  homeCrowdSupport = new Subject<string>();
+  homeCrowdSupport = new Subject<number>();
   homeCrowdSupport$ = this.homeCrowdSupport.asObservable();
   updateHomeCrowdSupport(data:any){
     this.homeCrowdSupport.next(data);
   }
 
   // home team morale and motivation
-  homeTeamMorale = new Subject<string>();
+  homeTeamMorale = new Subject<number>();
   homeTeamMorale$ = this.homeTeamMorale.asObservable();
   updateHomeTeamMorale(data:any){
     this.homeTeamMorale.next(data);
   }
   // away team morale and motivation
-  awayTeamMorale = new Subject<string>();
+  awayTeamMorale = new Subject<number>();
   awayTeamMorale$ = this.awayTeamMorale.asObservable();
   updateAwayTeamMorale(data:any){
     this.awayTeamMorale.next(data);
   }
   // home and away team tactics
-  homeTeamTactics = new Subject<string>();
+  homeTeamTactics = new Subject<number>();
   homeTeamTactics$ = this.homeTeamTactics.asObservable();
   updateHomeTeamTactics(data:any){
     this.homeTeamTactics.next(data);
   }
 
-  awayTeamTactics = new Subject<string>();
+  awayTeamTactics = new Subject<number>();
   awayTeamTactics$ = this.awayTeamTactics.asObservable();
   updateAwayTeamTactics(data:any){
     this.awayTeamTactics.next(data);
