@@ -110,6 +110,8 @@ export class ScoreboardComponent implements OnInit {
   // declare match properties and initial statistical data
   matchMinutes:number = 0;
   matchSeconds:number = 0;
+  homeTeamGoals:number = 0;
+  awayTeamGoals:number = 0;
   allPotentialShots:number;
   homeTeamPotentialShots:number;
   awayTeamPotentialShots:number;
