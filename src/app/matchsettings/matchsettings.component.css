@@ -16,6 +16,14 @@
   text-align: center;
   display: flex;
 }
+
+input#homeTeam1stLegGoals {
+    color: #333;
+}
+input#awayTeam1stLegGoals {
+    color: #333;
+}
+
 .isSecondLeg {
   display: flex;
   flex-basis: 100%;

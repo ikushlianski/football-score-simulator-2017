@@ -89,8 +89,8 @@ ul.homeTeamScorers {
 .scoreboard__kickOffButton {
   display: flex;
   justify-content: center;
-  margin-top: 1.5rem;
-  font-size: initial;
+  margin-top: 1.3rem;
+  font-size: 14px;
 }
 
 .scoreboard__currentMatchScore {

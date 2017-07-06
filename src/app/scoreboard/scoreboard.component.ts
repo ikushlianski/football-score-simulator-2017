@@ -109,6 +109,10 @@ export class ScoreboardComponent implements OnInit {
   // declare match properties and initial statistical data
   matchMinutes:number = 0;
   matchSeconds:number = 0;
+  timeAddedToH1:number = 0;
+  timeAddedToH2:number = 0;
+  matchStatus:string;
+  matchStatuses:string[] = ['1st half', 'Half time', '2nd half', 'Full time'];
   homeTeamGoals:number = 0;
   awayTeamGoals:number = 0;
   allPotentialShots:number;
@@ -136,14 +140,46 @@ export class ScoreboardComponent implements OnInit {
   awayTeamSubs:string[] = ['Goalkeeper2', 'Defender5', 'Defender6', 'Midfielder5', 'Midfielder6', 'Forward3'];
 
   // initiate scorers' arrays
-  homeTeamGoalObjects:any = [{name:'Dede', goalTime: 53}, {name:'Vanderson', goalTime: 62}];
-  awayTeamGoalObjects:any = [{name:'Kokorin', goalTime: 44}];
+  homeTeamGoalObjects:any;
+  // [{name:'Player7', goalTime: 53}, {name:'Player1', goalTime: 62}];
+  awayTeamGoalObjects:any;
+  // [{name:'Player4', goalTime: 44}];
 
   // match kickoff button
   startMatch(){
-    console.log('match started');
-    this.matchSeconds = 1;
-    this.matchMinutes = 1;
+    this.matchStatus = this.matchStatuses[0];
+    console.log(this.matchStatus);
+    setInterval(() => {
+      this.matchSeconds = this.matchSeconds + 1;
+      console.log(this.matchSeconds);
+      if (this.matchSeconds > 59) {
+        this.matchMinutes = this.matchMinutes + 1;
+        this.matchSeconds = 0;
+        if (this.matchMinutes == 44) {
+          // I need to set criteria to determine minutes added to first half
+          this.timeAddedToH1 = 2;
+        }
+        if( (this.matchMinutes == (45 + this.timeAddedToH1)) && (this.matchStatus == this.matchStatuses[0]) ) {
+          // may add moments when game arbitrarily continues despite time elapsed
+          this.matchStatus = this.matchStatuses[1];
+          console.log(this.matchStatus);
+          setTimeout(function(){
+            this.matchStatus = this.matchStatuses[2];
+          }, 5000)
+        }
+        if (this.matchMinutes == 89) {
+          // I need to set criteria to determine minutes added to first half
+          this.timeAddedToH2 = 2;
+        }
+        if( (this.matchMinutes > (90 + this.timeAddedToH2)) && this.matchStatuses[2] ) {
+          // may add moments when game arbitrarily continues despite time elapsed
+          this.matchStatus = this.matchStatuses[3];
+          console.log(this.matchStatus);
+        }
+      }
+
+
+    }, 1);
   }
 
   ngOnInit() {

@@ -1,5 +1,5 @@
 .container {
-  
+
 }
 .jumbotron {
     background-color: transparent;
@@ -17,4 +17,5 @@
 .jumbotron__introduction h2, .jumbotron__introduction h4,
 .jumbotron__introduction small {
   color: whitesmoke;
+  margin: 16px auto;
 }

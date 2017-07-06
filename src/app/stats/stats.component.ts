@@ -131,6 +131,7 @@ export class StatsComponent implements OnInit {
   awayTeamRedCards:number = 0;
 
   ngOnInit() {
+
   }
 
 }

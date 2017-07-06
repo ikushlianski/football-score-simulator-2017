@@ -12,6 +12,8 @@ button {
 body {
   background-color: rgba(158, 158, 158, 0.10);
   background-image: url('/assets/img/stadium.jpeg');
+  background-position: top center;
+  font-family: Roboto;
 }
 p, label, div, h1, h2, h3, h4, h5, h6 {
   color: whitesmoke;
