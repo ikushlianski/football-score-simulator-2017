@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {MainserviceService} from '../mainservice.service';
-declare var $: any;
 
 @Component({
-  selector: 'app-scoreboard',
-  templateUrl: './scoreboard.component.html',
-  styleUrls: ['./scoreboard.component.css']
+  selector: 'app-stats',
+  templateUrl: './stats.component.html',
+  styleUrls: ['./stats.component.css']
 })
-export class ScoreboardComponent implements OnInit {
+export class StatsComponent implements OnInit {
   // what came to ScoreBoard from Match Settings
   matchHasStarted:boolean;
   homeTeamName:string;
@@ -96,17 +95,19 @@ export class ScoreboardComponent implements OnInit {
     this._mainService.homeTeamTactics$.subscribe(
       data => {
         this.homeTeamTactics = data;
+          console.log('home team tactics is ' + this.homeTeamTactics)
       }
     );
     // awayTeamTactics
     this._mainService.awayTeamTactics$.subscribe(
       data => {
         this.awayTeamTactics = data;
+        console.log('away team tactics is ' + this.awayTeamTactics)
       }
     );
   } // constructor ends
 
-  // declare match properties and initial statistical data
+  // what came from scoreboard component
   matchMinutes:number = 0;
   matchSeconds:number = 0;
   homeTeamGoals:number = 0;
@@ -129,26 +130,7 @@ export class ScoreboardComponent implements OnInit {
   homeTeamRedCards:number = 0;
   awayTeamRedCards:number = 0;
 
-  // squads
-  homeTeamStartingLineup:string[] = ['Goalkeeper', 'Defender1', 'Defender2', 'Defender3', 'Defender4', 'Midfielder1', 'Midfielder2', 'Midfielder3', 'Midfielder4', 'Forward1', 'Forward2'];
-  homeTeamSubs:string[] = ['Goalkeeper2', 'Defender5', 'Defender6', 'Midfielder5', 'Midfielder6', 'Forward3'];
-  awayTeamStartingLineup:string[] = ['Goalkeeper', 'Defender1', 'Defender2', 'Defender3', 'Defender4', 'Midfielder1', 'Midfielder2', 'Midfielder3', 'Midfielder4', 'Forward1', 'Forward2'];
-  awayTeamSubs:string[] = ['Goalkeeper2', 'Defender5', 'Defender6', 'Midfielder5', 'Midfielder6', 'Forward3'];
-
-  // initiate scorers' arrays
-  homeTeamGoalObjects:any = [{name:'Dede', goalTime: 53}, {name:'Vanderson', goalTime: 62}];
-  awayTeamGoalObjects:any = [{name:'Kokorin', goalTime: 44}];
-
-  // match kickoff button
-  startMatch(){
-    console.log('match started');
-    this.matchSeconds = 1;
-    this.matchMinutes = 1;
-  }
-
   ngOnInit() {
-    var screenHeight = $(window).height();
-    $(".scoreboard").css({"minHeight": screenHeight});
   }
 
 }

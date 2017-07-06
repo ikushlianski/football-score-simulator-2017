@@ -1,4 +1,4 @@
-<div class="scoreboard" [style.display] = "matchHasStarted ? 'block' : 'none'">
+<div class="scoreboard" [style.display] = "matchHasStarted ? 'flex' : 'none'">
   <div class="scoreboard__matchMetaRow">
 
   </div>
@@ -6,29 +6,36 @@
     <div class="homeTeamZone">
       <div class="homeTeamName scoreboard__homeTeamName">
         {{homeTeamName}}
-      </div>
-      <div class="homeTeamScorers scoreboard__homeTeamScorers">
-
+        <ul class="homeTeamScorers scoreboard__homeTeamScorers">
+          <li *ngFor="let homeTeamGoalObject of homeTeamGoalObjects" class="scorer">{{homeTeamGoalObject.name}} {{homeTeamGoalObject.goalTime}}'</li>
+        </ul>
       </div>
     </div>
     <div class="scoreZone">
       <div class="currentMatchScore scoreboard__currentMatchScore">
         {{homeTeamGoals}}-{{awayTeamGoals}}
       </div>
-      <div class="currentMatchTime scoreboard__currentMatchTime">
-
-      </div>
       <div class="aggregateScore scoreboard__aggregateScore" *ngIf="(homeTeam1stLegGoals != undefined && awayTeam1stLegGoals != undefined)">
         agg: {{homeTeam1stLegGoals}}-{{awayTeam1stLegGoals}}
+      </div>
+      <div class="currentMatchTime scoreboard__currentMatchTime" *ngIf="!(matchMinutes == 0 && matchSeconds == 0)">
+        {{matchMinutes}}'
+      </div>
+      <div class="kickOffButton scoreboard__kickOffButton" *ngIf="matchMinutes == 0 && matchSeconds == 0">
+        <button type="button" name="kickoff" (click)="startMatch()">Kick off</button>
       </div>
     </div>
     <div class="awayTeamZone">
       <div class="awayTeamName scoreboard__awayTeamName">
         {{awayTeamName}}
+        <ul class="awayTeamScorers scoreboard__awayTeamScorers">
+          <li *ngFor="let awayTeamGoalObject of awayTeamGoalObjects" class="scorer">{{awayTeamGoalObject.name}} {{awayTeamGoalObject.goalTime}}'</li>
+        </ul>
       </div>
-      <div class="awayTeamScorers scoreboard__awayTeamScorers">
 
-      </div>
     </div>
   </div>
+  <app-stats style="margin-top: 3em; width:100%;">
+
+  </app-stats>
 </div>

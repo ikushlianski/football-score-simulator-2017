@@ -1,0 +1,32 @@
+
+.homeStats {
+  text-align: right;
+}
+.matchStatsWords {
+  text-align: center;
+  font-size: larger;
+}
+.statsType {
+  text-align: center;
+  text-transform: uppercase;
+}
+.statsWrapper {
+  margin: 2% 20%;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+table.matchStats {
+    color: whitesmoke;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: larger;
+}
+table.table.matchStats td {
+  border: none;
+}
+
+@media screen and (max-width: 768px) {
+  .statsWrapper {
+    margin: 2% 5%;
+  }
+}

@@ -10,6 +10,7 @@ import { AllmatchesComponent } from './allmatches/allmatches.component';
 import { AppsettingsComponent } from './appsettings/appsettings.component';
 import { CommentsComponent } from './comments/comments.component';
 import {MainserviceService} from './mainservice.service';
+import { StatsComponent } from './stats/stats.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {MainserviceService} from './mainservice.service';
     ScoreboardComponent,
     AllmatchesComponent,
     AppsettingsComponent,
-    CommentsComponent
+    CommentsComponent,
+    StatsComponent
   ],
   imports: [
     BrowserModule,

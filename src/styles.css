@@ -5,15 +5,16 @@
 button {
   background-color: #4CAF50;
   color: white;
-  
+
   border: none;
   padding: 0.5em;
 }
 body {
   background-color: rgba(158, 158, 158, 0.10);
+  background-image: url('/assets/img/stadium.jpeg');
 }
 p, label, div, h1, h2, h3, h4, h5, h6 {
-  color: #333;
+  color: whitesmoke;
   display: block;
 }
 label {

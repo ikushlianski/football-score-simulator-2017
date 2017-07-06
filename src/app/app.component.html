@@ -1,4 +1,4 @@
-<div class="jumbotron jumbotron__introduction">
+<div class="jumbotron jumbotron__introduction" *ngIf="!matchHasStarted">
   <div class="">
     <h2>Welcome to Football Results Simulator</h2>
     <h4>Psychology and statistics matter</h4>
@@ -7,7 +7,8 @@
     <small>Place name and github link here</small>
   </div>
 </div>
-<div class="container">
+<div [ngClass]="(matchHasStarted==true)?'none':'container'">
   <app-matchsettings></app-matchsettings>
   <app-scoreboard></app-scoreboard>
+
 </div>

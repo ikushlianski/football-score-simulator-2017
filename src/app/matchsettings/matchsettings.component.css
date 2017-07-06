@@ -45,7 +45,7 @@
 }
 
 .matchSettings__main {
-  border: 1px solid #673AB7;
+  /*border: 1px solid #673AB7;*/
   display: flex;
   justify-content: space-around;
 }
