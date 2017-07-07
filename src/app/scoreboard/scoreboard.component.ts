@@ -111,8 +111,8 @@ export class ScoreboardComponent implements OnInit {
   matchSeconds:number = 0;
   timeAddedToH1:number = 0;
   timeAddedToH2:number = 0;
-  matchStatus:string;
-  matchStatuses:string[] = ['1st half', 'Half time', '2nd half', 'Full time'];
+  matchStatuses:string[] = ['1st half', 'Half time', '2nd half', 'Full time', 'Not started'];
+  matchStatus:string = this.matchStatuses[4];
   homeTeamGoals:number = 0;
   awayTeamGoals:number = 0;
   allPotentialShots:number;
@@ -150,35 +150,37 @@ export class ScoreboardComponent implements OnInit {
     this.matchStatus = this.matchStatuses[0];
     console.log(this.matchStatus);
     setInterval(() => {
-      this.matchSeconds = this.matchSeconds + 1;
-      console.log(this.matchSeconds);
-      if (this.matchSeconds > 59) {
-        this.matchMinutes = this.matchMinutes + 1;
-        this.matchSeconds = 0;
-        if (this.matchMinutes == 44) {
-          // I need to set criteria to determine minutes added to first half
-          this.timeAddedToH1 = 2;
-        }
-        if( (this.matchMinutes == (45 + this.timeAddedToH1)) && (this.matchStatus == this.matchStatuses[0]) ) {
-          // may add moments when game arbitrarily continues despite time elapsed
-          this.matchStatus = this.matchStatuses[1];
-          console.log(this.matchStatus);
-          setTimeout(function(){
-            this.matchStatus = this.matchStatuses[2];
-          }, 5000)
-        }
-        if (this.matchMinutes == 89) {
-          // I need to set criteria to determine minutes added to first half
-          this.timeAddedToH2 = 2;
-        }
-        if( (this.matchMinutes > (90 + this.timeAddedToH2)) && this.matchStatuses[2] ) {
-          // may add moments when game arbitrarily continues despite time elapsed
-          this.matchStatus = this.matchStatuses[3];
-          console.log(this.matchStatus);
+      if(this.matchStatus != this.matchStatuses[1] && this.matchStatus != this.matchStatuses[3]) {
+        this.matchSeconds = this.matchSeconds + 1;
+        console.log(this.matchSeconds);
+        if (this.matchSeconds > 59) {
+          this.matchMinutes = this.matchMinutes + 1;
+          this.matchSeconds = 0;
+          if (this.matchMinutes == 44) {
+            // I need to set criteria to determine minutes added to first half
+            this.timeAddedToH1 = 2;
+          }
+          if( (this.matchMinutes == (45 + this.timeAddedToH1)) && (this.matchStatus == this.matchStatuses[0]) ) {
+            // may add moments when game arbitrarily continues despite time elapsed
+            this.matchStatus = this.matchStatuses[1];
+            console.log(this.matchStatus);
+            setTimeout(()=>{
+              this.matchStatus = this.matchStatuses[2];
+              this.matchMinutes = 45;
+            }, 5000)
+          }
+          if (this.matchMinutes == 89) {
+            // I need to set criteria to determine minutes added to first half
+            this.timeAddedToH2 = 2;
+          }
+          if( (this.matchMinutes > (90 + this.timeAddedToH2)) && this.matchStatuses[2] ) {
+            // may add moments when game arbitrarily continues despite time elapsed
+            this.matchStatus = this.matchStatuses[3];
+            console.log(this.matchStatus);
+            return;
+          }
         }
       }
-
-
     }, 1);
   }
 

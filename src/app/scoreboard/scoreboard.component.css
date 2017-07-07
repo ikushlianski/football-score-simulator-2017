@@ -52,7 +52,10 @@ ul.homeTeamScorers {
   justify-content: flex-end;
   font-size: large;
 }
-
+.matchStatus {
+    font-size: small;
+    /*margin-top: 0.5em;*/
+}
 .scoreboard {
   background-image: url('../../assets/img/ucl_background.jpg');
   padding: 5rem;
@@ -106,6 +109,7 @@ ul.homeTeamScorers {
   flex-direction: column;
   justify-content: flex-start;
   font-size: large;
+  align-items: center;
 }
 
 @media screen and (max-width: 768px) {

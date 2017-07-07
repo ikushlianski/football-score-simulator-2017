@@ -21,8 +21,11 @@
       <div class="currentMatchTime scoreboard__currentMatchTime" *ngIf="!(matchMinutes == 0 && matchSeconds == 0)">
         {{matchMinutes}}'
       </div>
-      <div class="kickOffButton scoreboard__kickOffButton" *ngIf="matchMinutes == 0 && matchSeconds == 0">
+      <div class="kickOffButton scoreboard__kickOffButton" *ngIf="matchStatus == matchStatuses[4]">
         <button type="button" name="kickoff" (click)="startMatch()">Kick off</button>
+      </div>
+      <div class="matchStatus" *ngIf="!(matchMinutes == 0 && matchSeconds == 0)">
+        {{matchStatus}}
       </div>
     </div>
     <div class="awayTeamZone">
