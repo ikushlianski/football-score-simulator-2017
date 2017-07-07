@@ -29,4 +29,7 @@ table.table.matchStats td {
   .statsWrapper {
     margin: 2% 5%;
   }
+  .matchStats td {
+    font-size: 1.4rem;
+  }
 }

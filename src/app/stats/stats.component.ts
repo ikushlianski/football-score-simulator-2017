@@ -22,6 +22,29 @@ export class StatsComponent implements OnInit {
   homeTeamTactics:number;
   awayTeamTactics:number;
 
+  // what came from scoreboard component
+  matchMinutes:number = 0;
+  matchSeconds:number = 0;
+  homeTeamGoals:number = 0;
+  awayTeamGoals:number = 0;
+  allPotentialShots:number;
+  homeTeamPotentialShots:number;
+  awayTeamPotentialShots:number;
+  homeTeamActualShots:number = 0;
+  awayTeamActualShots:number = 0;
+  // constant determining what share of shots should be actually shots on target (between 0.25 and 0.5)
+  readonly SHOT_IS_SHOT_ON_GOAL = Math.random() * (0.5 - 0.1) + 0.1;
+  homeTeamShotsOnGoal:number = 0;
+  awayTeamShotsOnGoal:number = 0;
+  homeTeamPossession:number = 50;
+  awayTeamPossession:number = 50;
+  homeTeamFouls:number = 0;
+  awayTeamFouls:number = 0;
+  homeTeamYellowCards:number = 0;
+  awayTeamYellowCards:number = 0;
+  homeTeamRedCards:number = 0;
+  awayTeamRedCards:number = 0;
+
   constructor(private _mainService:MainserviceService) {
     this._mainService.matchHasStarted$.subscribe(
       data => {
@@ -105,30 +128,63 @@ export class StatsComponent implements OnInit {
         console.log('away team tactics is ' + this.awayTeamTactics)
       }
     );
+
+    // homeTeam possession
+    this._mainService.homeTeamPossession$.subscribe(
+      data => {
+        this.homeTeamPossession = data;
+      }
+    );
+    // awayTeam possession
+    this._mainService.awayTeamPossession$.subscribe(
+      data => {
+        this.awayTeamPossession = data;
+      }
+    );
+
+    // homeTeamFouls
+    this._mainService.homeTeamFouls$.subscribe(
+      data => {
+        this.homeTeamFouls = data;
+      }
+    );
+    // awayTeamFouls
+    this._mainService.awayTeamFouls$.subscribe(
+      data => {
+        this.awayTeamFouls = data;
+      }
+    );
+
+    // homeTeamYellowCards
+    this._mainService.homeTeamYellowCards$.subscribe(
+      data => {
+        this.homeTeamYellowCards = data;
+      }
+    );
+    // awayTeamYellowCards
+    this._mainService.awayTeamYellowCards$.subscribe(
+      data => {
+        this.awayTeamYellowCards = data;
+      }
+    );
+
+    // homeTeamRedCards
+    this._mainService.homeTeamRedCards$.subscribe(
+      data => {
+        this.homeTeamRedCards = data;
+      }
+    );
+    // awayTeamRedCards
+    this._mainService.awayTeamRedCards$.subscribe(
+      data => {
+        this.awayTeamRedCards = data;
+      }
+    );
+
+
   } // constructor ends
 
-  // what came from scoreboard component
-  matchMinutes:number = 0;
-  matchSeconds:number = 0;
-  homeTeamGoals:number = 0;
-  awayTeamGoals:number = 0;
-  allPotentialShots:number;
-  homeTeamPotentialShots:number;
-  awayTeamPotentialShots:number;
-  homeTeamActualShots:number = 0;
-  awayTeamActualShots:number = 0;
-  // constant determining what share of shots should be actually shots on target (between 0.25 and 0.5)
-  readonly SHOT_IS_SHOT_ON_GOAL = Math.random() * (0.5 - 0.1) + 0.1;
-  homeTeamShotsOnGoal:number = 0;
-  awayTeamShotsOnGoal:number = 0;
-  homeTeamPossession:number = 50;
-  awayTeamPossession:number = 50;
-  homeTeamFouls:number = 0;
-  awayTeamFouls:number = 0;
-  homeTeamYellowCards:number = 0;
-  awayTeamYellowCards:number = 0;
-  homeTeamRedCards:number = 0;
-  awayTeamRedCards:number = 0;
+
 
   ngOnInit() {
 

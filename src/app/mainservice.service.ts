@@ -74,13 +74,59 @@ export class MainserviceService {
   updateHomeTeamTactics(data:any){
     this.homeTeamTactics.next(data);
   }
-
   awayTeamTactics = new Subject<number>();
   awayTeamTactics$ = this.awayTeamTactics.asObservable();
   updateAwayTeamTactics(data:any){
     this.awayTeamTactics.next(data);
   }
 
+  // teams' ball possession
+  homeTeamPossession = new Subject<number>();
+  homeTeamPossession$ = this.homeTeamPossession.asObservable();
+  updateHomeTeamPossession(data:any){
+    this.homeTeamPossession.next(data);
+  }
+  awayTeamPossession = new Subject<number>();
+  awayTeamPossession$ = this.awayTeamPossession.asObservable();
+  updateAwayTeamPossession(data:any){
+    this.awayTeamPossession.next(data);
+  }
+
+  // teams' fouls
+  homeTeamFouls = new Subject<number>();
+  homeTeamFouls$ = this.homeTeamFouls.asObservable();
+  updateHomeTeamFouls(data:any){
+    this.homeTeamFouls.next(data);
+  }
+  awayTeamFouls = new Subject<number>();
+  awayTeamFouls$ = this.awayTeamFouls.asObservable();
+  updateAwayTeamFouls(data:any){
+    this.awayTeamFouls.next(data);
+  }
+
+  // teams' yellow cards
+  homeTeamYellowCards = new Subject<number>();
+  homeTeamYellowCards$ = this.homeTeamYellowCards.asObservable();
+  updateHomeTeamYellowCards(data:any){
+    this.homeTeamYellowCards.next(data);
+  }
+  awayTeamYellowCards = new Subject<number>();
+  awayTeamYellowCards$ = this.awayTeamYellowCards.asObservable();
+  updateAwayTeamYellowCards(data:any){
+    this.awayTeamYellowCards.next(data);
+  }
+
+  // teams' red cards
+  homeTeamRedCards = new Subject<number>();
+  homeTeamRedCards$ = this.homeTeamRedCards.asObservable();
+  updateHomeTeamRedCards(data:any){
+    this.homeTeamRedCards.next(data);
+  }
+  awayTeamRedCards = new Subject<number>();
+  awayTeamRedCards$ = this.awayTeamRedCards.asObservable();
+  updateAwayTeamRedCards(data:any){
+    this.awayTeamRedCards.next(data);
+  }
 
   ngOnInit(){
 
