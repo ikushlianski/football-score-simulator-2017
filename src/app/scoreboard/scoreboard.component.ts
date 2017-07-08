@@ -284,7 +284,7 @@ export class ScoreboardComponent implements OnInit {
             // did the home team get a yellow card?
             if (Math.random() < 1/7) {
               // choose random player from home team squad
-              let homePlayerCautioned = this.homeTeamStartingLineup[Math.round(Math.random() * this.homeTeamStartingLineup.length-1)];
+              let homePlayerCautioned = this.homeTeamStartingLineup[Math.round(Math.random() * (this.homeTeamStartingLineup.length - 1))];
 
               // check whether it was a second yellow for this player
               if (homePlayerCautioned.yellowCards.yellowCardsNumber == 1) {
@@ -317,7 +317,7 @@ export class ScoreboardComponent implements OnInit {
               // did the home team receive straight red?
               if (Math.random() < 1/500) {
                 // choose random player from home team squad who received straight red
-                let homePlayerStraightRed = this.homeTeamStartingLineup[Math.round(Math.random() * this.homeTeamStartingLineup.length-1)];
+                let homePlayerStraightRed = this.homeTeamStartingLineup[Math.round(Math.random() * (this.homeTeamStartingLineup.length - 1))];
                 // give this player a yellow
                 homePlayerStraightRed.redCards++;
                 homePlayerStraightRed.redCardTime = this.matchMinutes + 1;
@@ -344,7 +344,7 @@ export class ScoreboardComponent implements OnInit {
             // did the away team get a yellow card?
             if (Math.random() < 1/7) {
               // choose random player from home team squad
-              let awayPlayerCautioned = this.awayTeamStartingLineup[Math.round(Math.random() * this.awayTeamStartingLineup.length-1)];
+              let awayPlayerCautioned = this.awayTeamStartingLineup[Math.round(Math.random() * (this.awayTeamStartingLineup.length - 1))];
 
               // check whether it was a second yellow for this player
               if (awayPlayerCautioned.yellowCards.yellowCardsNumber == 1) {
@@ -377,7 +377,7 @@ export class ScoreboardComponent implements OnInit {
               // did the home team receive straight red?
               if (Math.random() < 1/500) {
                 // choose random player from home team squad who received straight red
-                let awayPlayerStraightRed = this.awayTeamStartingLineup[Math.round(Math.random() * this.awayTeamStartingLineup.length-1)];
+                let awayPlayerStraightRed = this.awayTeamStartingLineup[Math.round(Math.random() * (this.awayTeamStartingLineup.length - 1))];
                 // give this player a yellow
                 awayPlayerStraightRed.redCards++;
                 this.awayTeamRedCards++;
