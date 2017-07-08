@@ -285,10 +285,9 @@ export class ScoreboardComponent implements OnInit {
             if (Math.random() < 1/7) {
               // choose random player from home team squad
               let homePlayerCautioned = this.homeTeamStartingLineup[Math.round(Math.random() * this.homeTeamStartingLineup.length-1)];
-              console.log(homePlayerCautioned)
 
               // check whether it was a second yellow for this player
-              if (homePlayerCautioned.yellowCards.yellowCardsNumber > 1) {
+              if (homePlayerCautioned.yellowCards.yellowCardsNumber == 1) {
                 homePlayerCautioned.yellowCards.yellowCardsNumber++;
                 homePlayerCautioned.yellowCards.yellowCard2Time = this.matchMinutes + 1;
                 this._mainService.updateHomeTeamYellowCards(this.homeTeamYellowCards);
@@ -348,7 +347,7 @@ export class ScoreboardComponent implements OnInit {
               let awayPlayerCautioned = this.awayTeamStartingLineup[Math.round(Math.random() * this.awayTeamStartingLineup.length-1)];
 
               // check whether it was a second yellow for this player
-              if (awayPlayerCautioned.yellowCards.yellowCardsNumber > 1) {
+              if (awayPlayerCautioned.yellowCards.yellowCardsNumber == 1) {
                 awayPlayerCautioned.yellowCards.yellowCardsNumber++;
                 awayPlayerCautioned.yellowCards.yellowCard2Time = this.matchMinutes + 1;
                 this._mainService.updateAwayTeamYellowCards(this.homeTeamYellowCards);
