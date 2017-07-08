@@ -15,8 +15,9 @@
       <div class="currentMatchScore scoreboard__currentMatchScore">
         {{homeTeamGoals}}-{{awayTeamGoals}}
       </div>
-      <div class="aggregateScore scoreboard__aggregateScore" *ngIf="(homeTeam1stLegGoals != undefined && awayTeam1stLegGoals != undefined)">
-        agg: {{homeTeam1stLegGoals}}-{{awayTeam1stLegGoals}}
+      <div class="aggregateScore scoreboard__aggregateScore" *ngIf="(homeTeam1stLegGoals != undefined && awayTeam1stLegGoals != undefined )">
+        1st leg: {{homeTeam1stLegGoals}}-{{awayTeam1stLegGoals}}
+        <p class="aggregateStatus" *ngIf="matchStatus == matchStatuses[3] && homeTeam1stLegGoals != undefined && awayTeam1stLegGoals != undefined">{{aggregateStatus}}</p>
       </div>
       <div class="currentMatchTime scoreboard__currentMatchTime" >
         {{matchMinutes}}'
