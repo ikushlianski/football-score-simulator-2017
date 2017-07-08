@@ -418,7 +418,7 @@ export class ScoreboardComponent implements OnInit {
                 this.homeTeamGoals++;
                 this._mainService.updateHomeTeamGoals(this.homeTeamGoals);
                 // find who scored goal
-                let homeGoalscorer = this.homeTeamStartingLineup[Math.round (Math.random() * this.homeTeamStartingLineup.length - 1)];
+                let homeGoalscorer = this.homeTeamStartingLineup[Math.round (0.5 + Math.random() * (this.homeTeamStartingLineup.length - 1))];
                 homeGoalscorer.goalsToday++;
                 this.homeTeamGoalObjects.push({name: homeGoalscorer.name, goalTime: this.matchMinutes + 1});
               }
@@ -439,7 +439,7 @@ export class ScoreboardComponent implements OnInit {
                   this.awayTeamGoals++;
                   this._mainService.updateAwayTeamGoals(this.awayTeamGoals);
                   // find who scored goal
-                  let awayGoalscorer = this.awayTeamStartingLineup[ Math.round (Math.random() * this.awayTeamStartingLineup.length - 1)];
+                  let awayGoalscorer = this.awayTeamStartingLineup[ Math.round (0.5 + Math.random() * (this.awayTeamStartingLineup.length - 1))];
                   awayGoalscorer.goalsToday++;
                   this.awayTeamGoalObjects.push({name: awayGoalscorer.name, goalTime: this.matchMinutes + 1});
                 }
