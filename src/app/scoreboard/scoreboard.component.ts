@@ -123,12 +123,13 @@ export class ScoreboardComponent implements OnInit {
   homeTeamActualShots:number = 0;
   awayTeamActualShots:number = 0;
   // constant determining what share of shots should be actually shots on target (between 0.25 and 0.5)
-  readonly SHOT_IS_SHOT_ON_GOAL = Math.random() * (0.5 - 0.1) + 0.1;
+  readonly SHOT_IS_ON_GOAL_H = Math.random() * (0.5 - 0.1) + 0.1;
+  readonly SHOT_IS_ON_GOAL_A = Math.random() * (0.5 - 0.1) + 0.1;
   homeTeamShotsOnGoal:number = 0;
   awayTeamShotsOnGoal:number = 0;
   homeTeamPossession:number = 50;
   awayTeamPossession:number = 100 - this.homeTeamPossession;
-  allPotentialFouls:number = Math.round(20 + Math.random() * 30);
+  allPotentialFouls:number = Math.round(20 + Math.random() * 7);
   homeTeamFouls:number = 0;
   homeTeamPotentialFouls:number = 0;
   awayTeamFouls:number = 0;
@@ -140,61 +141,80 @@ export class ScoreboardComponent implements OnInit {
 
   // squads
   homeTeamStartingLineup:any = [
-    {name:'Goalkeeper', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Defender1', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Defender2', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Defender3', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Defender4', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Midfielder1', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Midfielder2', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Midfielder3', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Midfielder4', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Forward1', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Forward2', goalsToday:0, yellowCards: 0, redCards: 0},
+    {name:'Goalkeeper', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Defender1', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Defender2', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Defender3', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Defender4', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Midfielder1', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Midfielder2', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Midfielder3', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Midfielder4', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Forward1', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Forward2', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0}
   ];
   homeTeamSubs:any = [
-    {name:'Goalkeeper2', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Defender5', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Defender6', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Midfielder5', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Midfielder6', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Forward3', goalsToday:0, yellowCards: 0, redCards: 0}
+    {name:'Goalkeeper2', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Defender5', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Defender6', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Midfielder5', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Midfielder6', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Forward3', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0}
   ];
   awayTeamStartingLineup:any = [
-    {name:'Goalkeeper', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Defender1', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Defender2', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Defender3', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Defender4', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Midfielder1', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Midfielder2', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Midfielder3', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Midfielder4', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Forward1', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Forward2', goalsToday:0, yellowCards: 0, redCards: 0},
+    {name:'Goalkeeper', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Defender1', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Defender2', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Defender3', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Defender4', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Midfielder1', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Midfielder2', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Midfielder3', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Midfielder4', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Forward1', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Forward2', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
   ];
   awayTeamSubs:any = [
-    {name:'Goalkeeper2', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Defender5', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Defender6', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Midfielder5', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Midfielder6', goalsToday:0, yellowCards: 0, redCards: 0},
-    {name:'Forward3', goalsToday:0, yellowCards: 0, redCards: 0}
+    {name:'Goalkeeper2', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Defender5', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Defender6', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Midfielder5', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Midfielder6', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0},
+    {name:'Forward3', goalsToday: 0, yellowCards: {yellowCardsNumber: 0, yellowCard1Time: 0, yellowCard2Time: 0}, redCards: 0, redCardTime: 0}
   ];
 
   // initiate scorers' arrays
-  homeTeamGoalObjects:any;
+  homeTeamGoalObjects:any = [];
   // [{name:'Player7', goalTime: 53}, {name:'Player1', goalTime: 62}];
-  awayTeamGoalObjects:any;
+  awayTeamGoalObjects:any = [];
   // [{name:'Player4', goalTime: 44}];
 
   // match kickoff button
   startMatch(){
     // determine potential number of fouls from each team
-    this.homeTeamPotentialFouls = Math.round(Math.random()*(this.allPotentialFouls * (this.awayRelativeStrength / 100) ));
-    this.awayTeamPotentialFouls = Math.round(Math.random()*(this.allPotentialFouls * (this.homeRelativeStrength / 100) ));
-    console.log('all potential fouls: ' + this.allPotentialFouls, 'home team potential fouls: ' + this.homeTeamPotentialFouls, 'away team potential fouls: ' + this.awayTeamPotentialFouls );
+    this.homeTeamPotentialFouls = Math.round((this.allPotentialFouls * (this.awayRelativeStrength / 100) ));
+    this.awayTeamPotentialFouls = Math.round((this.allPotentialFouls * (this.homeRelativeStrength / 100) ));
+    // determine all potential shots
+    if (this.homeTeamTactics > this.awayTeamTactics) {
+      this.allPotentialShots = 24 * (this.awayTeamTactics + this.homeTeamTactics) / (3 * this.awayTeamTactics);
+    } else {
+      if (this.homeTeamTactics == this.awayTeamTactics && this.homeTeamTactics >= 1 && this.awayTeamTactics >= 1) {
+        // many attacks
+        this.allPotentialShots = 24 * (this.awayTeamTactics + this.homeTeamTactics) / (2 * this.awayTeamTactics);
+      }
+      if (this.homeTeamTactics == this.awayTeamTactics && this.homeTeamTactics < 1 && this.awayTeamTactics < 1) {
+        // few attacks
+        this.allPotentialShots = 24 * (this.awayTeamTactics + this.homeTeamTactics) / (4 * this.awayTeamTactics);
+      }
+      if (this.homeTeamTactics < this.awayTeamTactics) {
+        this.allPotentialShots = 24 * (this.homeTeamTactics + this.awayTeamTactics) / (4 * this.homeTeamTactics);
+      }
+    }
+    // determine each team's potential shots
+    this.homeTeamPotentialShots = Math.round(this.allPotentialShots * ((this.homeRelativeStrength + this.homeTeamMorale + this.homeCrowdSupport) / 100));
+    this.awayTeamPotentialShots = Math.round(this.allPotentialShots * ((this.awayRelativeStrength + this.awayTeamMorale) / 100));
     this.matchStatus = this.matchStatuses[0];
+    console.log('potential home shots ' + this.homeTeamPotentialShots, 'potential away shots ' + this.awayTeamPotentialShots);
     setInterval(() => {
       // if match has started, if it's not half time and not Full time
       if(this.matchStatus != this.matchStatuses[1] && this.matchStatus != this.matchStatuses[3]) {
@@ -265,15 +285,16 @@ export class ScoreboardComponent implements OnInit {
             if (Math.random() < 1/7) {
               // choose random player from home team squad
               let homePlayerCautioned = this.homeTeamStartingLineup[Math.round(Math.random() * this.homeTeamStartingLineup.length-1)];
-              // give this player a yellow
-              homePlayerCautioned.yellowCards++;
-              this.homeTeamYellowCards++;
-              this._mainService.updateHomeTeamYellowCards(this.homeTeamYellowCards);
-              console.log(homePlayerCautioned);
+              console.log(homePlayerCautioned)
+
               // check whether it was a second yellow for this player
-              if (homePlayerCautioned.yellowCards > 1) {
+              if (homePlayerCautioned.yellowCards.yellowCardsNumber > 1) {
+                homePlayerCautioned.yellowCards.yellowCardsNumber++;
+                homePlayerCautioned.yellowCards.yellowCard2Time = this.matchMinutes + 1;
+                this._mainService.updateHomeTeamYellowCards(this.homeTeamYellowCards);
                 homePlayerCautioned.redCards++;
                 this.homeTeamRedCards++;
+                homePlayerCautioned.redCardTime = this.matchMinutes + 1;
                 this._mainService.updateHomeTeamRedCards(this.homeTeamRedCards);
                 let indexOfCautionedPlayer = this.homeTeamStartingLineup.indexOf(homePlayerCautioned);
                 this.homeTeamStartingLineup.splice(indexOfCautionedPlayer, 1);
@@ -285,18 +306,26 @@ export class ScoreboardComponent implements OnInit {
                 } else {
                   this.homeTeamMorale = this.homeTeamMorale + (this.homeTeamMorale * 0.15);
                 }
+              } else {
+                // give this player a yellow and register the time of the card
+                homePlayerCautioned.yellowCards.yellowCardsNumber++;
+                homePlayerCautioned.yellowCards.yellowCard1Time = this.matchMinutes + 1;
+                this.homeTeamYellowCards++;
+                this._mainService.updateHomeTeamYellowCards(this.homeTeamYellowCards);
+                console.log(homePlayerCautioned);
               }
             } else {
               // did the home team receive straight red?
-              if (Math.random() < 1/81) {
+              if (Math.random() < 1/500) {
                 // choose random player from home team squad who received straight red
-                let playerStraightRed = this.homeTeamStartingLineup[Math.round(Math.random() * this.homeTeamStartingLineup.length-1)];
+                let homePlayerStraightRed = this.homeTeamStartingLineup[Math.round(Math.random() * this.homeTeamStartingLineup.length-1)];
                 // give this player a yellow
-                playerStraightRed.redCards++;
+                homePlayerStraightRed.redCards++;
+                homePlayerStraightRed.redCardTime = this.matchMinutes + 1;
                 this.homeTeamRedCards++;
                 this._mainService.updateHomeTeamRedCards(this.homeTeamRedCards);
-                console.log(playerStraightRed);
-                let indexOfPlayerStraightRed = this.homeTeamStartingLineup.indexOf(playerStraightRed);
+                console.log(homePlayerStraightRed);
+                let indexOfPlayerStraightRed = this.homeTeamStartingLineup.indexOf(homePlayerStraightRed);
                 this.homeTeamStartingLineup.splice(indexOfPlayerStraightRed, 1);
                 // decrease relative strength due to man disadvantage
                 this.homeRelativeStrength = this.homeRelativeStrength - (this.homeRelativeStrength * 0.09);
@@ -317,15 +346,15 @@ export class ScoreboardComponent implements OnInit {
             if (Math.random() < 1/7) {
               // choose random player from home team squad
               let awayPlayerCautioned = this.awayTeamStartingLineup[Math.round(Math.random() * this.awayTeamStartingLineup.length-1)];
-              // give this player a yellow
-              awayPlayerCautioned.yellowCards++;
-              this.awayTeamYellowCards++;
-              this._mainService.updateAwayTeamYellowCards(this.awayTeamYellowCards);
-              console.log(awayPlayerCautioned);
+
               // check whether it was a second yellow for this player
-              if (awayPlayerCautioned.yellowCards > 1) {
+              if (awayPlayerCautioned.yellowCards.yellowCardsNumber > 1) {
+                awayPlayerCautioned.yellowCards.yellowCardsNumber++;
+                awayPlayerCautioned.yellowCards.yellowCard2Time = this.matchMinutes + 1;
+                this._mainService.updateAwayTeamYellowCards(this.homeTeamYellowCards);
                 awayPlayerCautioned.redCards++;
                 this.awayTeamRedCards++;
+                awayPlayerCautioned.redCardTime = this.matchMinutes + 1;
                 this._mainService.updateAwayTeamRedCards(this.awayTeamRedCards);
                 let indexOfCautionedPlayer = this.awayTeamStartingLineup.indexOf(awayPlayerCautioned);
                 this.awayTeamStartingLineup.splice(indexOfCautionedPlayer, 1);
@@ -333,22 +362,30 @@ export class ScoreboardComponent implements OnInit {
                 this.awayRelativeStrength = this.awayRelativeStrength - (this.awayRelativeStrength * 0.09);
                 // decrease or increase morale after red card (50/50%)
                 if (Math.random() > 0.5 ) {
-                  this.awayTeamMorale = this.awayTeamMorale - (this.awayTeamMorale * 0.15);
+                  this.awayTeamMorale = this.awayTeamMorale - (this.awayTeamMorale * 0.25);
                 } else {
-                  this.awayTeamMorale = this.awayTeamMorale + (this.awayTeamMorale * 0.15);
+                  this.awayTeamMorale = this.awayTeamMorale + (this.awayTeamMorale * 0.05);
                 }
+              } else {
+                // give this player a yellow
+                awayPlayerCautioned.yellowCards.yellowCardsNumber++;
+                awayPlayerCautioned.yellowCards.yellowCard1Time = this.matchMinutes + 1;
+                this.awayTeamYellowCards++;
+                this._mainService.updateAwayTeamYellowCards(this.awayTeamYellowCards);
+                console.log(awayPlayerCautioned);
               }
             } else {
               // did the home team receive straight red?
-              if (Math.random() < 1/81) {
+              if (Math.random() < 1/500) {
                 // choose random player from home team squad who received straight red
-                let playerStraightRed = this.awayTeamStartingLineup[Math.round(Math.random() * this.awayTeamStartingLineup.length-1)];
+                let awayPlayerStraightRed = this.awayTeamStartingLineup[Math.round(Math.random() * this.awayTeamStartingLineup.length-1)];
                 // give this player a yellow
-                playerStraightRed.redCards++;
+                awayPlayerStraightRed.redCards++;
                 this.awayTeamRedCards++;
+                awayPlayerStraightRed.redCardTime = this.matchMinutes + 1;
                 this._mainService.updateAwayTeamRedCards(this.awayTeamRedCards);
-                console.log(playerStraightRed);
-                let indexOfPlayerStraightRed = this.awayTeamStartingLineup.indexOf(playerStraightRed);
+                console.log(awayPlayerStraightRed);
+                let indexOfPlayerStraightRed = this.awayTeamStartingLineup.indexOf(awayPlayerStraightRed);
                 this.awayTeamStartingLineup.splice(indexOfPlayerStraightRed, 1);
                 // decrease relative strength due to man disadvantage
                 this.awayRelativeStrength = this.awayRelativeStrength - (this.awayRelativeStrength * 0.09);
@@ -367,6 +404,49 @@ export class ScoreboardComponent implements OnInit {
           //// 3) ATTEMPTS AND SHOTS ON GOAL
           //////////////////////////////////
 
+          // did the home team shoot?
+          if (Math.random() < this.homeTeamPotentialShots / 90){
+            this.homeTeamActualShots++;
+            this._mainService.updateHomeTeamActualShots(this.homeTeamActualShots);
+            // was this shot on target by the home team?
+            if(Math.random() < this.SHOT_IS_ON_GOAL_H) {
+              this.homeTeamShotsOnGoal++;
+              this._mainService.updateHomeTeamShotsOnGoal(this.homeTeamShotsOnGoal);
+              // was this a goal?
+              let homeGoalChance = (this.homeRelativeStrength + this.homeTeamMorale + this.homeCrowdSupport) / 100 / (1.5 + Math.random())
+              if (Math.random() < homeGoalChance) {
+                // this is a goal
+                this.homeTeamGoals++;
+                this._mainService.updateHomeTeamGoals(this.homeTeamGoals);
+                // find who scored goal
+                let homeGoalscorer = this.homeTeamStartingLineup[Math.round (Math.random() * this.homeTeamStartingLineup.length - 1)];
+                homeGoalscorer.goalsToday++;
+                this.homeTeamGoalObjects.push({name: homeGoalscorer.name, goalTime: this.matchMinutes + 1});
+              }
+            }
+          } else {
+            // did the away team shoot?
+            if (Math.random() < this.awayTeamPotentialShots / 90) {
+              this.awayTeamActualShots++;
+              this._mainService.updateAwayTeamActualShots(this.awayTeamActualShots);
+              // was this shot on target by the away team?
+              if(Math.random() < this.SHOT_IS_ON_GOAL_A) {
+                this.awayTeamShotsOnGoal++;
+                this._mainService.updateAwayTeamShotsOnGoal(this.awayTeamShotsOnGoal);
+                // was this a goal?
+                let awayGoalChance = (this.awayRelativeStrength + this.awayTeamMorale) / 100 / (1.5 + Math.random())
+                if (Math.random() < awayGoalChance) {
+                  // this is a goal
+                  this.awayTeamGoals++;
+                  this._mainService.updateAwayTeamGoals(this.awayTeamGoals);
+                  // find who scored goal
+                  let awayGoalscorer = this.awayTeamStartingLineup[ Math.round (Math.random() * this.awayTeamStartingLineup.length - 1)];
+                  awayGoalscorer.goalsToday++;
+                  this.awayTeamGoalObjects.push({name: awayGoalscorer.name, goalTime: this.matchMinutes + 1});
+                }
+              }
+            }
+          }
 
 
 
@@ -375,7 +455,7 @@ export class ScoreboardComponent implements OnInit {
             // I need to set criteria to determine minutes added to first half
             this.timeAddedToH1 = Math.round(Math.random()*5);
           }
-          // @ HALF TIME
+          // HALF TIME
           if( (this.matchMinutes == (45 + this.timeAddedToH1)) && (this.matchStatus == this.matchStatuses[0]) ) {
             // may add moments when game arbitrarily continues despite time elapsed
             this.matchStatus = this.matchStatuses[1];
@@ -396,6 +476,7 @@ export class ScoreboardComponent implements OnInit {
             this.matchStatus = this.matchStatuses[3];
             console.log(this.matchStatus);
             console.info('home team morale after match: ' + this.homeTeamMorale.toFixed(3), 'away team morale after match: ' + this.awayTeamMorale.toFixed(3));
+            console.log(this.homeTeamGoalObjects, this.awayTeamGoalObjects)
             return;
           }
         }

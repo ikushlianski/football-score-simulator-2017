@@ -181,6 +181,45 @@ export class StatsComponent implements OnInit {
       }
     );
 
+    // home team total attempts
+    this._mainService.homeTeamActualShots$.subscribe(
+      data => {
+        this.homeTeamActualShots = data;
+      }
+    );
+    // away team total attempts
+    this._mainService.awayTeamActualShots$.subscribe(
+      data => {
+        this.awayTeamActualShots = data;
+      }
+    );
+
+    // home team shots on goal
+    this._mainService.homeTeamShotsOnGoal$.subscribe(
+      data => {
+        this.homeTeamShotsOnGoal = data;
+      }
+    );
+    // home team shots on goal
+    this._mainService.awayTeamShotsOnGoal$.subscribe(
+      data => {
+        this.awayTeamShotsOnGoal = data;
+      }
+    );
+
+    // home team goals
+    this._mainService.homeTeamGoals$.subscribe(
+      data => {
+        this.homeTeamGoals = data;
+      }
+    );
+    // away team goals
+    this._mainService.awayTeamGoals$.subscribe(
+      data => {
+        this.awayTeamGoals = data;
+      }
+    );
+
 
   } // constructor ends
 

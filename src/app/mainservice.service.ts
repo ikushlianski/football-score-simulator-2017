@@ -128,6 +128,42 @@ export class MainserviceService {
     this.awayTeamRedCards.next(data);
   }
 
+  // teams' overall shots
+  homeTeamActualShots = new Subject<number>();
+  homeTeamActualShots$ = this.homeTeamActualShots.asObservable();
+  updateHomeTeamActualShots(data:any){
+    this.homeTeamActualShots.next(data);
+  }
+  awayTeamActualShots = new Subject<number>();
+  awayTeamActualShots$ = this.awayTeamActualShots.asObservable();
+  updateAwayTeamActualShots(data:any){
+    this.awayTeamActualShots.next(data);
+  }
+
+  // teams' overall shots
+  homeTeamShotsOnGoal = new Subject<number>();
+  homeTeamShotsOnGoal$ = this.homeTeamShotsOnGoal.asObservable();
+  updateHomeTeamShotsOnGoal(data:any){
+    this.homeTeamShotsOnGoal.next(data);
+  }
+  awayTeamShotsOnGoal = new Subject<number>();
+  awayTeamShotsOnGoal$ = this.awayTeamShotsOnGoal.asObservable();
+  updateAwayTeamShotsOnGoal(data:any){
+    this.awayTeamShotsOnGoal.next(data);
+  }
+
+  // teams' goals
+  homeTeamGoals = new Subject<number>();
+  homeTeamGoals$ = this.homeTeamGoals.asObservable();
+  updateHomeTeamGoals(data:any){
+    this.homeTeamGoals.next(data);
+  }
+  awayTeamGoals = new Subject<number>();
+  awayTeamGoals$ = this.awayTeamGoals.asObservable();
+  updateAwayTeamGoals(data:any){
+    this.awayTeamGoals.next(data);
+  }
+
   ngOnInit(){
 
   }
