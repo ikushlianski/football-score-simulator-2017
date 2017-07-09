@@ -495,11 +495,11 @@ export class ScoreboardComponent implements OnInit {
               }
               if (this.totalHomeTeamGoals == this.totalAwayTeamGoals) {
                 if (this.homeTeam1stLegGoals > this.awayTeamGoals) {
-                  this.aggregateStatus = `${this.totalHomeTeamGoals}- ${this.totalAwayTeamGoals}: ${this.homeTeamName} win on away goals`;
+                  this.aggregateStatus = `${this.totalHomeTeamGoals}-${this.totalAwayTeamGoals}: ${this.homeTeamName} win on away goals`;
                   this.matchStatus = this.matchStatuses[3];
                 }
                 if (this.homeTeam1stLegGoals < this.awayTeamGoals) {
-                  this.aggregateStatus = `${this.totalHomeTeamGoals}- ${this.totalAwayTeamGoals}: ${this.awayTeamName} win on away goals`;
+                  this.aggregateStatus = `${this.totalHomeTeamGoals}-${this.totalAwayTeamGoals}: ${this.awayTeamName} win on away goals`;
                   this.matchStatus = this.matchStatuses[3];
                 }
                 if (this.homeTeam1stLegGoals == this.awayTeamGoals) {
@@ -529,10 +529,10 @@ export class ScoreboardComponent implements OnInit {
             }
             if (this.totalHomeTeamGoals == this.totalAwayTeamGoals) {
               if (this.homeTeam1stLegGoals > this.awayTeamGoals) {
-                this.aggregateStatus = `${this.totalHomeTeamGoals}- ${this.totalAwayTeamGoals}: ${this.homeTeamName} win on away goals`;
+                this.aggregateStatus = `${this.totalHomeTeamGoals}-${this.totalAwayTeamGoals}: ${this.homeTeamName} win on away goals`;
               }
               if (this.homeTeam1stLegGoals < this.awayTeamGoals) {
-                this.aggregateStatus = `${this.totalHomeTeamGoals}- ${this.totalAwayTeamGoals}: ${this.awayTeamName} win on away goals`;
+                this.aggregateStatus = `${this.totalHomeTeamGoals}-${this.totalAwayTeamGoals}: ${this.awayTeamName} win on away goals`;
                 this.matchStatus = this.matchStatuses[3];
               }
               if (this.homeTeam1stLegGoals == this.awayTeamGoals) {
@@ -549,20 +549,20 @@ export class ScoreboardComponent implements OnInit {
                   while (Math.abs(homePenScored - awayPenScored) == 0);
                   if (homePenScored > awayPenScored) {
                     this.matchStatus = this.matchStatuses[3];
-                    this.aggregateStatus = `${homePenScored}- ${awayPenScored}: ${this.homeTeamName} win on penalties`;
+                    this.aggregateStatus = `${homePenScored}-${awayPenScored}: ${this.homeTeamName} win on penalties`;
                   }
                   if (homePenScored < awayPenScored) {
                     this.matchStatus = this.matchStatuses[3];
-                    this.aggregateStatus = `${homePenScored}- ${awayPenScored}: ${this.awayTeamName} win on penalties`;
+                    this.aggregateStatus = `${homePenScored}-${awayPenScored}: ${this.awayTeamName} win on penalties`;
                   }
                 } else {
                   if (homePenScored > awayPenScored) {
                     this.matchStatus = this.matchStatuses[3];
-                    this.aggregateStatus = `${homePenScored}- ${awayPenScored}: ${this.homeTeamName} win on penalties`;
+                    this.aggregateStatus = `${homePenScored}-${awayPenScored}: ${this.homeTeamName} win on penalties`;
                   }
                   if (homePenScored < awayPenScored) {
                     this.matchStatus = this.matchStatuses[3];
-                    this.aggregateStatus = `${homePenScored}- ${awayPenScored}: ${this.awayTeamName} win on penalties`;
+                    this.aggregateStatus = `${homePenScored}-${awayPenScored}: ${this.awayTeamName} win on penalties`;
                   }
                 }
               }
