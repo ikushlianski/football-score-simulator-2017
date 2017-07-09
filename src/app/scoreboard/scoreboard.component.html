@@ -9,7 +9,7 @@
         <ul class="homeTeamScorers scoreboard__homeTeamScorers">
           <li *ngFor="let homeTeamGoalObject of homeTeamGoalObjects" class="scorer">{{homeTeamGoalObject.name}} {{homeTeamGoalObject.goalTime}}'</li>
           <li class="sentOff" *ngFor="let homeTeamSentOff of homeTeamRedObjects">
-            {{homeTeamSentOff.name}} {{homeTeamSentOff.redCardTime}}' <img src="../../assets/img/redcard.png" class="redCard" alt="">
+            <img src="../../assets/img/redcard.png" class="redCard" alt=""> {{homeTeamSentOff.name}} {{homeTeamSentOff.redCardTime}}'
           </li>
         </ul>
       </div>
