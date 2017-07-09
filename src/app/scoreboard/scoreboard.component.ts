@@ -572,7 +572,7 @@ export class ScoreboardComponent implements OnInit {
           }
         }
       }
-    }, 1);
+    }, 10);
   }
 
   ngOnInit() {
