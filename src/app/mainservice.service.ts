@@ -26,14 +26,14 @@ export class MainserviceService {
     this.isSecondLeg.next(data);
   }
   // home and away goals
-  homeTeam1stLegGoals = new Subject<any>();
+  homeTeam1stLegGoals = new Subject<number>();
   homeTeam1stLegGoals$ = this.homeTeam1stLegGoals.asObservable();
-  updateHomeTeam1stLegGoals(data:any){
+  updateHomeTeam1stLegGoals(data:number){
     this.homeTeam1stLegGoals.next(data);
   }
-  awayTeam1stLegGoals = new Subject<any>();
+  awayTeam1stLegGoals = new Subject<number>();
   awayTeam1stLegGoals$ = this.awayTeam1stLegGoals.asObservable();
-  updateAwayTeam1stLegGoals(data:any){
+  updateAwayTeam1stLegGoals(data:number){
     this.awayTeam1stLegGoals.next(data);
   }
 

@@ -8,6 +8,9 @@
         {{homeTeamName}}
         <ul class="homeTeamScorers scoreboard__homeTeamScorers">
           <li *ngFor="let homeTeamGoalObject of homeTeamGoalObjects" class="scorer">{{homeTeamGoalObject.name}} {{homeTeamGoalObject.goalTime}}'</li>
+          <li class="sentOff" *ngFor="let homeTeamSentOff of homeTeamRedObjects">
+            {{homeTeamSentOff.name}} {{homeTeamSentOff.redCardTime}}' <img src="../../assets/img/redcard.png" class="redCard" alt="">
+          </li>
         </ul>
       </div>
     </div>
@@ -15,9 +18,8 @@
       <div class="currentMatchScore scoreboard__currentMatchScore">
         {{homeTeamGoals}}-{{awayTeamGoals}}
       </div>
-      <div class="aggregateScore scoreboard__aggregateScore" *ngIf="(homeTeam1stLegGoals != undefined && awayTeam1stLegGoals != undefined )">
-        1st leg: {{homeTeam1stLegGoals}}-{{awayTeam1stLegGoals}}
-        <p class="aggregateStatus" *ngIf="matchStatus == matchStatuses[3] && homeTeam1stLegGoals != undefined && awayTeam1stLegGoals != undefined">{{aggregateStatus}}</p>
+      <div class="aggregateScore scoreboard__aggregateScore" *ngIf="(homeTeam1stLegGoals != undefined && awayTeam1stLegGoals != undefined && matchStatus != matchStatuses[3] && matchStatus != matchStatuses[4])">
+        agg: {{totalHomeTeamGoals}}:{{totalAwayTeamGoals}}
       </div>
       <div class="currentMatchTime scoreboard__currentMatchTime" >
         {{matchMinutes}}'
@@ -28,12 +30,16 @@
       <div class="matchStatus">
         {{matchStatus}}
       </div>
+      <p class="aggregateStatus" *ngIf="matchStatus == matchStatuses[3] && homeTeam1stLegGoals != undefined && awayTeam1stLegGoals != undefined">{{aggregateStatus}}</p>
     </div>
     <div class="awayTeamZone">
       <div class="awayTeamName scoreboard__awayTeamName">
         {{awayTeamName}}
         <ul class="awayTeamScorers scoreboard__awayTeamScorers">
           <li *ngFor="let awayTeamGoalObject of awayTeamGoalObjects" class="scorer">{{awayTeamGoalObject.name}} {{awayTeamGoalObject.goalTime}}'</li>
+          <li class="sentOff" *ngFor="let awayTeamSentOff of awayTeamRedObjects">
+            {{awayTeamSentOff.name}} {{awayTeamSentOff.redCardTime}}' <img src="../../assets/img/redcard.png" class="redCard" alt="">
+          </li>
         </ul>
       </div>
 

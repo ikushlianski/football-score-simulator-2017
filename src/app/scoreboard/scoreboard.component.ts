@@ -63,14 +63,12 @@ export class ScoreboardComponent implements OnInit {
     this._mainService.homeRelativeStrength$.subscribe(
       data => {
         this.homeRelativeStrength = data;
-        console.log(this.homeRelativeStrength)
       }
     );
     // relative strength of away team
     this._mainService.awayRelativeStrength$.subscribe(
       data => {
         this.awayRelativeStrength = data;
-        console.log(this.awayRelativeStrength)
       }
     );
 
@@ -113,11 +111,13 @@ export class ScoreboardComponent implements OnInit {
   matchSeconds:number = 0;
   timeAddedToH1:number = 0;
   timeAddedToH2:number = 0;
-  matchStatuses:string[] = ['1st half', 'Half time', '2nd half', 'Full time', 'Not started'];
+  matchStatuses:string[] = ['1st half', 'Half time', '2nd half', 'Full time', 'Not started', 'Extra time', 'Penalty shootout'];
   matchStatus:string = this.matchStatuses[4];
-  aggregateStatus:string;
+  aggregateStatus:any;
   homeTeamGoals:number = 0;
   awayTeamGoals:number = 0;
+  totalHomeTeamGoals:number;
+  totalAwayTeamGoals:number;
   allPotentialShots:number;
   homeTeamPotentialShots:number;
   awayTeamPotentialShots:number;
@@ -189,9 +189,16 @@ export class ScoreboardComponent implements OnInit {
   // [{name:'Player7', goalTime: 53}, {name:'Player1', goalTime: 62}];
   awayTeamGoalObjects:any = [];
   // [{name:'Player4', goalTime: 44}];
+  homeTeamRedObjects:any = [];
+  awayTeamRedObjects:any = [];
 
   // match kickoff button
   startMatch(){
+    // count number of goals
+    if (this.isSecondLeg) {
+      this.totalHomeTeamGoals = this.homeTeam1stLegGoals + this.homeTeamGoals;
+      this.totalAwayTeamGoals = this.awayTeam1stLegGoals + this.awayTeamGoals;
+    }
     // determine potential number of fouls from each team
     this.homeTeamPotentialFouls = Math.round((this.allPotentialFouls * (this.awayRelativeStrength / 100) ));
     this.awayTeamPotentialFouls = Math.round((this.allPotentialFouls * (this.homeRelativeStrength / 100) ));
@@ -215,10 +222,9 @@ export class ScoreboardComponent implements OnInit {
     this.homeTeamPotentialShots = Math.round(this.allPotentialShots * ((this.homeRelativeStrength + this.homeTeamMorale + this.homeCrowdSupport) / 100));
     this.awayTeamPotentialShots = Math.round(this.allPotentialShots * ((this.awayRelativeStrength + this.awayTeamMorale) / 100));
     this.matchStatus = this.matchStatuses[0];
-    console.log('potential home shots ' + this.homeTeamPotentialShots, 'potential away shots ' + this.awayTeamPotentialShots);
     setInterval(() => {
       // if match has started, if it's not half time and not Full time
-      if(this.matchStatus != this.matchStatuses[1] && this.matchStatus != this.matchStatuses[3]) {
+      if(this.matchStatus != this.matchStatuses[1] && this.matchStatus != this.matchStatuses[3] && this.matchStatus != this.matchStatuses[6]) {
         this.matchSeconds = this.matchSeconds + 1;
         // when new minute starts
         if (this.matchSeconds > 59) {
@@ -294,12 +300,11 @@ export class ScoreboardComponent implements OnInit {
                 this._mainService.updateHomeTeamYellowCards(this.homeTeamYellowCards);
                 homePlayerCautioned.redCards++;
                 this.homeTeamRedCards++;
-                console.log(homePlayerCautioned);
                 homePlayerCautioned.redCardTime = this.matchMinutes + 1;
                 this._mainService.updateHomeTeamRedCards(this.homeTeamRedCards);
+                this.homeTeamRedObjects.push({name: homePlayerCautioned.name, redCardTime:homePlayerCautioned.redCardTime});
                 let indexOfCautionedPlayer = this.homeTeamStartingLineup.indexOf(homePlayerCautioned);
                 this.homeTeamStartingLineup.splice(indexOfCautionedPlayer, 1);
-                console.log(this.homeTeamStartingLineup);
                 // decrease relative strength due to man disadvantage
                 this.homeRelativeStrength = this.homeRelativeStrength - (this.homeRelativeStrength * 0.09);
                 // decrease or increase morale after red card (50/50%)
@@ -314,19 +319,18 @@ export class ScoreboardComponent implements OnInit {
                 homePlayerCautioned.yellowCards.yellowCard1Time = this.matchMinutes + 1;
                 this.homeTeamYellowCards++;
                 this._mainService.updateHomeTeamYellowCards(this.homeTeamYellowCards);
-                console.log(homePlayerCautioned);
               }
             } else {
               // did the home team receive straight red?
-              if (Math.random() < 1/500) {
+              if (Math.random() < 1/500) /* should be 500 */ {
                 // choose random player from home team squad who received straight red
                 let homePlayerStraightRed = this.homeTeamStartingLineup[Math.round(Math.random() * (this.homeTeamStartingLineup.length - 1))];
-                // give this player a yellow
+                // give this player a straight red card
                 homePlayerStraightRed.redCards++;
                 homePlayerStraightRed.redCardTime = this.matchMinutes + 1;
                 this.homeTeamRedCards++;
                 this._mainService.updateHomeTeamRedCards(this.homeTeamRedCards);
-                console.log(homePlayerStraightRed);
+                this.homeTeamRedObjects.push({name: homePlayerStraightRed.name, redCardTime:homePlayerStraightRed.redCardTime});
                 let indexOfPlayerStraightRed = this.homeTeamStartingLineup.indexOf(homePlayerStraightRed);
                 this.homeTeamStartingLineup.splice(indexOfPlayerStraightRed, 1);
                 // decrease relative strength due to man disadvantage
@@ -356,12 +360,11 @@ export class ScoreboardComponent implements OnInit {
                 this._mainService.updateAwayTeamYellowCards(this.homeTeamYellowCards);
                 awayPlayerCautioned.redCards++;
                 this.awayTeamRedCards++;
-                console.log(awayPlayerCautioned);
                 awayPlayerCautioned.redCardTime = this.matchMinutes + 1;
                 this._mainService.updateAwayTeamRedCards(this.awayTeamRedCards);
+                this.awayTeamRedObjects.push({name: awayPlayerCautioned.name, redCardTime:awayPlayerCautioned.redCardTime});
                 let indexOfCautionedPlayer = this.awayTeamStartingLineup.indexOf(awayPlayerCautioned);
                 this.awayTeamStartingLineup.splice(indexOfCautionedPlayer, 1);
-                console.log(this.awayTeamStartingLineup);
                 // decrease relative strength due to man disadvantage
                 this.awayRelativeStrength = this.awayRelativeStrength - (this.awayRelativeStrength * 0.09);
                 // decrease or increase morale after red card (50/50%)
@@ -376,19 +379,18 @@ export class ScoreboardComponent implements OnInit {
                 awayPlayerCautioned.yellowCards.yellowCard1Time = this.matchMinutes + 1;
                 this.awayTeamYellowCards++;
                 this._mainService.updateAwayTeamYellowCards(this.awayTeamYellowCards);
-                console.log(awayPlayerCautioned);
               }
             } else {
               // did the home team receive straight red?
-              if (Math.random() < 1/500) {
+              if (Math.random() < 1/500) /* should be 500 */ {
                 // choose random player from home team squad who received straight red
                 let awayPlayerStraightRed = this.awayTeamStartingLineup[Math.round(Math.random() * (this.awayTeamStartingLineup.length - 1))];
-                // give this player a yellow
+                // give this player a straight red card
                 awayPlayerStraightRed.redCards++;
                 this.awayTeamRedCards++;
                 awayPlayerStraightRed.redCardTime = this.matchMinutes + 1;
                 this._mainService.updateAwayTeamRedCards(this.awayTeamRedCards);
-                console.log(awayPlayerStraightRed);
+                this.awayTeamRedObjects.push({name: awayPlayerStraightRed.name, redCardTime:awayPlayerStraightRed.redCardTime});
                 let indexOfPlayerStraightRed = this.awayTeamStartingLineup.indexOf(awayPlayerStraightRed);
                 this.awayTeamStartingLineup.splice(indexOfPlayerStraightRed, 1);
                 // decrease relative strength due to man disadvantage
@@ -423,6 +425,7 @@ export class ScoreboardComponent implements OnInit {
                 // this is a goal
                 this.homeTeamGoals++;
                 this._mainService.updateHomeTeamGoals(this.homeTeamGoals);
+                this.totalHomeTeamGoals = this.homeTeam1stLegGoals + this.homeTeamGoals;
                 // find who scored goal
                 let homeGoalscorer = this.homeTeamStartingLineup[Math.round (0.5 + Math.random() * (this.homeTeamStartingLineup.length - 1))];
                 homeGoalscorer.goalsToday++;
@@ -446,6 +449,7 @@ export class ScoreboardComponent implements OnInit {
                   // this is a goal
                   this.awayTeamGoals++;
                   this._mainService.updateAwayTeamGoals(this.awayTeamGoals);
+                  this.totalAwayTeamGoals = this.awayTeam1stLegGoals + this.awayTeamGoals;
                   // find who scored goal
                   let awayGoalscorer = this.awayTeamStartingLineup[ Math.round (0.5 + Math.random() * (this.awayTeamStartingLineup.length - 1))];
                   awayGoalscorer.goalsToday++;
@@ -467,7 +471,6 @@ export class ScoreboardComponent implements OnInit {
           if( (this.matchMinutes == (45 + this.timeAddedToH1)) && (this.matchStatus == this.matchStatuses[0]) ) {
             // may add moments when game arbitrarily continues despite time elapsed
             this.matchStatus = this.matchStatuses[1];
-            console.log(this.matchStatus);
             setTimeout(()=>{
               this.matchStatus = this.matchStatuses[2];
               this.matchMinutes = 45;
@@ -478,38 +481,94 @@ export class ScoreboardComponent implements OnInit {
             // I need to set criteria to determine minutes added to first half
             this.timeAddedToH2 = Math.round(Math.random()*5);
           }
-          // if match time ends
-          if( (this.matchMinutes > (90 + this.timeAddedToH2)) && this.matchStatuses[2] ) {
-            // may add moments when game arbitrarily continues despite time elapsed
-            this.matchStatus = this.matchStatuses[3];
-            console.log(this.matchStatus);
+          // when normal match time ends
+          if( (this.matchMinutes > (90 + this.timeAddedToH2)) && this.matchStatus == this.matchStatuses[2] ) {
             // If this was 2nd leg, check aggregate result
             if (this.isSecondLeg) {
-              let totalHomeTeamGoals = this.homeTeam1stLegGoals + this.homeTeamGoals;
-              let totalAwayTeamGoals = this.awayTeam1stLegGoals + this.awayTeamGoals;
-              if (totalHomeTeamGoals > totalAwayTeamGoals){
-                this.aggregateStatus = this.homeTeamName + ' win ' + totalHomeTeamGoals + '-' + totalAwayTeamGoals + ' on aggregate';
+              if (this.totalHomeTeamGoals > this.totalAwayTeamGoals){
+                this.aggregateStatus = `${this.homeTeamName} win ${this.totalHomeTeamGoals}-${this.totalAwayTeamGoals} on aggregate`;
+                this.matchStatus = this.matchStatuses[3];
               }
-              if (totalHomeTeamGoals < totalAwayTeamGoals) {
-                this.aggregateStatus = this.awayTeamName + ' win ' + totalHomeTeamGoals + '-' + totalAwayTeamGoals + ' on aggregate';
+              if (this.totalHomeTeamGoals < this.totalAwayTeamGoals) {
+                this.aggregateStatus = `${this.awayTeamName} win ${this.totalHomeTeamGoals}-${this.totalAwayTeamGoals} on aggregate`;
+                this.matchStatus = this.matchStatuses[3];
               }
-              if (totalHomeTeamGoals == totalAwayTeamGoals) {
+              if (this.totalHomeTeamGoals == this.totalAwayTeamGoals) {
                 if (this.homeTeam1stLegGoals > this.awayTeamGoals) {
-                  this.aggregateStatus = totalHomeTeamGoals + '-' + totalAwayTeamGoals + ':' + this.homeTeamName + ' win on away goals';
+                  this.aggregateStatus = `${this.totalHomeTeamGoals}- ${this.totalAwayTeamGoals}: ${this.homeTeamName} win on away goals`;
+                  this.matchStatus = this.matchStatuses[3];
                 }
                 if (this.homeTeam1stLegGoals < this.awayTeamGoals) {
-                  this.aggregateStatus = totalHomeTeamGoals + '-' + totalAwayTeamGoals + ':' + this.awayTeamName + ' win on away goals';
+                  this.aggregateStatus = `${this.totalHomeTeamGoals}- ${this.totalAwayTeamGoals}: ${this.awayTeamName} win on away goals`;
+                  this.matchStatus = this.matchStatuses[3];
                 }
                 if (this.homeTeam1stLegGoals == this.awayTeamGoals) {
                   console.log('game goes to extra time');
+                  this.matchStatus = this.matchStatuses[5];
+                  this.matchMinutes = 90;
                   // implement extra time and possible penalties
                 }
               }
+            } else {
+              // if this is not the 2nd leg
+              // maybe add moments when game arbitrarily continues despite time elapsed
+              this.matchStatus = this.matchStatuses[3];
+              console.info('home team morale after match: ' + this.homeTeamMorale.toFixed(3), 'away team morale after match: ' + this.awayTeamMorale.toFixed(3));
+              return;
             }
-
-            console.info('home team morale after match: ' + this.homeTeamMorale.toFixed(3), 'away team morale after match: ' + this.awayTeamMorale.toFixed(3));
-            console.log(this.homeTeamGoalObjects, this.awayTeamGoalObjects);
-            return;
+          }
+          // if extra time ends
+          if ( (this.matchMinutes > 120) && this.matchStatus == this.matchStatuses[5] ) {
+            // compare home and away goals again
+            if (this.totalHomeTeamGoals > this.totalAwayTeamGoals){
+              this.aggregateStatus = `${this.homeTeamName} win ${this.totalHomeTeamGoals}-${this.totalAwayTeamGoals} on aggregate`;
+              this.matchStatus = this.matchStatuses[3];
+            }
+            if (this.totalHomeTeamGoals < this.totalAwayTeamGoals) {
+              this.aggregateStatus = `${this.awayTeamName} win ${this.totalHomeTeamGoals}-${this.totalAwayTeamGoals} on aggregate`;
+              this.matchStatus = this.matchStatuses[3];
+            }
+            if (this.totalHomeTeamGoals == this.totalAwayTeamGoals) {
+              if (this.homeTeam1stLegGoals > this.awayTeamGoals) {
+                this.aggregateStatus = `${this.totalHomeTeamGoals}- ${this.totalAwayTeamGoals}: ${this.homeTeamName} win on away goals`;
+              }
+              if (this.homeTeam1stLegGoals < this.awayTeamGoals) {
+                this.aggregateStatus = `${this.totalHomeTeamGoals}- ${this.totalAwayTeamGoals}: ${this.awayTeamName} win on away goals`;
+                this.matchStatus = this.matchStatuses[3];
+              }
+              if (this.homeTeam1stLegGoals == this.awayTeamGoals) {
+                console.log('game goes to penalties');
+                this.matchStatus = this.matchStatuses[6];
+                this.matchMinutes = 120;
+                // implement extra time and possible penalties
+                let homePenScored = Math.round(Math.random() * 5);
+                let awayPenScored = Math.round(Math.random() * 5);
+                if (homePenScored == awayPenScored) {
+                  do {
+                    homePenScored = homePenScored + Math.round(Math.random());
+                    awayPenScored = awayPenScored + Math.round(Math.random());
+                  }
+                  while (Math.abs(homePenScored - awayPenScored) == 0);
+                  if (homePenScored > awayPenScored) {
+                    this.matchStatus = this.matchStatuses[3];
+                    this.aggregateStatus = `${homePenScored}- ${awayPenScored}: ${this.homeTeamName} win on penalties`;
+                  }
+                  if (homePenScored < awayPenScored) {
+                    this.matchStatus = this.matchStatuses[3];
+                    this.aggregateStatus = `${homePenScored}- ${awayPenScored}: ${this.awayTeamName} win on penalties`;
+                  }
+                } else {
+                  if (homePenScored > awayPenScored) {
+                    this.matchStatus = this.matchStatuses[3];
+                    this.aggregateStatus = `${homePenScored}- ${awayPenScored}: ${this.homeTeamName} win on penalties`;
+                  }
+                  if (homePenScored < awayPenScored) {
+                    this.matchStatus = this.matchStatuses[3];
+                    this.aggregateStatus = `${homePenScored}- ${awayPenScored}: ${this.awayTeamName} win on penalties`;
+                  }
+                }
+              }
+            }
           }
         }
       }

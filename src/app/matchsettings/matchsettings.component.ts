@@ -44,8 +44,8 @@ export class MatchsettingsComponent implements OnInit {
 
   // second leg stuff
   isSecondLeg:boolean = false;
-  homeTeam1stLegGoals = undefined;
-  awayTeam1stLegGoals = undefined;
+  homeTeam1stLegGoals:number = undefined;
+  awayTeam1stLegGoals:number = undefined;
   onChangeSecondLeg(event){
     if (event.target.checked){
       this.isSecondLeg = true;
@@ -58,11 +58,11 @@ export class MatchsettingsComponent implements OnInit {
     };
   }
   onChangeHomeTeam1stLegGoals(event) {
-    this.homeTeam1stLegGoals = event.target.value;
+    this.homeTeam1stLegGoals = Number(event.target.value);
     this._mainService.updateHomeTeam1stLegGoals(this.homeTeam1stLegGoals);
   }
   onChangeAwayTeam1stLegGoals(event) {
-    this.awayTeam1stLegGoals = event.target.value;
+    this.awayTeam1stLegGoals = Number(event.target.value);
     this._mainService.updateAwayTeam1stLegGoals(this.awayTeam1stLegGoals);
   }
 
