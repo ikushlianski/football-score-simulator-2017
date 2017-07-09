@@ -118,14 +118,12 @@ export class StatsComponent implements OnInit {
     this._mainService.homeTeamTactics$.subscribe(
       data => {
         this.homeTeamTactics = data;
-          console.log('home team tactics is ' + this.homeTeamTactics)
       }
     );
     // awayTeamTactics
     this._mainService.awayTeamTactics$.subscribe(
       data => {
         this.awayTeamTactics = data;
-        console.log('away team tactics is ' + this.awayTeamTactics)
       }
     );
 

@@ -503,7 +503,6 @@ export class ScoreboardComponent implements OnInit {
                   this.matchStatus = this.matchStatuses[3];
                 }
                 if (this.homeTeam1stLegGoals == this.awayTeamGoals) {
-                  console.log('game goes to extra time');
                   this.matchStatus = this.matchStatuses[5];
                   this.matchMinutes = 90;
                   // implement extra time and possible penalties
@@ -537,7 +536,6 @@ export class ScoreboardComponent implements OnInit {
                 this.matchStatus = this.matchStatuses[3];
               }
               if (this.homeTeam1stLegGoals == this.awayTeamGoals) {
-                console.log('game goes to penalties');
                 this.matchStatus = this.matchStatuses[6];
                 this.matchMinutes = 120;
                 // implement extra time and possible penalties
