@@ -1,31 +1,17 @@
-# FootballResultSimulatorV2
+# Football Results Simulator
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
+This app allows you to simulate football results. All you need is to know the relative class of the teams involved.
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Fine-tune match parameters
+Fine-tune pre-match predictions setting teams' tactics, home crowd support and even morale.
 
-## Code scaffolding
+## Home and away matches
+Play home and away matches in exciting 1st and 2nd leg duels! Extra time and penalties are quite possible if the score is tied after the end of two-match duel.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+## Realistic match engine
+The generator takes into account football statistics, so unrealistic results like San Marino beating Germany are virtually impossible.
 
-## Build
+## Morale is important
+This simulator is morale-driven, so attempts and shots on goal to some extent depend on the motivation of the team.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Deploying to GitHub Pages
-
-Run `ng github-pages:deploy` to deploy to GitHub Pages.
-
-## Further help
-
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+In the future releases I will make the impact of morale even more serious.
