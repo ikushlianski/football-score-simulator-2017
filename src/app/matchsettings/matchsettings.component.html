@@ -1,11 +1,18 @@
 <div class="matchSettings" [style.display] = "matchHasStarted ? 'none' : 'block'">
   <div class="matchSettings matchSettings__main">
+    <div class="chooseTournament matchSettings__chooseTournament">
+      <label for="chooseTournament">Tournament</label>
+      <select id="chooseTournament" class="" name="tournamentName" [disabled]="" [(ngModel)]="tournamentName" (change)="onChangeTournament($event)">
+        <option [ngValue]="" *ngFor="let tournamentName of tournamentNames">{{tournamentName}}</option>
+      </select>
+    </div>
     <div class="chooseTeams matchSettings__chooseTeams">
       <div class="chooseHomeTeam">
-        <input type="text" name="chooseHomeTeam" [value]="" placeholder="Choose home team" (change)="onChangeHomeTeamName($event)" [(ngModel)]="homeTeamName">
+        <input type="text" name="chooseHomeTeam" auto-complete [source]="possibleTeamNames" [max-num-list]="5" [min-chars]="2" [value]="" placeholder="Choose home team" (change)="onChangeHomeTeamName($event)"  [(ngModel)]="homeTeamName" >
       </div>
       <div class="chooseAwayTeam">
-        <input type="text" name="chooseAwayTeam" [value]="" placeholder="Choose away team" (change)="onChangeAwayTeamName($event)" [(ngModel)]="awayTeamName">
+        <input type="text" name="chooseAwayTeam" [max-num-list]="5" [min-chars]="2" [value]="" placeholder="Choose away team" (change)="onChangeAwayTeamName($event)" [(ngModel)]="awayTeamName" auto-complete
+      [source]="possibleTeamNames">
       </div>
     </div>
     <div class="matchSettings__secondLeg">

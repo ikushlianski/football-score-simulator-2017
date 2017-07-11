@@ -1,6 +1,11 @@
 <div class="scoreboard" [style.display] = "matchHasStarted ? 'flex' : 'none'">
   <div class="scoreboard__matchMetaRow">
-
+    <div class="tournamentName">
+      {{tournamentName}}
+    </div>
+    <div class="matchLocation" *ngIf="matchLocation != undefined">
+      {{matchLocation}}
+    </div>
   </div>
   <div class="scoreboard__mainRow">
     <div class="homeTeamZone">

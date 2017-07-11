@@ -29,7 +29,7 @@ input[type=text] {
   border: none;
   color: #333;
   padding: 0.5em;
-  margin: 0.5em;
+  margin: 0.5em 0;
   /*border: 1px solid grey;*/
   text-align: center;
   /*box-shadow: inset 0px 0px 2px 1px #444;*/
@@ -39,4 +39,7 @@ select {
   color: initial;
   min-width: 20em;
   min-height: 3em;
+}
+.ngui-auto-complete li {
+    color: black;
 }

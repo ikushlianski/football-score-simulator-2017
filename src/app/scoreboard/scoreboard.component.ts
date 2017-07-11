@@ -10,6 +10,8 @@ declare var $: any;
 export class ScoreboardComponent implements OnInit {
   // what came to ScoreBoard from Match Settings
   matchHasStarted:boolean;
+  tournamentName:string;
+  matchLocation:string;
   homeTeamName:string;
   awayTeamName:string;
   isSecondLeg:boolean;
@@ -28,7 +30,21 @@ export class ScoreboardComponent implements OnInit {
       data => {
         this.matchHasStarted = data;
       }
-    )
+    );
+    // tournament name comes from service
+    this._mainService.tournamentName$.subscribe(
+      data => {
+        this.tournamentName = data;
+      }
+    );
+
+    this._mainService.matchLocation$.subscribe(
+      data => {
+        this.matchLocation = data;
+        console.log('scoreboard received match location: ' + this.matchLocation);
+      }
+    );
+
     this._mainService.homeTeamName$.subscribe(
       data => {
         this.homeTeamName = data;

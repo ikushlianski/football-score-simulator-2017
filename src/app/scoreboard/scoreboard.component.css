@@ -86,6 +86,13 @@ ul.homeTeamScorers {
   width: 100%;
   justify-content: space-between;
 }
+.scoreboard__matchMetaRow {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1em;
+}
 .scoreboard__aggregateScore {
   display: flex;
   justify-content: center;
@@ -120,6 +127,9 @@ ul.homeTeamScorers {
   justify-content: flex-start;
   font-size: large;
   align-items: center;
+}
+.tournamentName {
+
 }
 
 @media screen and (max-width: 768px) {

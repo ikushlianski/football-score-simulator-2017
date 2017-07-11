@@ -11,6 +11,7 @@ import { AppsettingsComponent } from './appsettings/appsettings.component';
 import { CommentsComponent } from './comments/comments.component';
 import {MainserviceService} from './mainservice.service';
 import { StatsComponent } from './stats/stats.component';
+import { NguiAutoCompleteModule } from '@ngui/auto-complete';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { StatsComponent } from './stats/stats.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    NguiAutoCompleteModule
   ],
   providers: [MainserviceService],
   bootstrap: [AppComponent]

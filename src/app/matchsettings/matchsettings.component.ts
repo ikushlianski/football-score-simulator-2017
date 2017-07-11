@@ -8,6 +8,7 @@ declare var $: any;
   templateUrl: './matchsettings.component.html',
   styleUrls: ['./matchsettings.component.css']
 })
+
 export class MatchsettingsComponent implements OnInit {
   constructor(private _mainService:MainserviceService) {
     this._mainService.matchHasStarted$.subscribe(
@@ -15,6 +16,7 @@ export class MatchsettingsComponent implements OnInit {
         this.matchHasStarted = data;
       }
     );
+    this.tournamentName = 'Please choose tournament';
     this.relativeStrengthText = this.relativeStrengths[3];
     this.homeRelativeStrength = 50;
     this.awayRelativeStrength = 50;
@@ -30,11 +32,75 @@ export class MatchsettingsComponent implements OnInit {
     this.awayTeamTacticsText = this.tactics[2];
   }
 
+  // tournament names
+  tournamentName:string;
+  tournamentNames:string[] = [
+    'UEFA Champions League',
+    'UEFA Europa League',
+    'UEFA European Championship',
+    'UEFA Euro qualifiers',
+    'UEFA friendly (clubs)',
+    'International friendly (UEFA nations)',
+    'UEFA World Cup qualifiers'
+  ];
+
+  possibleTeamObjects:any = [];
+  possibleTeamNames:string[] = [];
+  homeTeamObject: TeamObject;
+  awayTeamObject: TeamObject;
+  matchLocation:any;
+
+  onChangeTournament(event) {
+    this.tournamentName = event.target.value;
+    this._mainService.updateTournamentName(this.tournamentName);
+    // fetch either clubs or national teams depending on kind of tournament
+    this.possibleTeamObjects = [];
+    this.possibleTeamNames = [];
+    if (this.tournamentName == this.tournamentNames[0] || this.tournamentName == this.tournamentNames[1] || this.tournamentName == this.tournamentNames[4]){
+      // fetch only clubs, only from UFEA zone
+      this._mainService.getUEFAClubObjects()
+      .subscribe(possibleTeamObjects => this.possibleTeamObjects = possibleTeamObjects);
+      this.possibleTeamObjects.forEach(team => this.possibleTeamNames.push(team.club_name));
+    }
+    if (this.tournamentName == this.tournamentNames[2] || this.tournamentName == this.tournamentNames[3] || this.tournamentName == this.tournamentNames[5] || this.tournamentName == this.tournamentNames[6]){
+      // fetch only national teams, only from UFEA zone
+      this._mainService.getUEFANationsObjects()
+      .subscribe(possibleTeamObjects => {
+      this.possibleTeamObjects = possibleTeamObjects;
+      this.possibleTeamObjects.forEach(team => this.possibleTeamNames.push(team.nation_name));
+      console.log(this.possibleTeamNames);
+      }
+    );
+    }
+  }
+
   // team names
   homeTeamName = '';
   onChangeHomeTeamName(event){
+    this.matchLocation = undefined;
     this.homeTeamName = event.target.value;
     this._mainService.updateHomeTeamName(this.homeTeamName);
+    // check match location
+    let chosenTeamName = event.target.value;
+    let clubs = this.possibleTeamObjects.filter(x => x.club_name == chosenTeamName);
+    if (clubs.length > 0) {
+      this.matchLocation = clubs[0].venues;
+      if(Array.isArray(this.matchLocation)) {
+        this.matchLocation = this.matchLocation[Math.round(Math.random()*(this.matchLocation.length-1))]
+      }
+    }
+    if (this.matchLocation == undefined) {
+      let nations = this.possibleTeamObjects.filter(x => x.nation_name == chosenTeamName);
+      if (nations.length > 0) {
+        this.matchLocation = nations[0].venues;
+        if(Array.isArray(this.matchLocation)) {
+          this.matchLocation = this.matchLocation[Math.round(Math.random()*(this.matchLocation.length-1))]
+        }
+      }
+    }
+    if (this.matchLocation != undefined && this.matchLocation != '') {
+      this._mainService.updateMatchLocation(this.matchLocation);
+    }
   }
   awayTeamName = '';
   onChangeAwayTeamName(event){
@@ -314,13 +380,17 @@ export class MatchsettingsComponent implements OnInit {
     // send all default and potentially unchanged match settings to mainservice so that if a user does not change any or some of them, they will still be available to service and to all other components subscribed to service data
      this._mainService.homeRelativeStrength.next(this.homeRelativeStrength);
      this._mainService.awayRelativeStrength.next(this.awayRelativeStrength);
+     this._mainService.tournamentName.next(this.tournamentName);
      this._mainService.isSecondLeg.next(this.isSecondLeg);
      this._mainService.homeCrowdSupport.next(this.homeCrowdSupport);
      this._mainService.homeTeamMorale.next(this.homeTeamMorale);
      this._mainService.awayTeamMorale.next(this.awayTeamMorale);
      this._mainService.homeTeamTactics.next(this.homeTeamTactics);
      this._mainService.awayTeamTactics.next(this.awayTeamTactics);
-
+     /* onChangeTournament(); */
   }
 
+}
+interface TeamObject {
+  venues: string;
 }

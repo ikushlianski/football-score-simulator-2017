@@ -32,14 +32,18 @@ input#awayTeam1stLegGoals {
 }
 
 .matchSettings {
-  padding: 2rem;
+  /*padding: 2rem;*/
 }
 .matchSettings__chooseTeams {
   display: flex;
   justify-content: space-around;
+  margin: 0.5rem;
   padding: 0rem;
   width: 100%;
   flex-wrap: wrap;
+}
+.matchSettings__chooseTournament {
+  margin: 0.5rem;
 }
 .matchSettings__proceedToMatch {
   margin: 0 auto;
@@ -58,7 +62,7 @@ input#awayTeam1stLegGoals {
   justify-content: space-around;
 }
 .matchSettings__other, .matchSettings__main {
-  margin: 1rem 0rem;
+  margin: 0.5rem;
   flex-wrap: wrap;
 }
 
@@ -87,6 +91,7 @@ input#awayTeam1stLegGoals {
     width: 2rem;
     height: 2rem;
 }
+
 
 @media all and (max-width: 640px) {
   input {
