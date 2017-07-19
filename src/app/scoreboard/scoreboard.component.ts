@@ -586,7 +586,7 @@ export class ScoreboardComponent implements OnInit {
           }
         }
       }
-    }, 10);
+    }, 1);
   }
 
   ngOnInit() {

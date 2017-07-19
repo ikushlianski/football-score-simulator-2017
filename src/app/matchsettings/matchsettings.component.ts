@@ -49,18 +49,25 @@ export class MatchsettingsComponent implements OnInit {
   homeTeamObject: TeamObject;
   awayTeamObject: TeamObject;
   matchLocation:any;
+  homeTeamRanking:number;
+  awayTeamRanking:number;
+  isBothFromDB:boolean = false;
 
   onChangeTournament(event) {
     this.tournamentName = event.target.value;
     this._mainService.updateTournamentName(this.tournamentName);
-    // fetch either clubs or national teams depending on kind of tournament
+    // fetch either clubs or national teams depending on tournament
     this.possibleTeamObjects = [];
     this.possibleTeamNames = [];
     if (this.tournamentName == this.tournamentNames[0] || this.tournamentName == this.tournamentNames[1] || this.tournamentName == this.tournamentNames[4]){
       // fetch only clubs, only from UFEA zone
       this._mainService.getUEFAClubObjects()
-      .subscribe(possibleTeamObjects => this.possibleTeamObjects = possibleTeamObjects);
-      this.possibleTeamObjects.forEach(team => this.possibleTeamNames.push(team.club_name));
+      .subscribe(possibleTeamObjects => {
+        this.possibleTeamObjects = possibleTeamObjects;
+        this.possibleTeamObjects.forEach(team => this.possibleTeamNames.push(team.club_name));
+        console.log(this.possibleTeamNames);
+      }
+    );
     }
     if (this.tournamentName == this.tournamentNames[2] || this.tournamentName == this.tournamentNames[3] || this.tournamentName == this.tournamentNames[5] || this.tournamentName == this.tournamentNames[6]){
       // fetch only national teams, only from UFEA zone
@@ -78,34 +85,69 @@ export class MatchsettingsComponent implements OnInit {
   homeTeamName = '';
   onChangeHomeTeamName(event){
     this.matchLocation = undefined;
+    this.homeTeamRanking = undefined;
+    this.isBothFromDB = false;
     this.homeTeamName = event.target.value;
     this._mainService.updateHomeTeamName(this.homeTeamName);
-    // check match location
+    // check match location and set ranking
     let chosenTeamName = event.target.value;
     let clubs = this.possibleTeamObjects.filter(x => x.club_name == chosenTeamName);
     if (clubs.length > 0) {
+      // if this is a club, choose a stadium for it out of those available in the array
       this.matchLocation = clubs[0].venues;
       if(Array.isArray(this.matchLocation)) {
         this.matchLocation = this.matchLocation[Math.round(Math.random()*(this.matchLocation.length-1))]
       }
+      // set the club's ranking from DB
+      this.homeTeamRanking = clubs[0].club_ranking;
     }
     if (this.matchLocation == undefined) {
+      // if this is not a club, then it's a nation, so choose a stadium for it
       let nations = this.possibleTeamObjects.filter(x => x.nation_name == chosenTeamName);
       if (nations.length > 0) {
         this.matchLocation = nations[0].venues;
         if(Array.isArray(this.matchLocation)) {
           this.matchLocation = this.matchLocation[Math.round(Math.random()*(this.matchLocation.length-1))]
         }
+        // set the nation's ranking from DB
+        this.homeTeamRanking = nations[0].fifa_nation_rank;
       }
     }
-    if (this.matchLocation != undefined && this.matchLocation != '') {
-      this._mainService.updateMatchLocation(this.matchLocation);
+    this._mainService.updateMatchLocation(this.matchLocation);
+    if (this.homeTeamRanking && this.awayTeamRanking) {
+      console.log('home team ranking: ' + this.homeTeamRanking, 'away team ranking: ' +this.awayTeamRanking)
+      this.isBothFromDB = true;
+      console.log('are both teams from DB? ' + this.isBothFromDB)
+    } else {
+      console.log('home team ranking: ' + this.homeTeamRanking, 'away team ranking: ' +this.awayTeamRanking)
+      console.log('are both teams from DB? ' + this.isBothFromDB)
     }
   }
   awayTeamName = '';
   onChangeAwayTeamName(event){
+    this.awayTeamRanking = undefined;
+    this.isBothFromDB = false;
     this.awayTeamName = event.target.value;
     this._mainService.updateAwayTeamName(this.awayTeamName);
+    // determine whether the away team is a club or nation
+    let clubs = this.possibleTeamObjects.filter(x => x.club_name == this.awayTeamName);
+    if (clubs.length > 0) {
+      // set the club's ranking from DB
+      this.awayTeamRanking = clubs[0].club_ranking;
+    }
+    let nations = this.possibleTeamObjects.filter(x => x.nation_name == this.awayTeamName);
+    if (nations.length > 0) {
+      // set the nation's ranking from DB
+      this.awayTeamRanking = nations[0].fifa_nation_rank;
+    }
+    if (this.homeTeamRanking && this.awayTeamRanking) {
+      console.log('home team ranking: ' + this.homeTeamRanking, 'away team ranking: ' +this.awayTeamRanking)
+      this.isBothFromDB = true;
+      console.log('are both teams from DB? ' + this.isBothFromDB)
+    } else {
+      console.log('home team ranking: ' + this.homeTeamRanking, 'away team ranking: ' +this.awayTeamRanking)
+      console.log('are both teams from DB? ' + this.isBothFromDB)
+    }
   }
 
   // second leg stuff
