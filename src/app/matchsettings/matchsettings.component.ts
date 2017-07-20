@@ -16,7 +16,7 @@ export class MatchsettingsComponent implements OnInit {
         this.matchHasStarted = data;
       }
     );
-    this.tournamentName = 'Please choose tournament';
+
     this.relativeStrengthText = this.relativeStrengths[3];
     this.homeRelativeStrength = 50;
     this.awayRelativeStrength = 50;
@@ -51,7 +51,10 @@ export class MatchsettingsComponent implements OnInit {
   matchLocation:any;
   homeTeamRanking:number;
   awayTeamRanking:number;
+  rankingDifference:number;
   isBothFromDB:boolean = false;
+  homeTeamLogoLarge:string;
+  awayTeamLogoLarge:string;
 
   onChangeTournament(event) {
     this.tournamentName = event.target.value;
@@ -84,6 +87,9 @@ export class MatchsettingsComponent implements OnInit {
   // team names
   homeTeamName = '';
   onChangeHomeTeamName(event){
+    this.homeRelativeStrength = 50;
+    this.awayRelativeStrength = 50;
+    this.relativeStrengthText = this.relativeStrengths[3];
     this.matchLocation = undefined;
     this.homeTeamRanking = undefined;
     this.isBothFromDB = false;
@@ -100,20 +106,113 @@ export class MatchsettingsComponent implements OnInit {
       }
       // set the club's ranking from DB
       this.homeTeamRanking = clubs[0].club_ranking;
+      this.homeTeamLogoLarge = clubs[0].club_logo_large;
+      // if both teams in inputs come from DB
+      if (this.homeTeamRanking && this.awayTeamRanking) {
+        console.log('home team ranking: ' + this.homeTeamRanking, 'away team ranking: ' +this.awayTeamRanking)
+        this.isBothFromDB = true;
+        console.log('are both teams from DB? ' + this.isBothFromDB)
+        // determine relative strengths of teams based from data from DB
+        this.rankingDifference = this.homeTeamRanking - this.awayTeamRanking;
+        if (this.rankingDifference <= 10 && this.rankingDifference >= -10) {
+          this.homeRelativeStrength = 50;
+          this.awayRelativeStrength = 50;
+          this.relativeStrengthText = this.relativeStrengths[3];
+        }
+        if (this.rankingDifference > 10 && this.rankingDifference <= 20) {
+          this.homeRelativeStrength = 45;
+          this.awayRelativeStrength = 55;
+          this.relativeStrengthText = this.relativeStrengths[2];
+        }
+        if (this.rankingDifference > 20 && this.rankingDifference <= 100) {
+          this.homeRelativeStrength = 40;
+          this.awayRelativeStrength = 60;
+          this.relativeStrengthText = this.relativeStrengths[1];
+        }
+        if (this.rankingDifference > 100) {
+          this.homeRelativeStrength = 30;
+          this.awayRelativeStrength = 70;
+          this.relativeStrengthText = this.relativeStrengths[0];
+        }
+        if (this.rankingDifference < -10 && this.rankingDifference >= -20) {
+          this.homeRelativeStrength = 55;
+          this.awayRelativeStrength = 45;
+          this.relativeStrengthText = this.relativeStrengths[4];
+        }
+        if (this.rankingDifference < -20 && this.rankingDifference >= -100) {
+          this.homeRelativeStrength = 60;
+          this.awayRelativeStrength = 40;
+          this.relativeStrengthText = this.relativeStrengths[5];
+        }
+        if (this.rankingDifference < -100) {
+          this.homeRelativeStrength = 70;
+          this.awayRelativeStrength = 30;
+          this.relativeStrengthText = this.relativeStrengths[6];
+        }
+        this._mainService.updateHomeRelativeStrength(this.homeRelativeStrength);
+        this._mainService.updateAwayRelativeStrength(this.awayRelativeStrength);
+      }
     }
     if (this.matchLocation == undefined) {
       // if this is not a club, then it's a nation, so choose a stadium for it
       let nations = this.possibleTeamObjects.filter(x => x.nation_name == chosenTeamName);
       if (nations.length > 0) {
         this.matchLocation = nations[0].venues;
+        this.homeTeamLogoLarge = nations[0].nation_flag_large;
         if(Array.isArray(this.matchLocation)) {
           this.matchLocation = this.matchLocation[Math.round(Math.random()*(this.matchLocation.length-1))]
         }
         // set the nation's ranking from DB
         this.homeTeamRanking = nations[0].fifa_nation_rank;
+        // if both teams in inputs come from DB
+        if (this.homeTeamRanking && this.awayTeamRanking) {
+          console.log('home team ranking: ' + this.homeTeamRanking, 'away team ranking: ' +this.awayTeamRanking)
+          this.isBothFromDB = true;
+          console.log('are both teams from DB? ' + this.isBothFromDB)
+          // determine relative strengths of teams based from data from DB
+          this.rankingDifference = this.homeTeamRanking - this.awayTeamRanking;
+          if (this.rankingDifference <= 5 && this.rankingDifference >= -5) {
+            this.homeRelativeStrength = 50;
+            this.awayRelativeStrength = 50;
+            this.relativeStrengthText = this.relativeStrengths[3];
+          }
+          if (this.rankingDifference > 5 && this.rankingDifference <= 10) {
+            this.homeRelativeStrength = 45;
+            this.awayRelativeStrength = 55;
+            this.relativeStrengthText = this.relativeStrengths[2];
+          }
+          if (this.rankingDifference > 10 && this.rankingDifference <= 30) {
+            this.homeRelativeStrength = 40;
+            this.awayRelativeStrength = 60;
+            this.relativeStrengthText = this.relativeStrengths[1];
+          }
+          if (this.rankingDifference > 30) {
+            this.homeRelativeStrength = 30;
+            this.awayRelativeStrength = 70;
+            this.relativeStrengthText = this.relativeStrengths[0];
+          }
+          if (this.rankingDifference < -5 && this.rankingDifference >= -10) {
+            this.homeRelativeStrength = 55;
+            this.awayRelativeStrength = 45;
+            this.relativeStrengthText = this.relativeStrengths[4];
+          }
+          if (this.rankingDifference < -10 && this.rankingDifference >= -30) {
+            this.homeRelativeStrength = 60;
+            this.awayRelativeStrength = 40;
+            this.relativeStrengthText = this.relativeStrengths[5];
+          }
+          if (this.rankingDifference < -30) {
+            this.homeRelativeStrength = 70;
+            this.awayRelativeStrength = 30;
+            this.relativeStrengthText = this.relativeStrengths[6];
+          }
+          this._mainService.updateHomeRelativeStrength(this.homeRelativeStrength);
+          this._mainService.updateAwayRelativeStrength(this.awayRelativeStrength);
+        }
       }
     }
     this._mainService.updateMatchLocation(this.matchLocation);
+    this._mainService.updateHomeTeamLogoLarge(this.homeTeamLogoLarge);
     if (this.homeTeamRanking && this.awayTeamRanking) {
       console.log('home team ranking: ' + this.homeTeamRanking, 'away team ranking: ' +this.awayTeamRanking)
       this.isBothFromDB = true;
@@ -125,6 +224,9 @@ export class MatchsettingsComponent implements OnInit {
   }
   awayTeamName = '';
   onChangeAwayTeamName(event){
+    this.homeRelativeStrength = 50;
+    this.awayRelativeStrength = 50;
+    this.relativeStrengthText = this.relativeStrengths[3];
     this.awayTeamRanking = undefined;
     this.isBothFromDB = false;
     this.awayTeamName = event.target.value;
@@ -134,19 +236,104 @@ export class MatchsettingsComponent implements OnInit {
     if (clubs.length > 0) {
       // set the club's ranking from DB
       this.awayTeamRanking = clubs[0].club_ranking;
+      this.awayTeamLogoLarge = clubs[0].club_logo_large;
+      // if both teams in inputs come from DB
+      if (this.homeTeamRanking && this.awayTeamRanking) {
+        console.log('home team ranking: ' + this.homeTeamRanking, 'away team ranking: ' +this.awayTeamRanking)
+        this.isBothFromDB = true;
+        console.log('are both teams from DB? ' + this.isBothFromDB)
+        // determine relative strengths of teams based from data from DB
+        this.rankingDifference = this.homeTeamRanking - this.awayTeamRanking;
+        if (this.rankingDifference <= 10 && this.rankingDifference >= -10) {
+          this.homeRelativeStrength = 50;
+          this.awayRelativeStrength = 50;
+          this.relativeStrengthText = this.relativeStrengths[3];
+        }
+        if (this.rankingDifference > 10 && this.rankingDifference <= 20) {
+          this.homeRelativeStrength = 45;
+          this.awayRelativeStrength = 55;
+          this.relativeStrengthText = this.relativeStrengths[2];
+        }
+        if (this.rankingDifference > 20 && this.rankingDifference <= 100) {
+          this.homeRelativeStrength = 40;
+          this.awayRelativeStrength = 60;
+          this.relativeStrengthText = this.relativeStrengths[1];
+        }
+        if (this.rankingDifference > 100) {
+          this.homeRelativeStrength = 30;
+          this.awayRelativeStrength = 70;
+          this.relativeStrengthText = this.relativeStrengths[0];
+        }
+        if (this.rankingDifference < -10 && this.rankingDifference >= -20) {
+          this.homeRelativeStrength = 55;
+          this.awayRelativeStrength = 45;
+          this.relativeStrengthText = this.relativeStrengths[4];
+        }
+        if (this.rankingDifference < -20 && this.rankingDifference >= -100) {
+          this.homeRelativeStrength = 60;
+          this.awayRelativeStrength = 40;
+          this.relativeStrengthText = this.relativeStrengths[5];
+        }
+        if (this.rankingDifference < -100) {
+          this.homeRelativeStrength = 70;
+          this.awayRelativeStrength = 30;
+          this.relativeStrengthText = this.relativeStrengths[6];
+        }
+        this._mainService.updateHomeRelativeStrength(this.homeRelativeStrength);
+        this._mainService.updateAwayRelativeStrength(this.awayRelativeStrength);
+      }
     }
     let nations = this.possibleTeamObjects.filter(x => x.nation_name == this.awayTeamName);
     if (nations.length > 0) {
       // set the nation's ranking from DB
       this.awayTeamRanking = nations[0].fifa_nation_rank;
-    }
-    if (this.homeTeamRanking && this.awayTeamRanking) {
-      console.log('home team ranking: ' + this.homeTeamRanking, 'away team ranking: ' +this.awayTeamRanking)
-      this.isBothFromDB = true;
-      console.log('are both teams from DB? ' + this.isBothFromDB)
-    } else {
-      console.log('home team ranking: ' + this.homeTeamRanking, 'away team ranking: ' +this.awayTeamRanking)
-      console.log('are both teams from DB? ' + this.isBothFromDB)
+      this.awayTeamLogoLarge = nations[0].nation_flag_large;
+      // if both teams in inputs come from DB
+      if (this.homeTeamRanking && this.awayTeamRanking) {
+        console.log('home team ranking: ' + this.homeTeamRanking, 'away team ranking: ' +this.awayTeamRanking)
+        this.isBothFromDB = true;
+        console.log('are both teams from DB? ' + this.isBothFromDB)
+        // determine relative strengths of teams based from data from DB
+        this.rankingDifference = this.homeTeamRanking - this.awayTeamRanking;
+        if (this.rankingDifference <= 5 && this.rankingDifference >= -5) {
+          this.homeRelativeStrength = 50;
+          this.awayRelativeStrength = 50;
+          this.relativeStrengthText = this.relativeStrengths[3];
+        }
+        if (this.rankingDifference > 5 && this.rankingDifference <= 10) {
+          this.homeRelativeStrength = 45;
+          this.awayRelativeStrength = 55;
+          this.relativeStrengthText = this.relativeStrengths[2];
+        }
+        if (this.rankingDifference > 10 && this.rankingDifference <= 30) {
+          this.homeRelativeStrength = 40;
+          this.awayRelativeStrength = 60;
+          this.relativeStrengthText = this.relativeStrengths[1];
+        }
+        if (this.rankingDifference > 30) {
+          this.homeRelativeStrength = 30;
+          this.awayRelativeStrength = 70;
+          this.relativeStrengthText = this.relativeStrengths[0];
+        }
+        if (this.rankingDifference < -5 && this.rankingDifference >= -10) {
+          this.homeRelativeStrength = 55;
+          this.awayRelativeStrength = 45;
+          this.relativeStrengthText = this.relativeStrengths[4];
+        }
+        if (this.rankingDifference < -10 && this.rankingDifference >= -30) {
+          this.homeRelativeStrength = 60;
+          this.awayRelativeStrength = 40;
+          this.relativeStrengthText = this.relativeStrengths[5];
+        }
+        if (this.rankingDifference < -30) {
+          this.homeRelativeStrength = 70;
+          this.awayRelativeStrength = 30;
+          this.relativeStrengthText = this.relativeStrengths[6];
+        }
+        this._mainService.updateHomeRelativeStrength(this.homeRelativeStrength);
+        this._mainService.updateAwayRelativeStrength(this.awayRelativeStrength);
+      }
+      this._mainService.updateAwayTeamLogoLarge(this.awayTeamLogoLarge);
     }
   }
 

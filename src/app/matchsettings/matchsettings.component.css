@@ -46,7 +46,7 @@ input#awayTeam1stLegGoals {
   margin: 0.5rem;
 }
 .matchSettings__proceedToMatch {
-  margin: 0 auto;
+  margin: 2em auto;
   display: block;
 }
 .matchSettings select {

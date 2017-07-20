@@ -45,6 +45,17 @@ export class MainserviceService {
   updateMatchLocation(data:any){
     this.matchLocation.next(data);
   }
+  // teams' logos for scoreboard
+  homeTeamLogoLarge = new Subject<string>();
+  homeTeamLogoLarge$ = this.homeTeamLogoLarge.asObservable();
+  updateHomeTeamLogoLarge(data:any){
+    this.homeTeamLogoLarge.next(data);
+  }
+  awayTeamLogoLarge = new Subject<string>();
+  awayTeamLogoLarge$ = this.awayTeamLogoLarge.asObservable();
+  updateAwayTeamLogoLarge(data:any){
+    this.awayTeamLogoLarge.next(data);
+  }
 
   isSecondLeg = new Subject<boolean>();
   isSecondLeg$ = this.isSecondLeg.asObservable();

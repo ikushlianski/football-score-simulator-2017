@@ -34,8 +34,8 @@
       </div>
     </div>
     <div class="relativeStrength">
-      <label for="relativeStrengthText">Teams' relative strength</label>
-      <select id="relativeStrengthText" class="" name="relativeStrengthText" [disabled]="" [(ngModel)]="relativeStrengthText" (change)="onChangeRelativeStrength($event)">
+      <label for="relativeStrengthText">Relative strength <span *ngIf="isBothFromDB">(recommended)</span></label>
+      <select id="relativeStrengthText" class="" name="relativeStrengthText" [(ngModel)]="relativeStrengthText" (change)="onChangeRelativeStrength($event)">
         <option [ngValue]="" *ngFor="let relativeStrengthText of relativeStrengths">{{relativeStrengthText}}</option>
       </select>
     </div>

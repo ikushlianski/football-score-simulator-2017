@@ -15,6 +15,8 @@ export class ScoreboardComponent implements OnInit {
   homeTeamName:string;
   awayTeamName:string;
   isSecondLeg:boolean;
+  homeTeamLogoLarge:string;
+  awayTeamLogoLarge:string;
   homeTeam1stLegGoals:number;
   awayTeam1stLegGoals:number;
   homeRelativeStrength:number;
@@ -56,6 +58,18 @@ export class ScoreboardComponent implements OnInit {
       }
     );
 
+    // teams' logos
+    this._mainService.homeTeamLogoLarge$.subscribe(
+      data => {
+        this.homeTeamLogoLarge = data;
+      }
+    );
+    this._mainService.awayTeamLogoLarge$.subscribe(
+      data => {
+        this.awayTeamLogoLarge = data;
+      }
+    );
+
     // is second leg
     this._mainService.isSecondLeg$.subscribe(
       data => {
@@ -79,12 +93,14 @@ export class ScoreboardComponent implements OnInit {
     this._mainService.homeRelativeStrength$.subscribe(
       data => {
         this.homeRelativeStrength = data;
+        console.log(this.homeRelativeStrength);
       }
     );
     // relative strength of away team
     this._mainService.awayRelativeStrength$.subscribe(
       data => {
         this.awayRelativeStrength = data;
+        console.log(this.awayRelativeStrength);
       }
     );
 
@@ -587,6 +603,9 @@ export class ScoreboardComponent implements OnInit {
         }
       }
     }, 1);
+  }
+  playAnotherMatch() {
+    location.reload();
   }
 
   ngOnInit() {
