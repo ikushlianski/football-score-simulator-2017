@@ -68,7 +68,6 @@ export class MatchsettingsComponent implements OnInit {
       .subscribe(possibleTeamObjects => {
         this.possibleTeamObjects = possibleTeamObjects;
         this.possibleTeamObjects.forEach(team => this.possibleTeamNames.push(team.club_name));
-        console.log(this.possibleTeamNames);
       }
     );
     }
@@ -78,7 +77,6 @@ export class MatchsettingsComponent implements OnInit {
       .subscribe(possibleTeamObjects => {
       this.possibleTeamObjects = possibleTeamObjects;
       this.possibleTeamObjects.forEach(team => this.possibleTeamNames.push(team.nation_name));
-      console.log(this.possibleTeamNames);
       }
     );
     }
@@ -109,9 +107,7 @@ export class MatchsettingsComponent implements OnInit {
       this.homeTeamLogoLarge = clubs[0].club_logo_large;
       // if both teams in inputs come from DB
       if (this.homeTeamRanking && this.awayTeamRanking) {
-        console.log('home team ranking: ' + this.homeTeamRanking, 'away team ranking: ' +this.awayTeamRanking)
         this.isBothFromDB = true;
-        console.log('are both teams from DB? ' + this.isBothFromDB)
         // determine relative strengths of teams based from data from DB
         this.rankingDifference = this.homeTeamRanking - this.awayTeamRanking;
         if (this.rankingDifference <= 10 && this.rankingDifference >= -10) {
@@ -166,9 +162,7 @@ export class MatchsettingsComponent implements OnInit {
         this.homeTeamRanking = nations[0].fifa_nation_rank;
         // if both teams in inputs come from DB
         if (this.homeTeamRanking && this.awayTeamRanking) {
-          console.log('home team ranking: ' + this.homeTeamRanking, 'away team ranking: ' +this.awayTeamRanking)
           this.isBothFromDB = true;
-          console.log('are both teams from DB? ' + this.isBothFromDB)
           // determine relative strengths of teams based from data from DB
           this.rankingDifference = this.homeTeamRanking - this.awayTeamRanking;
           if (this.rankingDifference <= 5 && this.rankingDifference >= -5) {
@@ -214,12 +208,7 @@ export class MatchsettingsComponent implements OnInit {
     this._mainService.updateMatchLocation(this.matchLocation);
     this._mainService.updateHomeTeamLogoLarge(this.homeTeamLogoLarge);
     if (this.homeTeamRanking && this.awayTeamRanking) {
-      console.log('home team ranking: ' + this.homeTeamRanking, 'away team ranking: ' +this.awayTeamRanking)
       this.isBothFromDB = true;
-      console.log('are both teams from DB? ' + this.isBothFromDB)
-    } else {
-      console.log('home team ranking: ' + this.homeTeamRanking, 'away team ranking: ' +this.awayTeamRanking)
-      console.log('are both teams from DB? ' + this.isBothFromDB)
     }
   }
   awayTeamName = '';
@@ -239,9 +228,7 @@ export class MatchsettingsComponent implements OnInit {
       this.awayTeamLogoLarge = clubs[0].club_logo_large;
       // if both teams in inputs come from DB
       if (this.homeTeamRanking && this.awayTeamRanking) {
-        console.log('home team ranking: ' + this.homeTeamRanking, 'away team ranking: ' +this.awayTeamRanking)
         this.isBothFromDB = true;
-        console.log('are both teams from DB? ' + this.isBothFromDB)
         // determine relative strengths of teams based from data from DB
         this.rankingDifference = this.homeTeamRanking - this.awayTeamRanking;
         if (this.rankingDifference <= 10 && this.rankingDifference >= -10) {
@@ -290,9 +277,7 @@ export class MatchsettingsComponent implements OnInit {
       this.awayTeamLogoLarge = nations[0].nation_flag_large;
       // if both teams in inputs come from DB
       if (this.homeTeamRanking && this.awayTeamRanking) {
-        console.log('home team ranking: ' + this.homeTeamRanking, 'away team ranking: ' +this.awayTeamRanking)
         this.isBothFromDB = true;
-        console.log('are both teams from DB? ' + this.isBothFromDB)
         // determine relative strengths of teams based from data from DB
         this.rankingDifference = this.homeTeamRanking - this.awayTeamRanking;
         if (this.rankingDifference <= 5 && this.rankingDifference >= -5) {
@@ -333,8 +318,8 @@ export class MatchsettingsComponent implements OnInit {
         this._mainService.updateHomeRelativeStrength(this.homeRelativeStrength);
         this._mainService.updateAwayRelativeStrength(this.awayRelativeStrength);
       }
-      this._mainService.updateAwayTeamLogoLarge(this.awayTeamLogoLarge);
     }
+    this._mainService.updateAwayTeamLogoLarge(this.awayTeamLogoLarge);
   }
 
   // second leg stuff

@@ -3,6 +3,7 @@
     "uefa_clubs" : [ {
       "club_country" : "ESP",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50051.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50051.png",
       "club_name" : "Real Madrid CF",
       "club_ranking" : "1",
       "id" : "1",
@@ -11,6 +12,7 @@
     }, {
       "club_country" : "ESP",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50080.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50080.png",
       "club_name" : "Barcelona",
       "club_ranking" : "3",
       "id" : "3",
@@ -19,6 +21,7 @@
     }, {
       "club_country" : "GER",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50037.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50037.png",
       "club_name" : "FC Bayern Munchen",
       "club_ranking" : "2",
       "id" : "4",
@@ -27,6 +30,7 @@
     }, {
       "club_country" : "ESP",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50124.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50124.png",
       "club_name" : "Atletico de Madrid",
       "club_ranking" : "4",
       "id" : "5",
@@ -34,6 +38,7 @@
     }, {
       "club_country" : "ITA",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50139.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50139.png",
       "club_name" : "Juventus",
       "club_ranking" : "5",
       "id" : "6",
@@ -41,6 +46,7 @@
     }, {
       "club_country" : "FRA",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52747.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52747.png",
       "club_name" : "Paris Saint-Germain",
       "club_ranking" : "6",
       "id" : "7",
@@ -48,24 +54,28 @@
     }, {
       "club_country" : "GER",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52758.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52758.png",
       "club_name" : "Borussia Dortmund",
       "club_ranking" : "7",
       "id" : "8"
     }, {
       "club_country" : "ESP",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52714.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52714.png",
       "club_name" : "Sevilla FC",
       "club_ranking" : "8",
       "id" : "9"
     }, {
       "club_country" : "POR",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50147.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50147.png",
       "club_name" : "SL Benfica",
       "club_ranking" : "9",
       "id" : "10"
     }, {
       "club_country" : "ENG",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52914.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52914.png",
       "club_name" : "Chelsea FC",
       "club_ranking" : "10",
       "id" : "11",
@@ -73,6 +83,7 @@
     }, {
       "club_country" : "ENG",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52280.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52280.png",
       "club_name" : "Arsenal FC",
       "club_ranking" : "11",
       "id" : "12",
@@ -81,6 +92,7 @@
     }, {
       "club_country" : "ENG",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52919.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52919.png",
       "club_name" : "Manchester City FC",
       "club_ranking" : "12",
       "id" : "13",
@@ -89,18 +101,21 @@
     }, {
       "club_country" : "POR",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50064.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50064.png",
       "club_name" : "FC Porto",
       "club_ranking" : "13",
       "id" : "14"
     }, {
       "club_country" : "GER",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/57388.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/57388.png",
       "club_name" : "FC Schalke 04",
       "club_ranking" : "14",
       "id" : "15"
     }, {
       "club_country" : "ENG",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52682.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52682.png",
       "club_name" : "Manchester United FC",
       "club_ranking" : "15",
       "id" : "16",
@@ -108,18 +123,21 @@
     }, {
       "club_country" : "GER",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50109.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50109.png",
       "club_name" : "Bayer 04 Leverkusen",
       "club_ranking" : "16",
       "id" : "17"
     }, {
       "club_country" : "ITA",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50136.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50136.png",
       "club_name" : "SSC Napoli",
       "club_ranking" : "17",
       "id" : "18"
     }, {
       "club_country" : "UKR",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52707.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52707.png",
       "club_name" : "FC Shakhtar Donetsk",
       "club_ranking" : "18",
       "id" : "19",
@@ -127,6 +145,7 @@
     }, {
       "club_country" : "RUS",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52826.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52826.png",
       "club_name" : "FC Zenit",
       "club_ranking" : "19",
       "id" : "20",
@@ -134,6 +153,7 @@
     }, {
       "club_country" : "ENG",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/1652.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/1652.png",
       "club_name" : "Tottenham Hotspur FC",
       "club_ranking" : "20",
       "id" : "21",
@@ -141,6 +161,7 @@
     }, {
       "club_country" : "ESP",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52268.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52268.png",
       "club_name" : "Valencia CF",
       "club_ranking" : "21",
       "id" : "22",
@@ -148,24 +169,28 @@
     }, {
       "club_country" : "SUI",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/59856.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/59856.png",
       "club_name" : "FC Basel 1893",
       "club_ranking" : "22",
       "id" : "23"
     }, {
       "club_country" : "FRA",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/5312.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/5312.png",
       "club_name" : "Olympique Lyonnais",
       "club_ranking" : "23",
       "id" : "24"
     }, {
       "club_country" : "ITA",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52817.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52817.png",
       "club_name" : "ACF Fiorentina",
       "club_ranking" : "24",
       "id" : "25"
     }, {
       "club_country" : "UKR",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52723.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52723.png",
       "club_name" : "FC Dynamo Kyiv",
       "club_ranking" : "25",
       "id" : "26",
@@ -173,18 +198,21 @@
     }, {
       "club_country" : "NED",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50143.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50143.png",
       "club_name" : "AFC Ajax",
       "club_ranking" : "26",
       "id" : "27"
     }, {
       "club_country" : "ESP",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/70691.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/70691.png",
       "club_name" : "Villarreal CF",
       "club_ranking" : "27",
       "id" : "28"
     }, {
       "club_country" : "GRE",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/2610.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/2610.png",
       "club_name" : "Olympiacos FC",
       "club_ranking" : "28",
       "id" : "29",
@@ -192,36 +220,42 @@
     }, {
       "club_country" : "FRA",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50023.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50023.png",
       "club_name" : "AS Monaco FC",
       "club_ranking" : "29",
       "id" : "30"
     }, {
       "club_country" : "ESP",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50125.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50125.png",
       "club_name" : "Athletic Club",
       "club_ranking" : "30",
       "id" : "31"
     }, {
       "club_country" : "TUR",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50067.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50067.png",
       "club_name" : "Galatasaray AS",
       "club_ranking" : "31",
       "id" : "32"
     }, {
       "club_country" : "BEL",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50074.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50074.png",
       "club_name" : "RSC Anderlecht",
       "club_ranking" : "32",
       "id" : "33"
     }, {
       "club_country" : "ITA",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52973.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52973.png",
       "club_name" : "SS Lazio",
       "club_ranking" : "33",
       "id" : "34"
     }, {
       "club_country" : "ENG",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/7889.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/7889.png",
       "club_name" : "Liverpool FC",
       "club_ranking" : "34",
       "id" : "35",
@@ -229,12 +263,14 @@
     }, {
       "club_country" : "GER",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/64332.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/64332.png",
       "club_name" : "VfL Wolfsburg",
       "club_ranking" : "35",
       "id" : "36"
     }, {
       "club_country" : "GER",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52757.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52757.png",
       "club_name" : "Borussia M'gladbach",
       "club_ranking" : "36",
       "id" : "37",
@@ -242,24 +278,28 @@
     }, {
       "club_country" : "ITA",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50137.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50137.png",
       "club_name" : "AS Roma",
       "club_ranking" : "37",
       "id" : "38"
     }, {
       "club_country" : "UKR",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50158.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50158.png",
       "club_name" : "Dnipro Dnipropetrovsk",
       "club_ranking" : "38",
       "id" : "39"
     }, {
       "club_country" : "TUR",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52692.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52692.png",
       "club_name" : "Fenerbahce SK",
       "club_ranking" : "39",
       "id" : "40"
     }, {
       "club_country" : "CZE",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50033.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50033.png",
       "club_name" : "AC Sparta Praha",
       "club_ranking" : "40",
       "id" : "41",
@@ -267,120 +307,140 @@
     }, {
       "club_country" : "ITA",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50058.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50058.png",
       "club_name" : "AC Milan",
       "club_ranking" : "41",
       "id" : "42"
     }, {
       "club_country" : "NED",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50062.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50062.png",
       "club_name" : "PSV Eindhoven",
       "club_ranking" : "42",
       "id" : "43"
     }, {
       "club_country" : "TUR",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50157.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50157.png",
       "club_name" : "Besiktas JK",
       "club_ranking" : "43",
       "id" : "44"
     }, {
       "club_country" : "BEL",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/61582.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/61582.png",
       "club_name" : "KRC Genk",
       "club_ranking" : "44",
       "id" : "45"
     }, {
       "club_country" : "ITA",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50138.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50138.png",
       "club_name" : "Internazionale Milano",
       "club_ranking" : "45",
       "id" : "46"
     }, {
       "club_country" : "RUS",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/82818.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/82818.png",
       "club_name" : "FC Rubin",
       "club_ranking" : "46",
       "id" : "47"
     }, {
       "club_country" : "ESP",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/74069.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/74069.png",
       "club_name" : "Malaga CF",
       "club_ranking" : "47",
       "id" : "48"
     }, {
       "club_country" : "SCO",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50050.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50050.png",
       "club_name" : "Celtic FC",
       "club_ranking" : "48",
       "id" : "49"
     }, {
       "club_country" : "CZE",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/64388.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/64388.png",
       "club_name" : "FC Viktoria Plzen",
       "club_ranking" : "49",
       "id" : "50"
     }, {
       "club_country" : "AUT",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50030.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50030.png",
       "club_name" : "FC Salzburg",
       "club_ranking" : "50",
       "id" : "51"
     }, {
       "club_country" : "ESP",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/53043.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/53043.png",
       "club_name" : "RC Celta de Vigo",
       "club_ranking" : "51",
       "id" : "52"
     }, {
       "club_country" : "RUS",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/54266.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/54266.png",
       "club_name" : "PFC CSKA Moskva",
       "club_ranking" : "52",
       "id" : "53"
     }, {
       "club_country" : "BEL",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50043.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50043.png",
       "club_name" : "Club Brugge KV",
       "club_ranking" : "53",
       "id" : "54"
     }, {
       "club_country" : "DEN",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52709.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52709.png",
       "club_name" : "FC Kobenhavn",
       "club_ranking" : "54",
       "id" : "55"
     }, {
       "club_country" : "POR",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52336.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52336.png",
       "club_name" : "SC Braga",
       "club_ranking" : "55",
       "id" : "56"
     }, {
       "club_country" : "ENG",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/53577.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/53577.png",
       "club_name" : "Leicester City FC",
       "club_ranking" : "56",
       "id" : "57"
     }, {
       "club_country" : "POR",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50149.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50149.png",
       "club_name" : "Sporting",
       "club_ranking" : "57",
       "id" : "58"
     }, {
       "club_country" : "FRA",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50022.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50022.png",
       "club_name" : "AS Saint-Étienne",
       "club_ranking" : "58",
       "id" : "59"
     }, {
       "club_country" : "BEL",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/4608.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/4608.png",
       "club_name" : "KAA Gent",
       "club_ranking" : "59",
       "id" : "60"
     }, {
       "club_country" : "ROU",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50065.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50065.png",
       "club_name" : "FC Steaua Bucuresti",
       "club_ranking" : "60",
       "id" : "61",
@@ -388,54 +448,63 @@
     }, {
       "club_country" : "GRE",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50130.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50130.png",
       "club_name" : "PAOK FC",
       "club_ranking" : "61",
       "id" : "62"
     }, {
       "club_country" : "BUL",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/2603104.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/2603104.png",
       "club_name" : "PFC Ludogorets Razgrad",
       "club_ranking" : "62",
       "id" : "63"
     }, {
       "club_country" : "ESP",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/87959.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/87959.png",
       "club_name" : "Levante UD",
       "club_ranking" : "63",
       "id" : "64"
     }, {
       "club_country" : "ESP",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52265.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52265.png",
       "club_name" : "Real Betis Balompie",
       "club_ranking" : "64",
       "id" : "65"
     }, {
       "club_country" : "NED",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52327.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52327.png",
       "club_name" : "AZ Alkmaar",
       "club_ranking" : "65",
       "id" : "66"
     }, {
       "club_country" : "RUS",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/2601038.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/2601038.png",
       "club_name" : "FC Krasnodar",
       "club_ranking" : "66",
       "id" : "67"
     }, {
       "club_country" : "RUS",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/75050.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/75050.png",
       "club_name" : "FC Anji",
       "club_ranking" : "67",
       "id" : "68"
     }, {
       "club_country" : "ENG",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/59324.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/59324.png",
       "club_name" : "Newcastle United FC",
       "club_ranking" : "68",
       "id" : "69"
     }, {
       "club_country" : "BLR",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/66168.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/66168.png",
       "club_name" : "FC BATE Borisov",
       "club_ranking" : "69",
       "id" : "70",
@@ -444,12 +513,14 @@
     }, {
       "club_country" : "FRA",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50127.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50127.png",
       "club_name" : "Girondins de Bordeaux",
       "club_ranking" : "70",
       "id" : "71"
     }, {
       "club_country" : "ENG",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52281.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52281.png",
       "club_name" : "Everton FC",
       "club_ranking" : "71",
       "id" : "72"
@@ -492,6 +563,7 @@
     }, {
       "club_country" : "RUS",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52704.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52704.png",
       "club_name" : "Dinamo Moskva",
       "club_ranking" : "78",
       "id" : "79"
@@ -546,6 +618,7 @@
     }, {
       "club_country" : "RUS",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/64500.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/64500.png",
       "club_name" : "FC Rostov",
       "club_ranking" : "87",
       "id" : "88"
@@ -558,6 +631,7 @@
     }, {
       "club_country" : "NED",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52749.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52749.png",
       "club_name" : "Feyenoord",
       "club_ranking" : "89",
       "id" : "90"
@@ -582,6 +656,7 @@
     }, {
       "club_country" : "ENG",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52659.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52659.png",
       "club_name" : "Swansea City AFC",
       "club_ranking" : "93",
       "id" : "94"
@@ -606,6 +681,7 @@
     }, {
       "club_country" : "RUS",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/53065.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/53065.png",
       "club_name" : "FC Lokomotiv Moskva",
       "club_ranking" : "97",
       "id" : "98"
@@ -648,6 +724,7 @@
     }, {
       "club_country" : "RUS",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50068.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50068.png",
       "club_name" : "FC Spartak Moskva",
       "club_ranking" : "104",
       "id" : "105"
@@ -660,6 +737,7 @@
     }, {
       "club_country" : "AZE",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/60609.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/60609.png",
       "club_name" : "Qarabağ FK",
       "club_ranking" : "106",
       "id" : "107"
@@ -678,6 +756,7 @@
     }, {
       "club_country" : "UKR",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/53064.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/53064.png",
       "club_name" : "FC Chornomorets Odesa",
       "club_ranking" : "109",
       "id" : "110"
@@ -714,6 +793,7 @@
     }, {
       "club_country" : "ROU",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/88131.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/88131.png",
       "club_name" : "CFR 1907 Cluj",
       "club_ranking" : "115",
       "id" : "116"
@@ -732,6 +812,7 @@
     }, {
       "club_country" : "KAZ",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/2600605.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/2600605.png",
       "club_name" : "FC Astana",
       "club_ranking" : "118",
       "id" : "119"
@@ -786,6 +867,7 @@
     }, {
       "club_country" : "GRE",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50084.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50084.png",
       "club_name" : "Panathinaikos FC",
       "club_ranking" : "127",
       "id" : "128"
@@ -795,12 +877,6 @@
       "club_name" : "Vitoria SC",
       "club_ranking" : "128",
       "id" : "129"
-    }, {
-      "club_country" : "POR",
-      "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/53013.png",
-      "club_name" : "CS Maritimo",
-      "club_ranking" : "129",
-      "id" : "130"
     }, {
       "club_country" : "DEN",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/64140.png",
@@ -850,14 +926,9 @@
       "club_ranking" : "137",
       "id" : "138"
     }, {
-      "club_country" : "NOR",
-      "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52806.png",
-      "club_name" : "Rosenborg BK",
-      "club_ranking" : "138",
-      "id" : "139"
-    }, {
       "club_country" : "NED",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/52818.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/52818.png",
       "club_name" : "FC Twente",
       "club_ranking" : "139",
       "id" : "140"
@@ -907,6 +978,7 @@
     }, {
       "club_country" : "BLR",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50161.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50161.png",
       "club_name" : "FC Dinamo Minsk",
       "club_ranking" : "147",
       "id" : "148"
@@ -1021,6 +1093,7 @@
     }, {
       "club_country" : "UKR",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/64312.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/64312.png",
       "club_name" : "FC Metalurh Donetsk",
       "club_ranking" : "160",
       "id" : "168"
@@ -1063,6 +1136,7 @@
     }, {
       "club_country" : "SWE",
       "club_logo" : "http://img.uefa.com/imgml/TP/teams/logos/18x18/50066.png",
+      "club_logo_large" : "http://img.uefa.com/imgml/TP/teams/logos/70x70/50066.png",
       "club_name" : "IFK Goteborg",
       "club_ranking" : "168",
       "id" : "175"

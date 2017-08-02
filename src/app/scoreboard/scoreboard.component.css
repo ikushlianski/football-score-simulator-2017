@@ -24,16 +24,17 @@ p.aggregateStatus {
   font-size: small;
 }
 .awayTeamLogo {
-  flex-basis: 40%;
+  /*flex-basis: 40%;*/
   display: flex;
   justify-content: flex-start;
+  padding-right: 1em;
 }
 .awayTeamName {
   display: flex;
   flex-basis: 60%;
   flex-direction: column;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: white;
 }
 .awayTeamZone{
@@ -44,9 +45,10 @@ p.aggregateStatus {
   align-self: flex-start;
 }
 .homeTeamLogo {
-  flex-basis: 40%;
+  /*flex-basis: 40%;*/
   display: flex;
   justify-content: flex-end;
+  padding-left: 1em;
 }
 .homeTeamName {
   display: flex;
@@ -55,7 +57,7 @@ p.aggregateStatus {
   flex-direction: column;
   align-items: flex-end;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: white;
 }
 .homeTeamScorers {
@@ -190,5 +192,11 @@ p.aggregateStatus {
 @media screen and (max-width: 600px) {
   .homeTeamLogo, .awayTeamLogo {
     display:none;
+  }
+  .awayTeamName {
+    flex-basis: 100%;
+  }
+  .homeTeamName {
+    flex-basis: 100%;
   }
 }

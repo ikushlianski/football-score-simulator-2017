@@ -43,7 +43,6 @@ export class ScoreboardComponent implements OnInit {
     this._mainService.matchLocation$.subscribe(
       data => {
         this.matchLocation = data;
-        console.log('scoreboard received match location: ' + this.matchLocation);
       }
     );
 
@@ -93,14 +92,12 @@ export class ScoreboardComponent implements OnInit {
     this._mainService.homeRelativeStrength$.subscribe(
       data => {
         this.homeRelativeStrength = data;
-        console.log(this.homeRelativeStrength);
       }
     );
     // relative strength of away team
     this._mainService.awayRelativeStrength$.subscribe(
       data => {
         this.awayRelativeStrength = data;
-        console.log(this.awayRelativeStrength);
       }
     );
 
@@ -544,7 +541,6 @@ export class ScoreboardComponent implements OnInit {
               // if this is not the 2nd leg
               // maybe add moments when game arbitrarily continues despite time elapsed
               this.matchStatus = this.matchStatuses[3];
-              console.info('home team morale after match: ' + this.homeTeamMorale.toFixed(3), 'away team morale after match: ' + this.awayTeamMorale.toFixed(3));
               return;
             }
           }

@@ -10,11 +10,11 @@
   <div class="scoreboard__mainRow">
     <div class="homeTeamZone">
       <div class="nameAndLogoHome">
-        <div class="homeTeamLogo">
-          <img [src]="homeTeamLogoLarge || '../../assets/img/fantasy_team.png' " alt="">
-        </div>
         <div class="homeTeamName scoreboard__homeTeamName">
           {{homeTeamName}}
+        </div>
+        <div class="homeTeamLogo">
+          <img [src]="homeTeamLogoLarge || '../../assets/img/fantasy_team.png' " alt="">
         </div>
       </div>
     </div>
@@ -25,11 +25,11 @@
     </div>
     <div class="awayTeamZone">
       <div class="nameAndLogoAway">
-        <div class="awayTeamName scoreboard__awayTeamName">
-          {{awayTeamName}}
-        </div>
         <div class="awayTeamLogo">
           <img [src]="awayTeamLogoLarge || '../../assets/img/fantasy_team.png' " alt="">
+        </div>
+        <div class="awayTeamName scoreboard__awayTeamName">
+          {{awayTeamName}}
         </div>
       </div>
     </div>
