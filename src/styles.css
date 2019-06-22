@@ -43,3 +43,9 @@ select {
 .ngui-auto-complete li {
     color: black;
 }
+
+.announcement {
+  background: #0000004a;
+  padding: 10px;
+  margin-top: 1em;
+}
