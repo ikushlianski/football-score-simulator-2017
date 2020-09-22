@@ -26,9 +26,8 @@
    * Specify one of: "pnpmVersion", "npmVersion", or "yarnVersion".  See the Rush documentation
    * for details about these alternatives.
    */
-  "pnpmVersion": "4.14.4",
-
-  // "npmVersion": "4.5.0",
+  // "pnpmVersion": "4.14.4",
+  "npmVersion": "6.14.8",
   // "yarnVersion": "1.9.4",
 
   /**
@@ -121,7 +120,7 @@
    * Specify a SemVer range to ensure developers use a Node.js version that is appropriate
    * for your repo.
    */
-  "nodeSupportedVersionRange": ">=12.13.0 <13.0.0",
+  "nodeSupportedVersionRange": ">=12.13.0 <15.0.0",
 
   /**
    * Odd-numbered major versions of Node.js are experimental.  Even-numbered releases
@@ -214,7 +213,7 @@
   //     "tools",      // non-shipping projects that are part of the developer toolchain
   //     "prototypes"  // experiments that should mostly be ignored by the review process
   //   ],
-  // 
+  //
   //   /**
   //    * A list of NPM package scopes that will be excluded from review.
   //    * We recommend to exclude TypeScript typings (the "@types" scope), because
@@ -343,7 +342,7 @@
     //    * The folder name for this variant.
     //    */
     //   "variantName": "old-sdk",
-    // 
+    //
     //   /**
     //    * An informative description
     //    */
@@ -377,24 +376,24 @@
    * 3. It's useful to have a centralized inventory of all projects and their important metadata.
    */
   "projects": [
-    // {
+     {
     //   /**
     //    * The NPM package name of the project (must match package.json)
     //    */
-    //   "packageName": "my-app",
-    // 
+       "packageName": "@fss/frontend",
+    //
     //   /**
     //    * The path to the project folder, relative to the rush.json config file.
     //    */
-    //   "projectFolder": "apps/my-app",
-    // 
+       "projectFolder": "apps/frontend",
+    //
     //   /**
     //    * An optional category for usage in the "browser-approved-packages.json"
     //    * and "nonbrowser-approved-packages.json" files.  The value must be one of the
     //    * strings from the "reviewCategories" defined above.
     //    */
     //   "reviewCategory": "production",
-    // 
+    //
     //   /**
     //    * A list of local projects that appear as devDependencies for this project, but cannot be
     //    * locally linked because it would create a cyclic dependency; instead, the last published
@@ -403,34 +402,37 @@
     //   "cyclicDependencyProjects": [
     //     // "my-toolchain"
     //   ],
-    // 
+    //
     //   /**
     //    * If true, then this project will be ignored by the "rush check" command.
     //    * The default value is false.
     //    */
     //   // "skipRushCheck": false,
-    // 
+    //
     //   /**
     //    * A flag indicating that changes to this project will be published to npm, which affects
     //    * the Rush change and publish workflows. The default value is false.
     //    * NOTE: "versionPolicyName" and "shouldPublish" are alternatives; you cannot specify them both.
     //    */
     //   // "shouldPublish": false,
-    // 
+    //
     //   /**
     //    * An optional version policy associated with the project.  Version policies are defined
     //    * in "version-policies.json" file.  See the "rush publish" documentation for more info.
     //    * NOTE: "versionPolicyName" and "shouldPublish" are alternatives; you cannot specify them both.
     //    */
     //   // "versionPolicyName": ""
-    // },
-    // 
-    // {
-    //   "packageName": "my-controls",
-    //   "projectFolder": "libraries/my-controls",
-    //   "reviewCategory": "production"
-    // },
-    // 
+     },
+    //
+     {
+       "packageName": "@fss/api",
+       "projectFolder": "apps/api",
+     },
+    {
+      "packageName": "@fss/shared",
+      "projectFolder": "libs/shared",
+    },
+    //
     // {
     //   "packageName": "my-toolchain",
     //   "projectFolder": "tools/my-toolchain",

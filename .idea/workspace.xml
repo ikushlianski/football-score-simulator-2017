@@ -2,72 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fef6c47-21e2-4c7a-832f-1d064841e21a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.npmrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.nvmrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular-cli.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/app.e2e-spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/app.po.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/karma.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protractor.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/allmatches/allmatches.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/allmatches/allmatches.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/allmatches/allmatches.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/allmatches/allmatches.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/appsettings/appsettings.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/appsettings/appsettings.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/appsettings/appsettings.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/appsettings/appsettings.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/comments/comments.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/comments/comments.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/comments/comments.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/comments/comments.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/mainservice.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/mainservice.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/match-model.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/matchsettings/matchsettings.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/matchsettings/matchsettings.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/matchsettings/matchsettings.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/matchsettings/matchsettings.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/scoreboard/scoreboard.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/scoreboard/scoreboard.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/scoreboard/scoreboard.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/scoreboard/scoreboard.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/stats/stats.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/stats/stats.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/stats/stats.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/stats/stats.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/el_background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/fantasy_team.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/grass.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/redcard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/stadium.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/img/ucl_background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/environment.prod.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/environment.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/polyfills.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uefa_clubs_nations.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uefa_clubs_nations_2017.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uefa_clubs_nations_2019.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/frontend/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/frontend/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,20 +28,26 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../job-search-organizer" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.jscs" value="project" />
     <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="" />
     <property name="node.js.selected.package.jscs" value="" />
     <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="inlay.hints.TypeScript" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/apps/frontend/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/libs/shared" />
+      <recent name="$PROJECT_DIR$/apps/api" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -148,6 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605461449064</updated>
       <workItem from="1605461450172" duration="2406000" />
+      <workItem from="1605555658224" duration="3822000" />
     </task>
     <servers />
   </component>
@@ -158,6 +101,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1605559087311">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1605559087311" />
     <state x="485" y="190" width="1022" height="737" key="SettingsEditor" timestamp="1605465832033">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
