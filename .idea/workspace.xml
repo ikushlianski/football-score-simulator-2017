@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fef6c47-21e2-4c7a-832f-1d064841e21a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/frontend/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/frontend/src/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/config/rush/npm-shrinkwrap.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/config/rush/npm-shrinkwrap.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/shared/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/shared/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +30,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../job-search-organizer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/apps/api" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.jscs" value="project" />
@@ -46,8 +48,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/libs/shared" />
       <recent name="$PROJECT_DIR$/apps/api" />
+      <recent name="$PROJECT_DIR$/libs/shared" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -90,7 +92,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605461449064</updated>
       <workItem from="1605461450172" duration="2406000" />
-      <workItem from="1605555658224" duration="3822000" />
+      <workItem from="1605555658224" duration="4627000" />
     </task>
     <servers />
   </component>
@@ -109,5 +111,9 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="485" y="190" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1605465832033" />
+    <state x="721" y="385" width="540" height="344" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1605560184431">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="721" y="385" width="540" height="344" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1605560184431" />
   </component>
 </project>

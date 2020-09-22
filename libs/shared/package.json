@@ -22,11 +22,6 @@
     "analyze": "size-limit --why"
   },
   "peerDependencies": {},
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
   "module": "dist/shared.esm.js",
   "size-limit": [
     {
