@@ -1,8 +1,6 @@
 {
     "root": true,
     "env": {
-        "browser": true,
-        "node": true,
         "es2020": true
     },
     "extends": [
@@ -20,6 +18,7 @@
         "prettier"
     ],
     "rules": {
-        "prettier/prettier": "warn"
+        "prettier/prettier": "warn",
+      "newline-before-return": "warn"
     }
 }
