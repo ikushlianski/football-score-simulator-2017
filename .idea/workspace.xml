@@ -2,63 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fef6c47-21e2-4c7a-832f-1d064841e21a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.yarnrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/api/.eslintrc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/api/test.js.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/football-score-simulator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/football-score-simulator.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.npmrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.nvmrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/frontend/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/frontend/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/frontend/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/frontend/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/frontend/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/frontend/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/frontend/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/frontend/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/frontend/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/frontend/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/frontend/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/frontend/src/App.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/frontend/src/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/frontend/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/frontend/src/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/frontend/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/frontend/src/react-app-env.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/frontend/src/reportWebVitals.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/frontend/src/setupTests.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/frontend/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/config/rush/.npmrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/config/rush/.npmrc-publish" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/config/rush/command-line.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/config/rush/common-versions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/config/rush/experiments.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/config/rush/npm-shrinkwrap.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/config/rush/version-policies.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/git-hooks/commit-msg.sample" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/scripts/install-run-rush.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/scripts/install-run-rushx.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/scripts/install-run.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/shared/.github/workflows/main.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/shared/.github/workflows/size.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/shared/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/shared/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/shared/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/shared/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/shared/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/shared/src/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/shared/test/blah.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/shared/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rush.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/api/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/api/test.js.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -160,6 +109,9 @@
       <workItem from="1605645120886" duration="2766000" />
       <workItem from="1605647917291" duration="3978000" />
       <workItem from="1605652768318" duration="1172000" />
+      <workItem from="1605732132525" duration="396000" />
+      <workItem from="1605732533668" duration="1095000" />
+      <workItem from="1605733634442" duration="690000" />
     </task>
     <servers />
   </component>
@@ -170,17 +122,28 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1605647889207">
-      <screen x="72" y="27" width="1848" height="1053" />
+    <state x="707" y="354" width="556" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605733946934">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
+    <state x="707" y="354" width="556" height="396" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1605733946934" />
+    <state x="734" y="424" width="508" height="257" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1605732525939">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="734" y="424" width="508" height="257" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1605732525939" />
+    <state x="776" y="311" width="501" height="491" key="FileChooserDialogImpl" timestamp="1605732519392">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="776" y="311" width="501" height="491" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1605732519392" />
     <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1605647889207" />
-    <state x="485" y="190" width="1022" height="737" key="SettingsEditor" timestamp="1605652673947">
-      <screen x="72" y="27" width="1848" height="1053" />
+    <state x="481" y="190" width="1022" height="737" key="SettingsEditor" timestamp="1605733859097">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
+    <state x="481" y="190" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1605733859097" />
     <state x="485" y="190" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1605652673947" />
-    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1605645225746">
-      <screen x="72" y="27" width="1848" height="1053" />
+    <state x="656" y="259" width="674" height="678" key="search.everywhere.popup" timestamp="1605732143117">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
+    <state x="656" y="259" width="674" height="678" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1605732143117" />
     <state x="659" y="259" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1605645225746" />
     <state x="721" y="385" width="540" height="344" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1605648354371">
       <screen x="72" y="27" width="1848" height="1053" />
