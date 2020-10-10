@@ -1,0 +1,10 @@
+{
+  "name": "@fss/core",
+  "version": "0.1.0",
+  "author": "Ilya Kushlianski",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "echo 'todo'"
+  }
+}
