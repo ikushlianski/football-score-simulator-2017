@@ -1,14 +1,26 @@
 # error out on failures
 set -e;
 
-# check types
-tsc --noEmit
+for dir in packages/*/
+do
+  cd "${dir}"
 
-# run tests for all packages
-cd packages/api
-yarn test -- --watchAll=false
-cd -
+  # check types across packages
+  tsc --noEmit
 
-cd packages/frontend
-yarn test -- --watchAll=false
-cd -
+  # run tests
+  yarn test --watchAll=false
+
+  cd -
+done
+
+echo '
+     _____
+    / ____|
+   | (___   _   _   ___  ___  ___  ___  ___
+    \___ \ | | | | / __|/ __|/ _ \/ __|/ __|
+    ____) || |_| || (__| (__|  __/\__ \\__ \
+   |_____/  \__,_| \___|\___|\___||___/|___/
+
+
+'
