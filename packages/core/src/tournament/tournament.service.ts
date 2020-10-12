@@ -1,3 +1,1 @@
-export class TournamentService {
-
-}
+export class TournamentService {}
