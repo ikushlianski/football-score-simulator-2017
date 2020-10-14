@@ -5,11 +5,15 @@ for dir in packages/*/
 do
   cd "${dir}"
 
+  echo "Switching to ${dir}"
+
   # check types across packages
   tsc --noEmit
 
   # run tests
   yarn test --watchAll=false
+
+  echo "Done"
 
   cd -
 done
