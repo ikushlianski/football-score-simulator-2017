@@ -1,7 +1,7 @@
 import { RulesManager } from '../../tournament/rules-manager';
 import { TournamentRulesInterface } from '../../tournament/tournament-rules.interface';
 import { TournamentFormatEnum } from '../../tournament/tournament-format.enum';
-import { PlayOffFormatEnum } from '../../tournament/play-off-format.enum';
+import { PlayOffFormatEnum } from '../../format/play-off-format.enum';
 
 export class UnlRulesManager extends RulesManager {
   rules: TournamentRulesInterface;
@@ -20,6 +20,13 @@ export class UnlRulesManager extends RulesManager {
         thirdPlaceMatch: false,
       },
       playOffTeamCount: PlayOffFormatEnum.semiFinals,
+      promotions: true,
+      promotionRules: {
+        lastNTeamsPromoted: 1,
+      },
+      relegationRules: {
+        lastNTeamsRelegated: 1,
+      },
     };
   }
 }

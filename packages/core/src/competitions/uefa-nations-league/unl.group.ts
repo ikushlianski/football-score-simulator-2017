@@ -6,7 +6,7 @@ import { TeamInterface } from '../../team/team.interface';
 import { TournamentRulesInterface } from '../../tournament/tournament-rules.interface';
 import { CompetitionsEnum } from '../competitions.enum';
 
-export abstract class UnlCompetition implements Tournament {
+export abstract class UnlLeague implements League {
   tournamentCode: string;
   teams: TeamInterface[];
   rules: TournamentRulesInterface;

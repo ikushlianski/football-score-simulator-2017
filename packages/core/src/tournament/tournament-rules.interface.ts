@@ -1,7 +1,9 @@
-import { PlayoffFormatInterface } from './playoff-format.interface';
-import { PlayOffFormatEnum } from './play-off-format.enum';
+import { PlayOffFormatInterface } from '../format/play-off-format.interface';
+import { PlayOffFormatEnum } from '../format/play-off-format.enum';
 import { Tournament } from './tournament';
 import { TournamentFormatEnum } from './tournament-format.enum';
+import { PromotionRulesInterface } from './promotion-rules.interface';
+import { RelegationRulesInterface } from './relegation-rules.interface';
 
 export interface TournamentRulesInterface {
   teamCount: number;
@@ -9,15 +11,9 @@ export interface TournamentRulesInterface {
   groupsPerLeague: number;
   format: TournamentFormatEnum;
   qualification: boolean;
+  qualificationTournament: Tournament;
   qualificationRules?: TournamentRulesInterface;
-  playOffFormat?: PlayoffFormatInterface;
+  playOffFormat?: PlayOffFormatInterface;
   playOffTeamCount?: PlayOffFormatEnum;
-  promotions?: boolean;
-  promotionTo?: Tournament | Group | League;
-  promotionRules?: PromotionRules;
-  relegationRules?: RelegationRules;
-  relegationTo?: Tournament;
   recurring?: boolean;
 }
-
-export interface GroupRulesInterface {}

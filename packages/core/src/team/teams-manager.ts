@@ -1,5 +1,5 @@
-import { TeamInterface } from '../team/team.interface';
-import { Tournament } from './tournament';
+import { TeamInterface } from './team.interface';
+import { Tournament } from '../tournament/tournament';
 
 export abstract class TeamsManager {
   teams: TeamInterface[];
