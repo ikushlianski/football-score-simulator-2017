@@ -1,9 +1,9 @@
-import { RulesManager } from '../../tournament/rules-manager';
-import { TournamentRulesInterface } from '../../tournament/tournament-rules.interface';
+import { TournamentRules } from '../../rules/tournament-rules';
+import { TournamentRulesInterface } from '../../rules/tournament-rules.interface';
 import { TournamentFormatEnum } from '../../tournament/tournament-format.enum';
 import { PlayOffFormatEnum } from '../../format/play-off-format.enum';
 
-export class UnlRulesManager extends RulesManager {
+export class UnlRulesManager extends TournamentRules {
   rules: TournamentRulesInterface;
 
   constructor() {
@@ -20,6 +20,8 @@ export class UnlRulesManager extends RulesManager {
         thirdPlaceMatch: false,
       },
       playOffTeamCount: PlayOffFormatEnum.semiFinals,
+
+      // todo move to League manager
       promotions: true,
       promotionRules: {
         lastNTeamsPromoted: 1,

@@ -1,27 +1,33 @@
 import { Tournament } from '../../tournament';
-import { TeamsManager } from '../../team/teams-manager';
-import { RulesManager } from '../../tournament/rules-manager';
-import { DatabaseInterface } from '../../db/database.interface';
+import { TeamsManager } from '../../team/teams.manager';
+import { TournamentRules } from '../../rules/tournament-rules';
 import { TeamInterface } from '../../team/team.interface';
-import { TournamentRulesInterface } from '../../tournament/tournament-rules.interface';
+import { TournamentRulesInterface } from '../../rules/tournament-rules.interface';
 import { CompetitionsEnum } from '../competitions.enum';
+import { League } from '../../league/league';
 
 export abstract class UnlCompetition implements Tournament {
   tournamentCode: string;
   teams: TeamInterface[];
-  rules: TournamentRulesInterface;
+  leagues: League[];
+  tournamentRules: TournamentRulesInterface;
 
   protected constructor(
     teamsManager: TeamsManager,
-    rulesManager: RulesManager,
-    private db: DatabaseInterface,
+    rulesManager: TournamentRules,
+    leaguesManager: LeaguesManager,
   ) {
     this.tournamentCode = CompetitionsEnum.UNL;
     this.teams = teamsManager.getTeams();
-    this.rules = rulesManager.getRules();
-    this.db = db;
+    this.tournamentRules = rulesManager.getRules();
+    this.leagues = leagues;
   }
 
-  abstract start(): Promise<void>;
-  abstract end(): Promise<void>;
+  end(): () => void {
+    return function () {};
+  }
+
+  start(): () => void {
+    return function () {};
+  }
 }

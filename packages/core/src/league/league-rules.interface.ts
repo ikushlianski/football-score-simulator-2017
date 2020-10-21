@@ -1,7 +1,7 @@
 import { Tournament } from '../tournament';
 import { Group } from '../group/group';
-import { PromotionRulesInterface } from '../tournament/promotion-rules.interface';
-import { RelegationRulesInterface } from '../tournament/relegation-rules.interface';
+import { PromotionRulesInterface } from '../rules/promotion-rules.interface';
+import { RelegationRulesInterface } from '../rules/relegation-rules.interface';
 import { League } from './league';
 
 export interface LeagueRulesInterface {

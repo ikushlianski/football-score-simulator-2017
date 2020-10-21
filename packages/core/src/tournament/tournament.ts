@@ -1,12 +1,12 @@
-import { TeamInterface } from '../team/team.interface';
-import { TournamentRulesInterface } from './tournament-rules.interface';
 import { League } from '../league/league';
+import { TournamentRules } from '../rules/tournament-rules';
+import { CompetitionsEnum } from '../competitions/competitions.enum';
 
 export abstract class Tournament {
-  abstract tournamentCode: string;
-  abstract leagues: League[];
-  abstract rules: TournamentRulesInterface;
+  abstract tournamentCode: CompetitionsEnum;
+  abstract tournamentRules: TournamentRules;
+  abstract leagues?: League[];
 
-  abstract start(): unknown;
-  abstract end(): unknown;
+  abstract start(): () => void;
+  abstract end(): () => void;
 }

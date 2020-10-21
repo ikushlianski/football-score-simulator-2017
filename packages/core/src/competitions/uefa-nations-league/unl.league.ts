@@ -5,7 +5,7 @@ import { TeamInterface } from '../../team/team.interface';
 import { TournamentRulesInterface } from '../../rules/tournament-rules.interface';
 import { League } from '../../league/league';
 
-export abstract class UnlGroup extends League {
+export abstract class UnlLeague extends League {
   teams: TeamInterface[];
   rules: TournamentRulesInterface;
 
