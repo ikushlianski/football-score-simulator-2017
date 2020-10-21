@@ -1,12 +1,13 @@
 import { Group } from '../group/group';
-import { LeagueRulesInterface } from './league-rules.interface';
+import { LeagueRules } from './league-rules';
 import { TeamInterface } from '../team/team.interface';
+import { Team } from '../team/team';
 
 export abstract class League {
   abstract groups: Group[];
-  abstract leagueRules: LeagueRulesInterface;
+  abstract leagueRules: LeagueRules;
 
   // todo shouldn't manager do this?
-  abstract promoteTeams: (teams: TeamInterface[]) => void;
-  abstract relegateTeams: (teams: TeamInterface[]) => void;
+  abstract promoteTeams: (teams: Team[]) => void;
+  abstract relegateTeams: (teams: Team[]) => void;
 }

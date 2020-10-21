@@ -1,5 +1,5 @@
 export interface PlayOffFormatInterface {
-  legsBeforeFinal: 1 | 2;
-  legsInFinal: 1 | 2;
+  legsBeforeFinal: number;
+  legsInFinal: number;
   thirdPlaceMatch: boolean;
 }

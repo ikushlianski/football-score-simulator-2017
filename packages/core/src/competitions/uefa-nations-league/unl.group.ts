@@ -1,16 +1,15 @@
-import { TeamsManager } from '../../team/teams.manager';
+import { Team } from '../../team/team';
 import { TournamentRules } from '../../rules/tournament-rules';
 import { DatabaseInterface } from '../../db/database.interface';
-import { TeamInterface } from '../../team/team.interface';
 import { TournamentRulesInterface } from '../../rules/tournament-rules.interface';
 import { League } from '../../league/league';
 
 export abstract class UnlGroup extends League {
-  teams: TeamInterface[];
+  teams: Team[];
   rules: TournamentRulesInterface;
 
   protected constructor(
-    teamsManager: TeamsManager,
+    teamsManager: Team,
     rulesManager: TournamentRules,
     private db: DatabaseInterface,
   ) {

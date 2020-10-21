@@ -4,17 +4,17 @@ import { PromotionRulesInterface } from '../rules/promotion-rules.interface';
 import { RelegationRulesInterface } from '../rules/relegation-rules.interface';
 import { League } from './league';
 
-export interface LeagueRulesInterface {
-  maxTeamCount: number;
-  minTeamCount: number;
-  homeAndAway?: boolean;
-  roundCount: number;
+export abstract class LeagueRules {
+  abstract maxTeamCount: number;
+  abstract minTeamCount: number;
+  abstract homeAndAway: boolean;
+  abstract roundCount: number;
 
-  promotions?: boolean;
+  abstract promotions: boolean;
   promotionTo?: Tournament | Group | League;
   promotionRules?: PromotionRulesInterface;
 
-  relegations?: boolean;
-  relegationRules?: RelegationRulesInterface;
+  abstract relegations: boolean;
   relegationTo?: Tournament | Group | League;
+  relegationRules?: RelegationRulesInterface;
 }
