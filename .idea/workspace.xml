@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fef6c47-21e2-4c7a-832f-1d064841e21a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/packages/api/.eslintrc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/frontend/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/api/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/api/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/api/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/frontend/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/api/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/api/src/app.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/api/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/api/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/frontend/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/frontend/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/frontend/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -44,7 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/frontend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/api/src" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -65,6 +64,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/packages/api/src" />
       <recent name="$PROJECT_DIR$/packages/frontend" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/apps/api" />
@@ -116,7 +116,7 @@
       <workItem from="1605652768318" duration="1172000" />
       <workItem from="1605732132525" duration="396000" />
       <workItem from="1605732533668" duration="1095000" />
-      <workItem from="1605733634442" duration="2096000" />
+      <workItem from="1605733634442" duration="6572000" />
     </task>
     <servers />
   </component>
@@ -127,18 +127,22 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="839" y="444" width="298" height="217" key="#ESLint" timestamp="1605735225587">
+    <state x="839" y="444" width="298" height="217" key="#ESLint" timestamp="1605817552225">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="839" y="444" width="298" height="217" key="#ESLint/67.27.1853.1053@67.27.1853.1053" timestamp="1605735225587" />
-    <state x="707" y="354" width="556" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605733946934">
+    <state x="839" y="444" width="298" height="217" key="#ESLint/67.27.1853.1053@67.27.1853.1053" timestamp="1605817552225" />
+    <state x="707" y="354" width="587" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605816812626">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="707" y="354" width="556" height="396" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1605733946934" />
+    <state x="707" y="354" width="587" height="396" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1605816812626" />
     <state x="734" y="424" width="508" height="257" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1605732525939">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="734" y="424" width="508" height="257" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1605732525939" />
+    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605817795409">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="726" y="301" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1605817795409" />
     <state x="776" y="311" width="501" height="491" key="FileChooserDialogImpl" timestamp="1605732519392">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

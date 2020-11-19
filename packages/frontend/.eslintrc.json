@@ -1,3 +1,7 @@
 {
-  "extends": ["../../.eslintrc.json"]
+  "extends": ["../../.eslintrc.json"],
+  "env": {
+    "es2020": true,
+    "node": false
+  }
 }
