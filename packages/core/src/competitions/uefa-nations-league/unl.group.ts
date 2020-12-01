@@ -1,24 +1,13 @@
-import { Team } from '../../team/team';
-import { TournamentRules } from '../../rules/tournament-rules';
-import { DatabaseInterface } from '../../db/database.interface';
-import { TournamentRulesInterface } from '../../rules/tournament-rules.interface';
-import { League } from '../../league/league';
+import { Group } from '../../entities/group/group';
+import { Team } from '../../entities/team/team';
 
-export abstract class UnlGroup extends League {
+export class UnlGroup extends Group {
   teams: Team[];
-  rules: TournamentRulesInterface;
+  isSynthetic = false;
 
-  protected constructor(
-    teamsManager: Team,
-    rulesManager: TournamentRules,
-    private db: DatabaseInterface,
-  ) {
+  constructor(teams: Team[]) {
     super();
-    this.teams = teamsManager.getTeams();
-    this.rules = rulesManager.getRules();
-    this.db = db;
-  }
 
-  abstract start(): Promise<void>;
-  abstract end(): Promise<void>;
+    this.teams = teams;
+  }
 }

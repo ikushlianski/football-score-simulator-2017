@@ -1,25 +1,19 @@
-import { Team } from '../../team/team';
-import { TournamentRules } from '../../rules/tournament-rules';
-import { DatabaseInterface } from '../../db/database.interface';
-import { TeamInterface } from '../../team/team.interface';
-import { TournamentRulesInterface } from '../../rules/tournament-rules.interface';
-import { League } from '../../league/league';
+import { League } from '../../entities/league/league';
+import { Group } from '../../entities/group/group';
+import { LeagueRules } from '../../entities/league/league-rules';
 
-export abstract class UnlLeague extends League {
-  teams: Team[];
-  rules: TournamentRulesInterface;
+export class UnlLeague extends League {
+  groups: Group[];
+  leagueRules: LeagueRules;
 
-  protected constructor(
-    teamsManager: Team,
-    rulesManager: TournamentRules,
-    private db: DatabaseInterface,
-  ) {
+  constructor(groups: Group[]) {
     super();
-    this.teams = teamsManager.getTeams();
-    this.rules = rulesManager.getRules();
-    this.db = db;
-  }
 
-  abstract start(): Promise<void>;
-  abstract end(): Promise<void>;
+    this.groups = groups;
+    this.leagueRules = {
+      homeAndAway: true,
+      maxTeamCount: 4,
+      minTeamCount: 3,
+    };
+  }
 }
