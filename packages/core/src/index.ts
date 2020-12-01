@@ -1,1 +1,1 @@
-export * from './tournament';
+export * from './entities/tournament';
