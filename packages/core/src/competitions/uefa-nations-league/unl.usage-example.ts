@@ -7,20 +7,15 @@ import { Team } from '../../entities/team/team';
 import { NationsEnum } from '../../entities/nation/nations.enum';
 
 const unlGroup1LeagueA = new UnlGroup([
-  new Team('Belarus', NationsEnum.Belarus),
+  new Team('Belarus', NationsEnum.Belarus, 2.5),
+  new Team('Lithuania', NationsEnum.Lithuania, 2.0),
+  new Team('Kazakhstan', NationsEnum.Kazakhstan, 2.0),
+  new Team('Albania', NationsEnum.Albania, 3.0),
 ]);
 
-const unlLeagueA = new UnlLeague();
-const unlLeagueB = new UnlLeague();
-const unlLeagueC = new UnlLeague();
-const unlLeagueD = new UnlLeague();
+const unlLeagueA = new UnlLeague([unlGroup1LeagueA]);
 
-const unlGroupStage = new UnlGroupStage([
-  unlLeagueA,
-  unlLeagueB,
-  unlLeagueC,
-  unlLeagueD,
-]);
+const unlGroupStage = new UnlGroupStage([unlLeagueA]);
 const unlFinals = new UnlFinals([]);
-const unlStages = [unlGroupStage, unlGroupStage];
+const unlStages = [unlGroupStage, unlFinals];
 const nationsLeague = new UnlCompetition(unlStages);

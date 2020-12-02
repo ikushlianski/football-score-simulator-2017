@@ -1,5 +1,7 @@
 import { Team } from '../entities/team/team';
 
-export class TeamStrengthService {
+class TeamStrengthService {
   public calculateTeamRelativeStrength(team: Team, allTeams: Team[]) {}
 }
+
+export const teamStrengthService = new TeamStrengthService();
