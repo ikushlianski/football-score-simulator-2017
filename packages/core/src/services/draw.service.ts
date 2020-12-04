@@ -7,6 +7,8 @@ import { Group } from '../entities/group/group';
 export class DrawService {
   public drawTournament(teams: Team[], stage: Stage, rules?: DrawRules) {
     const { leagues } = stage;
+    console.log('stage', stage);
+    console.log('leagues', leagues);
 
     if (leagues) {
       leagues.forEach((league) => {
@@ -15,16 +17,16 @@ export class DrawService {
       });
     } else if (stage.teams?.length) {
       // this is a cup tournament
-      this.drawCup(teams, rules);
+      // todo this.drawCup(teams, rules);
     }
   }
 
-  public drawLeague(teams: Team[], league: League, rules?: DrawRules) {
+  private drawLeague(teams: Team[], league: League, rules?: DrawRules): void {
     const teamsToDraw = [...teams];
     const drawRoutine = new DrawRoutine(teamsToDraw);
 
     do {
-      const team = drawRoutine.pullFirstTeam();
+      const team = drawRoutine.pullNextTeam();
 
       if (team) {
         drawRoutine.placeTeamToRandomGroup(team, league.groups);
@@ -32,10 +34,10 @@ export class DrawService {
     } while (teamsToDraw.length > 0);
   }
 
-  public drawCup(teams: Team[], rules?: DrawRules) {}
+  // private drawCup(teams: Team[], rules?: DrawRules) {}
 }
 
-class DrawRoutine {
+export class DrawRoutine {
   teams: Team[];
   drawTargets = [];
 
@@ -52,7 +54,7 @@ class DrawRoutine {
     return pickedTeam;
   };
 
-  public pullFirstTeam = () => {
+  public pullNextTeam = (): Team | undefined => {
     const [pickedTeam] = this.teams.splice(0, 1);
 
     return pickedTeam;
@@ -65,9 +67,21 @@ class DrawRoutine {
   private pickRandomGroup = (groups: Group[]) => {
     const availableGroups = this.getAvailableGroups(groups);
     const groupIndex = this.pickRandomIndex(availableGroups);
+
+    return groups[groupIndex];
   };
 
-  public placeTeamToRandomGroup = (team: Team, groups: Group[]) => {};
+  public placeTeamToRandomGroup = (team: Team, groups: Group[]): void => {
+    const availableGroups = this.getAvailableGroups(groups);
+    const group = this.pickRandomGroup(availableGroups);
+    if (group) {
+      group.teams.push(team);
+    } else {
+      throw Error(
+        `pickRandomGroup returned ${group}, but a group was expected`,
+      );
+    }
+  };
 
   private getMaxTeamsInAllGroups = (groups: Group[]) => {
     return groups.reduce((max, group) => {

@@ -6,7 +6,7 @@ export abstract class League {
   abstract leagueRules: LeagueRules;
 
   protected constructor() {
-    this.validateTeamCount();
+    // this.validateTeamCount();
   }
 
   private validateTeamCount() {
