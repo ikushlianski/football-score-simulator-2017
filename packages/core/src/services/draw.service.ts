@@ -7,8 +7,6 @@ import { Group } from '../entities/group/group';
 export class DrawService {
   public drawTournament(teams: Team[], stage: Stage, rules?: DrawRules) {
     const { leagues } = stage;
-    console.log('stage', stage);
-    console.log('leagues', leagues);
 
     if (leagues) {
       leagues.forEach((league) => {
