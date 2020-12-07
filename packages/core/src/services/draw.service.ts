@@ -58,7 +58,7 @@ export class DrawRoutine {
     return pickedTeam;
   };
 
-  public placeTeamToGroup = (team: Team, group: Group) => {
+  public placeTeamToGroup = (team: Team, group: Group): void => {
     group.teams.push(team);
   };
 
@@ -81,20 +81,6 @@ export class DrawRoutine {
     }
   };
 
-  private getMaxTeamsInAllGroups = (groups: Group[]) => {
-    return groups.reduce((max, group) => {
-      if (group.teams.length > max) {
-        max = group.teams.length;
-      }
-
-      return max;
-    }, 0);
-  };
-
-  private pickRandomIndex = (items: any[]) => {
-    return Math.floor(Math.random() * items.length);
-  };
-
   private getAvailableGroups = (groups: Group[]) => {
     const currentMaxTeamCount = this.getMaxTeamsInAllGroups(groups);
 
@@ -107,5 +93,19 @@ export class DrawRoutine {
     }
 
     return availableGroups;
+  };
+
+  private getMaxTeamsInAllGroups = (groups: Group[]) => {
+    return groups.reduce((max, group) => {
+      if (group.teams.length > max) {
+        max = group.teams.length;
+      }
+
+      return max;
+    }, 0);
+  };
+
+  private pickRandomIndex = (items: any[]) => {
+    return Math.floor(Math.random() * items.length);
   };
 }
