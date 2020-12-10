@@ -19,7 +19,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "./hooks/pre-commit.sh"
+      "pre-commit": "./git-hooks/pre-commit.sh"
     }
   },
   "dependencies": {

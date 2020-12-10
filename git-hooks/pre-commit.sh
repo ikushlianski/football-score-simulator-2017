@@ -1,3 +1,4 @@
+#!/bin/bash
 # error out on failures
 set -e;
 
