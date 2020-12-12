@@ -1,7 +1,7 @@
-import { DrawRoutine } from './draw.service';
 import { Team } from '../entities/team/team';
 import { NationsEnum } from '../entities/nation/nations.enum';
 import { UnlGroup } from '../competitions/uefa-nations-league/unl.group';
+import { DrawRoutine } from './draw-routine';
 
 describe('drawRoutine', function () {
   const initSpec = () => {
