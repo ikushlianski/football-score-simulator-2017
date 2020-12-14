@@ -10,14 +10,14 @@ const createLeagueTournament = () => {
   const team2 = new Team('Lithuania', NationsEnum.Lithuania, 2.0);
   const team3 = new Team('Kazakhstan', NationsEnum.Kazakhstan, 2.0);
   const team4 = new Team('Albania', NationsEnum.Albania, 2.5);
-  const teams = [team1, team2, team3, team4];
-  const group1 = new UnlGroup(teams);
+  const teamsToDraw = [team1, team2, team3, team4];
+  const group1 = new UnlGroup([]);
   const groups = [group1];
   const league = new UnlLeague(groups);
   const leagues = [league];
   const stage = new UnlGroupStage(leagues);
 
-  return { stage, teams };
+  return { stage, teamsToDraw };
 };
 
 // const createCupTournament = () => {
@@ -27,24 +27,31 @@ describe('Draw Service', () => {
   describe('drawTournament', () => {
     const initSpec = () => {
       const drawService = new DrawService();
-      const { stage, teams } = createLeagueTournament();
+      const { stage, teamsToDraw } = createLeagueTournament();
 
       const drawLeagueSpy = jest.spyOn(drawService as any, 'drawLeague');
 
-      drawService.drawTournament(teams, stage);
+      drawService.drawTournament(teamsToDraw, stage);
 
-      return { stage, teams, drawLeagueSpy };
+      return { stage, teamsToDraw, drawLeagueSpy };
     };
 
     it('should call drawLeague method if league is specified in stage', () => {
-      const { drawLeagueSpy, teams, stage } = initSpec();
+      const { drawLeagueSpy, teamsToDraw, stage } = initSpec();
 
       expect(drawLeagueSpy).toHaveBeenCalledTimes(1);
       expect(drawLeagueSpy).toHaveBeenCalledWith(
-        teams,
+        teamsToDraw,
         stage.leagues[0],
         undefined,
       );
+    });
+
+    it('should populate all teams into the league', () => {
+      const { stage } = initSpec();
+
+      console.log(stage.leagues[0]?.groups[0]?.teams);
+      expect(stage.leagues[0]?.groups[0]?.teams).toHaveLength(4);
     });
   });
 });

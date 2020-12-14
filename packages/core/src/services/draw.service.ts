@@ -11,7 +11,7 @@ export class DrawService {
     if (leagues) {
       leagues.forEach((league) => {
         // this is a league
-        DrawService.drawLeague(teams, league, rules);
+        this.drawLeague(teams, league, rules);
       });
     } else if (stage.teams?.length) {
       // this is a cup tournament
@@ -19,11 +19,7 @@ export class DrawService {
     }
   }
 
-  private static drawLeague(
-    teams: Team[],
-    league: League,
-    rules?: DrawRules,
-  ): void {
+  protected drawLeague(teams: Team[], league: League, rules?: DrawRules): void {
     const teamsToDraw = [...teams];
     const drawRoutine = new DrawRoutine(teamsToDraw);
 
