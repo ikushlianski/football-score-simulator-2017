@@ -21,3 +21,7 @@ yarn-error.log*
 
 # ide
 .idea/
+
+
+# code quality & security
+.scannerwork
