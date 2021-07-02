@@ -1,4 +1,4 @@
-import { DrawService } from '../../services/draw.service';
+import { DrawService } from './draw.service';
 import { Team } from '../team/team';
 
 export abstract class Draw {

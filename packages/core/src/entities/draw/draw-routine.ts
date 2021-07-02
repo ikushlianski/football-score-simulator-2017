@@ -1,5 +1,5 @@
-import { Team } from '../entities/team/team';
-import { Group } from '../entities/group/group';
+import { Team } from '../team/team';
+import { Group } from '../group/group';
 
 export class DrawRoutine {
   teams: Team[];

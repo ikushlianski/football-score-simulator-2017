@@ -1,7 +1,7 @@
-import { Team } from '../entities/team/team';
-import { Stage } from '../entities/stage/stage';
-import { DrawRules } from '../entities/draw/draw-rules';
-import { League } from '../entities/league/league';
+import { Team } from '../team/team';
+import { Stage } from '../stage/stage';
+import { DrawRules } from './draw-rules';
+import { League } from '../league/league';
 import { DrawRoutine } from './draw-routine';
 
 export class DrawService {

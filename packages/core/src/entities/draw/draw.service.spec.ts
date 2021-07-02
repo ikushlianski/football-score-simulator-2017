@@ -1,9 +1,9 @@
 import { DrawService } from './draw.service';
-import { Team } from '../entities/team/team';
-import { NationsEnum } from '../entities/nation/nations.enum';
-import { UnlGroupStage } from '../competitions/uefa-nations-league/unl.group-stage';
-import { UnlLeague } from '../competitions/uefa-nations-league/unl.league';
-import { UnlGroup } from '../competitions/uefa-nations-league/unl.group';
+import { Team } from '../team/team';
+import { NationsEnum } from '../nation/nations.enum';
+import { UnlGroupStage } from '../../competitions/uefa-nations-league/unl.group-stage';
+import { UnlLeague } from '../../competitions/uefa-nations-league/unl.league';
+import { UnlGroup } from '../../competitions/uefa-nations-league/unl.group';
 
 const createLeagueTournament = () => {
   const team1 = new Team('Belarus', NationsEnum.Belarus, 2.5);
@@ -50,7 +50,6 @@ describe('Draw Service', () => {
     it('should populate all teams into the league', () => {
       const { stage } = initSpec();
 
-      console.log(stage.leagues[0]?.groups[0]?.teams);
       expect(stage.leagues[0]?.groups[0]?.teams).toHaveLength(4);
     });
   });
