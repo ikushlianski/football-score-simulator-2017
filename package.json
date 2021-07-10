@@ -1,6 +1,7 @@
 {
   "name": "football-score-simulator",
   "private": true,
+  "useWorkspaces": true,
   "workspaces": [
     "packages/*"
   ]

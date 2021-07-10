@@ -1,7 +1,6 @@
-const baseJestConfig = require('../../jest.config');
+const esModules = ['lodash-es'].join('|');
 
 module.exports = {
-  ...baseJestConfig,
   preset: 'ts-jest',
   testEnvironment: 'node',
   globals: {
@@ -9,5 +8,6 @@ module.exports = {
       isolatedModules: true,
     },
   },
+  transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
   clearMocks: true,
 };

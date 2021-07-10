@@ -5,13 +5,13 @@ import { League } from '../league/league';
 import { DrawRoutine } from './draw-routine';
 
 export class DrawService {
-  public drawTournament(teams: Team[], stage: Stage, rules?: DrawRules) {
+  public drawTournament(teams: Team[], stage: Stage) {
     const { leagues } = stage;
 
     if (leagues) {
       leagues.forEach((league) => {
         // this is a league
-        this.drawLeague(teams, league, rules);
+        this.drawLeague(teams, league);
       });
     } else if (stage.teams?.length) {
       // this is a cup tournament
@@ -19,7 +19,7 @@ export class DrawService {
     }
   }
 
-  protected drawLeague(teams: Team[], league: League, rules?: DrawRules): void {
+  protected drawLeague(teams: Team[], league: League): void {
     const teamsToDraw = [...teams];
     const drawRoutine = new DrawRoutine(teamsToDraw);
 
@@ -31,6 +31,4 @@ export class DrawService {
       }
     } while (teamsToDraw.length > 0);
   }
-
-  // private drawCup(teams: Team[], rules?: DrawRules) {}
 }

@@ -3,8 +3,6 @@ import { Stage } from '../../entities/stage/stage';
 
 export class UnlCompetition extends Tournament {
   stages: Stage[];
-  tournamentCode: CompetitionsEnum;
-  tournamentRules: TournamentRules;
 
   constructor(stages: Stage[]) {
     super();
