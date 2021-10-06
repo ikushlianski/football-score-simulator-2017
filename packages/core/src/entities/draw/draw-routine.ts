@@ -72,7 +72,7 @@ export class DrawRoutine {
     }, 0);
   };
 
-  private pickRandomIndex = (items: any[]) => {
+  private pickRandomIndex = (items: unknown[]) => {
     return Math.floor(Math.random() * items.length);
   };
 }

@@ -20,12 +20,9 @@ const createLeagueTournament = () => {
   return { stage, teamsToDraw };
 };
 
-// const createCupTournament = () => {
-// };
-
 describe('Draw Service', () => {
   describe('drawTournament', () => {
-    const initSpec = () => {
+    const initDraw = () => {
       const drawService = new DrawService();
       const { stage, teamsToDraw } = createLeagueTournament();
 
@@ -37,18 +34,14 @@ describe('Draw Service', () => {
     };
 
     it('should call drawLeague method if league is specified in stage', () => {
-      const { drawLeagueSpy, teamsToDraw, stage } = initSpec();
+      const { drawLeagueSpy, teamsToDraw, stage } = initDraw();
 
       expect(drawLeagueSpy).toHaveBeenCalledTimes(1);
-      expect(drawLeagueSpy).toHaveBeenCalledWith(
-        teamsToDraw,
-        stage.leagues[0],
-        undefined,
-      );
+      expect(drawLeagueSpy).toHaveBeenCalledWith(teamsToDraw, stage.leagues[0]);
     });
 
     it('should populate all teams into the league', () => {
-      const { stage } = initSpec();
+      const { stage } = initDraw();
 
       expect(stage.leagues[0]?.groups[0]?.teams).toHaveLength(4);
     });

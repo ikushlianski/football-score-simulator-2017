@@ -1,11 +1,10 @@
 import { Team } from '../team/team';
 import { Stage } from '../stage/stage';
-import { DrawRules } from './draw-rules';
 import { League } from '../league/league';
 import { DrawRoutine } from './draw-routine';
 
 export class DrawService {
-  public drawTournament(teams: Team[], stage: Stage) {
+  public drawTournament(teams: Team[], stage: Stage): void {
     const { leagues } = stage;
 
     if (leagues) {
