@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/football-score-simulator/src",
+  "monorepo": true,
+  "root": "apps/football-score-simulator",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/football-score-simulator/tsconfig.app.json"
+  },
+  "projects": {
+    "football-score-simulator": {
+      "type": "application",
+      "root": "apps/football-score-simulator",
+      "entryFile": "main",
+      "sourceRoot": "apps/football-score-simulator/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/football-score-simulator/tsconfig.app.json"
+      }
+    },
+    "users": {
+      "type": "application",
+      "root": "apps/users",
+      "entryFile": "main",
+      "sourceRoot": "apps/users/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/users/tsconfig.app.json"
+      }
+    },
+    "tournaments": {
+      "type": "application",
+      "root": "apps/tournaments",
+      "entryFile": "main",
+      "sourceRoot": "apps/tournaments/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/tournaments/tsconfig.app.json"
+      }
+    },
+    "squads": {
+      "type": "application",
+      "root": "apps/squads",
+      "entryFile": "main",
+      "sourceRoot": "apps/squads/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/squads/tsconfig.app.json"
+      }
+    },
+    "teams": {
+      "type": "application",
+      "root": "apps/teams",
+      "entryFile": "main",
+      "sourceRoot": "apps/teams/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/teams/tsconfig.app.json"
+      }
+    }
+  }
+}
