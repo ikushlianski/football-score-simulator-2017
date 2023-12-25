@@ -1,0 +1,25 @@
+a {
+  color: #FFEB3B;
+}
+
+.container {
+
+}
+.jumbotron {
+    background-color: transparent;
+}
+.jumbotron__introduction {
+  /*background-image: url('../assets/img/grass.jpg');*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  margin: 0;
+  padding: 1rem;
+  text-shadow: 1px 1px 1px #333;
+}
+.jumbotron__introduction h2, .jumbotron__introduction h4,
+.jumbotron__introduction small {
+  color: whitesmoke;
+  margin: 16px auto;
+}

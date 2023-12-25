@@ -1,0 +1,80 @@
+<div class="matchSettings" [style.display] = "matchHasStarted ? 'none' : 'block'">
+  <div class="matchSettings matchSettings__main">
+    <div class="chooseTournament matchSettings__chooseTournament">
+      <label for="chooseTournament">Tournament</label>
+      <select id="chooseTournament" class="" name="tournamentName" [disabled]="" [(ngModel)]="tournamentName" (change)="onChangeTournament($event)">
+        <option [ngValue]="" *ngFor="let tournamentName of tournamentNames">{{tournamentName}}</option>
+      </select>
+    </div>
+    <div class="chooseTeams matchSettings__chooseTeams">
+      <div class="chooseHomeTeam">
+        <input type="text" name="chooseHomeTeam" auto-complete [source]="possibleTeamNames" [max-num-list]="5" [min-chars]="2" [value]="" placeholder="Choose home team" (change)="onChangeHomeTeamName($event)"  [(ngModel)]="homeTeamName" >
+      </div>
+      <div class="chooseAwayTeam">
+        <input type="text" name="chooseAwayTeam" [max-num-list]="5" [min-chars]="2" [value]="" placeholder="Choose away team" (change)="onChangeAwayTeamName($event)" [(ngModel)]="awayTeamName" auto-complete
+      [source]="possibleTeamNames">
+      </div>
+    </div>
+    <div class="matchSettings__secondLeg">
+      <div class="isSecondLeg">
+        <label for="isSecondLeg">2nd leg of Home & Away match?</label>
+        <input type="checkbox" name="isSecondLeg" id="isSecondLeg" [checked]="isSecondLeg" (change)="onChangeSecondLeg($event)">
+      </div>
+      <div class="firstLegGoalsSetter">
+        <div class="firstLegGoalsSetter__homeTeam1stLegGoals">
+          <label for="homeTeam1stLegGoals">
+            <span *ngIf="!(homeTeamName == undefined || homeTeamName == '')">{{homeTeamName}}</span> <span *ngIf="(homeTeamName == undefined || homeTeamName == '')">Hosts'</span> 1st leg goals</label>
+          <input type="number" name="homeTeam1stLegGoals" id="homeTeam1stLegGoals" min="0" [disabled]="!isSecondLeg" (change)="onChangeHomeTeam1stLegGoals($event)">
+        </div>
+        <div class="firstLegGoalsSetter__awayTeam1stLegGoals">
+          <input type="number" name="awayTeam1stLegGoals" id="awayTeam1stLegGoals" min="0" [disabled]="!isSecondLeg" (change)="onChangeAwayTeam1stLegGoals($event)">
+          <label for="awayTeam1stLegGoals">
+            <span *ngIf="!(awayTeamName == undefined || awayTeamName == '')">{{awayTeamName}}</span> <span *ngIf="(awayTeamName == undefined || awayTeamName == '')">Visitors'</span> 1st leg goals</label>
+        </div>
+      </div>
+    </div>
+    <div class="relativeStrength">
+      <label for="relativeStrengthText">Relative strength <span *ngIf="isBothFromDB">(recommended)</span></label>
+      <select id="relativeStrengthText" class="" name="relativeStrengthText" [(ngModel)]="relativeStrengthText" (change)="onChangeRelativeStrength($event)">
+        <option [ngValue]="" *ngFor="let relativeStrengthText of relativeStrengths">{{relativeStrengthText}}</option>
+      </select>
+    </div>
+    <div class="homeCrowdSupport">
+      <label for="crowdSupport">Home crowd support</label>
+      <select id="crowdSupport" class="" name="homeCrowdSupportText" [(ngModel)]="homeCrowdSupportText" (change)="onChangeHomeCrowdSupport($event)">
+        <option [ngValue]="" *ngFor="let homeCrowdSupportText of homeCrowdSupports">{{homeCrowdSupportText}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="matchSettings matchSettings__other">
+    <div class="homeTeamSettings">
+      <div class="homeTeamMorale">
+        <label for="homeTeamMorale">Hosts' motivation & morale</label>
+        <select id="homeTeamMorale" class="" name="homeTeamMorale" [(ngModel)]="homeTeamMoraleText" (change)="onChangeHomeTeamMorale($event)">
+          <option [ngValue]="" *ngFor="let homeTeamMoraleText of motivations">{{homeTeamMoraleText}}</option>
+        </select>
+      </div>
+      <div class="homeTeamTactics">
+        <label for="homeTeamTactics">Home team tactics</label>
+        <select id="homeTeamTactics" class="" name="homeTeamTacticsText" [(ngModel)]="homeTeamTacticsText" (change)="onChangeHomeTeamTactics($event)">
+          <option [ngValue]="" *ngFor="let homeTeamTacticsText of tactics">{{homeTeamTacticsText}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="awayTeamSettings">
+      <div class="awayTeamMorale">
+        <label for="awayTeamMorale">Visitors' motivation & morale</label>
+        <select id="awayTeamMorale" class="" name="awayTeamMorale" [(ngModel)]="awayTeamMoraleText" (change)="onChangeAwayTeamMorale($event)">
+          <option [ngValue]="" *ngFor="let awayTeamMoraleText of motivations">{{awayTeamMoraleText}}</option>
+        </select>
+      </div>
+      <div class="awayTeamTactics">
+        <label for="awayTeamTactics">Away team tactics</label>
+        <select id="awayTeamTactics" class="" name="awayTeamTacticsText" [(ngModel)]="awayTeamTacticsText" (change)="onChangeAwayTeamTactics($event)">
+          <option [ngValue]="" *ngFor="let awayTeamTacticsText of tactics">{{awayTeamTacticsText}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <button type="button" name="proceedToMatch" class="matchSettings__proceedToMatch" (click)="proceedToMatch()">Proceed to match</button>
+</div>
